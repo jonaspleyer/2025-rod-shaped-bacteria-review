@@ -13,10 +13,12 @@
 \usepackage{makecell}
 \usepackage{microtype}      % microtypography
 \usepackage{mathrsfs}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{doi}
 \usepackage{acronym}
 \usepackage{listings}
+\usepackage{tabularx}
 \usepackage{tikz}
 \usepackage[dvipsnames]{xcolor}
 
@@ -30,6 +32,9 @@
 \newacro{ca}[CA]{Cellular Automaton}
 \newacro{ib}[IB]{Individual-Based}
 \newacroplural{ca}[CA]{Cellular Automata}
+\newacro{ecoli}[\textit{E.coli}]{\textit{Escherichia coli}}
+\newacro{bsubtilis}[\textit{B.subtilis}]{\textit{Bacillus subtilis}}
+\newacro{spombe}[\textit{S.pombe}]{\textit{Schizosaccharomyces pombe}}
 
 \newcommand{\todo}[1]{\colorbox{WildStrawberry}{\textcolor{white}{#1}}}
 
@@ -128,6 +133,43 @@ pdfkeywords={},
 %###################################################################################################
 \section{Introduction}
 
+The last decades have fundamentally challenged and changed our understanding of how bacteria retain
+their shape.
+Rod-shaped bacteria can grow by extending their circular part, or by inserting new material
+at the tip of the rod.
+Species such as \ac{ecoli} and ac{bsubtilis}~\cite{Errington2020} fall under the first category
+while \ac{spombe} represents the latter.
+The material is inserted in small bursts on the nanoscale in forms of patches, bands or
+hoops~\cite{DePedro2003}.
+Despite their differences in wall-size, \ac{bsubtilis} and \ac{ecoli} follow growth rules which are
+comparable with respect to the extension of the rod \cite{Chang2014}.
+
+It was long believed that bacteria lack cytoskeletal filaments but with the end of the last
+century, it was discovered that the MreB protein fills this role since it "[..] forms an actin-like
+cytoskeleton in bacteria [..]" \cite{Erickson2001} (supplement: [p. 1]).
+It can polymerize and form filaments which behave similar to actin microfilaments \cite{Dersch2020}.
+Studies of its crystal structure further showed the similarity to actin~\cite{vandenEnt2001} and the
+MreB, MreC and MreD proteins were identified as homologues of actin \cite{Lowe2017_lj}.\
+\cite{Jones2001} studied the species of different bacterial sub-kingdoms which have the MreB gene.
+They concluded: "Many of the organisms are rod shaped, similar to B. subtilis and E. coli.
+Organisms with more complex shapes, including curved, filamentous, and helical bacteria, were all
+abundantly represented." \cite{Jones2001} (supplement: [p. 7]).
+Furthermore \cite{Wachi1987} found that mutants of \ac{ecoli} which create defective MreB proteins will be
+spherical instead of their natural rod-shaped form.
+Our colleagues from Freiburg have validated many of these observations and further showed that MreB
+travels along the axis of elongation with a velocity that depends on the size of the filament
+\cite{Olshausen2013}.
+
+This raises the question whether a rod shape serves any particular purpose.
+It can be argued that the earliest cells consisted of "[..] rods and filaments with cocci being
+derived and degenerate forms." \cite{Young2006}.
+The importance of shapes on the function of cells is highlighted by~\cite{Takeuchi2005} who grew
+\ac{ecoli} in very narrow microchambers and thus permanently altered their shape.
+This resulted in modified motion of the cells, some unchanged (helical and short crescent cells),
+some dysfunctional (coiled cells).
+It is important to note that this experiment controlled only the shape of bacteria without altering
+any additional biochemical or genetic functions.
+
 \section{Biological Principles}
 \subsection{How Bacteria grow and maintain their Shape}
 \subsection{Bending Stiffness}
@@ -136,6 +178,53 @@ pdfkeywords={},
 
 \section{Mathematical \& Computational Frameworks}
 \subsection{(Required) Modeling Aspects}
+
+\begin{table}[H]
+    \centering
+    \def\arraystretch{1.3}
+    \begin{tabularx}{\textwidth}{c l X}
+        &\textbf{Aspect} & \textbf{Description}\\
+        \toprule
+        &\textbf{(C) Cellular}\\
+        \midrule
+        (1) & Rod-Shaped Mechanics &
+            Rod-shaped bacteria are flexible rods which are able to freely move around (off-lattice
+            approach) \cite{Takeuchi2005,Ursell2014,Amir2014_2}.\\
+        (2) & Growth &
+            Cells grow exponentially by inserting new material either along the circular part of the
+            rod or at the tip~\cite{Robert2014,Takeuchi2005}.\\
+        (3) & Differentiation &
+            \textit{B.subtilis} is known to differentiate into matrix-producing and
+            surfactin-producing cells \cite{vanGestel2015,Lpez2010}.\\
+        (4) & Division &
+            The formation and continuation of van Gogh bundles is driven by cell division
+            \cite{vanGestel2015}.
+            Bacteria can form multilayers during their growth phase \cite{Duvernoy2018}.\\
+        (5) & Variable Parameters &
+            Parameters for individual cells are not fixed values but rather taken from a
+            distribution \cite{Koutsoumanis2013}.\\
+        &\textbf{(CC) Cell-Cell Interactions}\\
+        \midrule
+        (6) & Adhesion &
+            Bacteria adhere to each other at longer distances and attach when in close contact
+            \cite{Verwey1947,Trejo2013}.
+            The interaction between rods can be polarized \cite{Duvernoy2018}.\\
+        (7) & Friction &
+            Friction between cells \cite{Grant2014} can be asymmetrical \cite{Doumic2020}.\\
+        &\textbf{(DC) Domain-Cell Interactions}\\
+        \midrule
+        (8) & External Forces &
+            Bacteria tend to stick to surfaces \cite{vanLoosdrecht1989}.
+            The extracellular gel exerts a force onto the cells \cite{Grant2014}.\\
+        (9) & Extracellular Reactions &
+            Bacteria can take up nutrients or possible secrete/take up signalling molecules
+            \cite{Li2025}.\\
+        \bottomrule
+    \end{tabularx}
+    \label{table:simulation-aspects-supplement}
+    \caption{TODO}
+\end{table}
+
 \subsection{Computational Modeling Frameworks}
 \subsubsection{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
 \subsubsection{Varying Support for Rod-Shaped Bacteria}
