@@ -162,6 +162,16 @@ Order of this review
 \section{Biological Principles}
 \subsection{How Bacteria grow and maintain their Shape}
 
+\begin{itemize}
+    \item \cite{Lleo1990} "Bacterial cell shape regulation ..."
+    \item \cite{Gitai2005} MReB is a crystal
+    \item \cite{Bratton2018} MReB decides shape of bacteria
+    \item \cite{IWAI2002} compound that can induce spherical cells
+    \item \cite{Karczmarek2007} more details about transition from rod to sphere
+    \item \cite{Bean2009} "Inducing a Low-Affinity State in MreB"
+    \item \cite{Ausmees2003} "The Bacterial Cytoskeleton"
+\end{itemize}
+
 The last decades have fundamentally challenged and changed our understanding of how bacteria retain
 their shape.
 Rod-shaped bacteria can grow by extending their circular part, or by inserting new material
@@ -193,6 +203,11 @@ travels along the axis of elongation with a velocity that depends on the size of
     \item z-Ring formation (citations and text)
     \item \cite{Koch1995} TODO "A physical basis for the precise location of the division site of rod-shaped bacteria: the Central Stress Model Free"
     \item \cite{Bramkamp2009} TODO "Division site selection in rod-shaped bacteria"
+    \item \cite{Lan2007} "Z-ring force and cell shape during division in rod-like bacteria"
+    \item \cite{denBlaauwen2018} "Is Longitudinal Division in Rod-Shaped Bacteria a Matter of
+        Swapping Axis?"
+    \item \cite{Billaudeau2017} "Contrasting mechanisms of growth in two model rod-shaped bacteria"
+    \item \cite{Wang2010_2} "Robust Growth of Escherichia coli"
 \end{itemize}
 
 \begin{figure}[H]
@@ -252,6 +267,10 @@ to the behaviour of the cells.
 \end{figure}
 
 \subsection{Physical Interaction between individual Bacteria and Surfaces}
+
+\begin{itemize}
+    \item \cite{BrettFinlay2014} bacteria stick to surfaces
+\end{itemize}
 
 A colony of bacteria is known to form biofilms~\cite{Dunne2002}.
 This strategy is is beneficial for the survival of the collective as it allows it to harness growth
@@ -331,6 +350,11 @@ produce the stacking behaviour they set out to describe.
 
 \begin{itemize}
     \item \cite{Nagarajan2022} TODO use contents of this review
+    \item \cite{Ingham2008} TODO swarming and other nice effects
+    \item \cite{Starru} TODO also swarming; also has very nice model for rod-shaped bacteria; I have
+        not seen this anywhere else; very nice
+    \item \cite{Stewart2005} "Aging and Death in an Organism That Reproduces by Morphologically
+        Symmetric Division"
 \end{itemize}
 
 Although the developing wrinkles mentioned in the preceding section can be characterized as a form
@@ -413,6 +437,11 @@ The authors show that spores in the case of a nutrient-depleted system
 
 \section{Mathematical \& Computational Frameworks}
 
+\begin{itemize}
+    \item \cite{breitwieser_biodynamo_2022} BioDynamo TODO mention this; I think no support
+    \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
+\end{itemize}
+
 In order to describe the multicellular systems we looked at in the preceding sections, multiple
 different aspects of cellular behaviour and their interactions with the surrounding domain need to
 be considered and implemented.
@@ -428,7 +457,13 @@ Especially for the parameters which facilitate growth, we can assume that there 
 inheritance from one generation to the next but only a stochastic distribution of parameters from
 which the new value is drawn (see supplement).
 
-\subsection{Single-Cell Modeling Aspects}
+\subsection{Modeling Aspects}
+
+\begin{itemize}
+    \item \cite{Dang2020} "Cellular Dialogues: Cell-Cell Communication through Diffusible Molecules
+        Yields Dynamic Spatial Patterns"
+    \item 
+\end{itemize}
 
 \begin{table}[H]
     \centering
@@ -581,9 +616,17 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \end{align}
     \item \cite{Pleyer2023} TODO "Modeling mechanical interactions in growing populations of rod-shaped bacteria"
     \item \cite{Kong2014} TODO "Swimming motion of rod-shaped magnetotactic bacteria: the effects of shape and growing magnetic moment"
+    \item \cite{Starru} TODO very interesting FEM-based model
 \end{itemize}
 
 \subsection{Parameter Estimation Approaches}
+
+\paragraph{Common Methods used for Analysis}
+\begin{itemize}
+    \item Segmentation \cite{}
+    \item Comparisons of Tracking Algorithms \cite{Maka2014,Ulman2017}; Cell Tracking challenge
+        \cite{Maka2023}
+\end{itemize}
 
 \begin{itemize}
     \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
