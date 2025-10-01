@@ -35,12 +35,13 @@
 \newacro{ecoli}[\textit{E.coli}]{\textit{Escherichia coli}}
 \newacro{bsubtilis}[\textit{B.subtilis}]{\textit{Bacillus subtilis}}
 \newacro{spombe}[\textit{S.pombe}]{\textit{Schizosaccharomyces pombe}}
+\newacro{paeruginosa}[\textit{P.aeruginosa}]{\textit{Pseudomonas aeruginosa}}
 
 \newcommand{\todo}[1]{\colorbox{WildStrawberry}{\textcolor{white}{#1}}}
 
 \newcommand{\R}{\mathbb{R}}
 
-\title{Mechanical Models of Rod-Shaped Bacteria - From Single-Cell Modeling to Collective Phenomena}
+\title{Mechanical Models of Rod-Shaped Bacteria - From Single-Cell Essays to Collective Phenomena}
 
 %\date{September 9, 1985}	% Here you can change the date presented in the paper title
 %\date{} 					% Or removing it
@@ -130,8 +131,19 @@ pdfkeywords={},
     \item Mathematical Models of Rod-Shaped Bacteria - From Single-Cell Analyses to Collective Phenomena
 \end{itemize}
 
+\tableofcontents
+
 %###################################################################################################
 \section{Introduction}
+
+\begin{itemize}
+    \item Interested in all variations of rod-shaped bacteria; stiff, flexible, spiral, etc.
+    \item Einordnung in andere Bakterienarten
+    \item Rods are "more fundamtenal" than spheres (cocci) (which citation?)
+\end{itemize}
+
+\section{Biological Principles}
+\subsection{How Bacteria grow and maintain their Shape}
 
 The last decades have fundamentally challenged and changed our understanding of how bacteria retain
 their shape.
@@ -160,6 +172,24 @@ Our colleagues from Freiburg have validated many of these observations and furth
 travels along the axis of elongation with a velocity that depends on the size of the filament
 \cite{Olshausen2013}.
 
+\begin{itemize}
+    \item z-Ring formation (citations and text)
+    \item \cite{Koch1995} TODO "A physical basis for the precise location of the division site of rod-shaped bacteria: the Central Stress Model Free"
+    \item \cite{Bramkamp2009} TODO "Division site selection in rod-shaped bacteria"
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{example-image-a}
+    \includegraphics[width=0.3\textwidth]{example-image-b}
+    \includegraphics[width=0.3\textwidth]{example-image-c}
+    \caption{TODO:
+        (A) Insert material along Rod
+        (B) Insert material at tips
+        (C) Z-Ring formation and division process
+    }
+\end{figure}
+
 This raises the question whether a rod shape serves any particular purpose.
 It can be argued that the earliest cells consisted of "[..] rods and filaments with cocci being
 derived and degenerate forms." \cite{Young2006}.
@@ -170,14 +200,214 @@ some dysfunctional (coiled cells).
 It is important to note that this experiment controlled only the shape of bacteria without altering
 any additional biochemical or genetic functions.
 
-\section{Biological Principles}
-\subsection{How Bacteria grow and maintain their Shape}
-\subsection{Bending Stiffness}
+\paragraph{Bending Stiffness}
+
+As discussed previously, the major contributor which allows rod-shaped bacteria to grow an keep
+their shape is MreB.
+If left alone, the rod will be straight but external effects can alter the morphology
+permanently~\cite{Takeuchi2005}.
+Multiple efforts have been made in recent years to measure and analyze the bending properties of
+individual bacteria.
+\cite{Amir2014_2} designed an experiment similar to \cite{Wang2010} but instead of optically trapped
+beads, a flow was used to apply a uniform force on the rod.
+Their method is non-invasive and allows for larger force scales.
+Cell-division was suppressed with SulA, thus altering the cellular biochemistry.
+Since the cells grow continuously, a straight shape was recovered in every case.
+With these methods, they demonstrated that the bacteria "[..] exhibit two fundamentally different
+modes of deformations and recover from them" \cite{Amir2014_2}.
+These modes are elastic in which the cell recovers immediately and plastic which requires growth to
+restore its morphology.
+Short pulses of forces resulted in elastic deformations from which the cell recovered immediately.
+Plastic changes in morphology were only possible under longer periods of persistent force exertion.
+Figure X(B) compares the angle of deflection before and after the snap-back
+which occurs after turning off the flow.
+The linear fit of 66 experimental results under varying conditions shows that both modes contribute
+to the behaviour of the cells.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{example-image-a}
+    \includegraphics[width=0.45\textwidth]{example-image-b}
+    \caption{TODO:
+        (A) Cell-cell Interactions
+        (B) Elastic and Plastic Deformations of the Rod
+    }
+\end{figure}
+
 \subsection{Physical Interaction between individual Bacteria and Surfaces}
+
+A colony of bacteria is known to form biofilms~\cite{Dunne2002}.
+This strategy is is beneficial for the survival of the collective as it allows it to harness growth
+factors and migrate when necessary and also plays an important role in bacterial infections in the
+biomedical sector \cite{Ong1999}.
+The formation of biofilms is only possible due to the attractive nature of bacterial interactions
+towards each other and surfaces \cite{Berne2018}.
+To analyze bacterial adhesion to surfaces, \cite{vanLoosdrecht1989} investigated the interactions of
+various bacteria with negatively charged polystyrene.
+They found that the interaction is characterized by a low Gibbs energy of
+$2-3kT$ per cell which can be described by a secondary minimum of the DLVO-theory
+\cite{Derjaguin1993,Verwey1947} which is relevant for distances $>=1nm$.
+At these distances, the DLVO potential acts as a generic adhesive potential.
+Particles which stay in the secondary minimum are held together but even weak interactions are
+enough to redisperse them which means that this state is reversible.
+When approaching closer distances, more intricate mechanisms come into play in which the
+heterogeneity of the materials in question needs to be considered.
+\cite{Hori2010} described bacterial adhesion as a "two-phase process including an initial, instantaneous
+and reversible physical phase (phase one) and a time-dependent and irreversible molecular and
+cellular phase (phase two)".
+
+All these considerations become even more intricate when not considering interactions of bacteria
+with surfaces but bacteria with each other.
+Gram-negative bacteria (eg. \ac{ecoli}) express outer membrane proteins (adhesins) which allow them
+to attach to various hosts \cite{Vaca2019,Beachey1981}.
+In addition, the flagella can play an important role in the direct adhesion between cells
+\cite{Haiko2013}.
+Thus it is not correct to blindly apply the results for adhesion to surfaces to the interactions
+between bacteria.
+
+The overall attractive nature of the bacterial forces can be seen in the stress response to positive
+and negative compression of a colony in a confined space.
+\cite{Trejo2013} studied the formation of macroscopic wrinkles when growing bacteria in a confined
+space.
+They were able to model the strain and stress of the collection of bacteria which requires that
+cells are connected by a (to first order) spring-like force.
+The developing wrinkles could then be described by a buckling instability.
+
+\cite{Duvernoy2018} used laser techniques and force microscopy to investigate adhesion of individual
+\ac{ecoli} and \ac{paeruginosa} cells.
+They found that the adhesion forces of the rods are polar, resulting in mechanical tension which in
+turn determines daughter cell arrangement.
+They measured the size of the grown bacterial colonies, fitted ellipses to their shapes and found
+that adhesion and polar adhesion in particular resulted in a greater difference between the long and
+short axis of the fitted ellipse and thus a more oval shape rather than circular (WT).
+Furthermore, they measured the critical value $N_(2D\/3D)$ where the colony grows into a second
+layer on top of the base layer.
+It was shown by \cite{Grant2014} Figure X B), that the point of transition
+depends on the rigidity of the surrounding gel and \cite{Duvernoy2018} extended this analysis,
+showing that the critical value $N_(2D\/3D)$ depends on the adhesive strength and polarity of the
+interaction.
+\cite{Grant2014} described the growing bacterial colony as a disc with radius $R$ which is pressed
+into the agarose slab.
+The authors created a purposely-designed simulation in `C++` in order to model the effects of the
+gel on the collection of bacteria.
+They approximated individual bacteria as multiple overlapping spheres which were linked by nonlinear
+springs such that their dynamics correspond to the Euler-Bernoulli dynamic beam theory
+\cite{HAN1999}.
+The physical interaction potential between multiple bacteria and the surface was of the form
+
+\begin{equation}
+    F(\epsilon) = C E_b (d/2)^(2 - \beta) \epsilon^\beta
+\end{equation}
+
+where only repulsive effects were considered and no attractive forces which is justified by the
+already dense packing of the bacteria in the experiment.
+The value $F$ is the magnitude of the force, $E_b$ is the effective Young modulus of the whole
+bacterium, $epsilon$ is the distance of overlap between two spheres and $d$ the diameter of the
+spheres.
+Their model also accounts for friction between cells which is based on Amonton's laws (against the
+direction of movement, proportional to the magnitude of the normal force) \cite{Hutchings2021}.
+In order to portray growth, new spheres were inserted and cells divided upon reaching a threshold.
+In combining all these aspects, the authors have constructed an agent-based model which was able to
+produce the stacking behaviour they set out to describe.
+
 \subsection{Spatial Effects and Self-Organization}
 
+Although the developing wrinkles mentioned in the preceding section can be characterized as a form
+of collective self-organization, they require a confined space and would not be observable
+otherwise.
+In most cases, rod-shaped bacteria grow in a medium separated enough such that they can freely
+extend in space.
+\cite{vanGestel2015} explored how \ac{bsubtilis} migrates over a surface by forming multicellular
+structures.
+The cells organize themselves into "van Gogh bundles" of cells
+which are tightly aligned in chains which then form filamentous loops.
+This phenomenon occurs at the border of the bacterial colony and the migration is driven by two
+phenotypically different cell types \cite{Lpez2010}.
+"[The authors] propose that surfactin-producing cells reduce the friction between cells and their
+substrate, thereby facilitating matrix-producing cells to form bundles" \cite{vanGestel2015}.
+It has been shown that mutants which combine \textit{srfA} and \textit{eps} are able to outperform
+the wild-type when it comes to colony expansion \cite{Velicer2009}.
+In their final stage, van Gogh bundles consist only of matrix-producing cells although they depend
+on surfactin-producing ones during their development.
+\cite{vanGestel2015} also constructed an agent-based model to describe the observed effects.
+Cells are modeled as straight lines in the shape of a filament by connecting their ends to each
+other.
+They are initially placed horizontally at the bottom of the simulation domain
+In order to update to the next position, three mechanisms are involved: (1) Cell elongation (2) Cell
+division (3) Cell turning.
+While the first two are rather self-explanatory, in the last step, a new spatial orientation of the
+cells is chosen in order to minimize the potential energy
+
+\begin{equation}
+    V = (\pi - \alpha_1)^2 + (\pi - \alpha_2)^2
+\end{equation}
+
+where $alpha_1$ and $alpha_2$ denote the angles to their respective neighbors.
+By choosing the new orientation at random with probability $P=1-e^(k(V_c-V_n))$ (where $V_c,V_n$ are
+the current and new potential energies), the parameter $k$ symbolizes the bending rigidity.
+Their analysis found that a high bending rigidity can play a more important role than the overall
+cell size, i.e. the growth rate.
+Concerning the complexity of their model, the authors noted:
+"We did not aim to accurately model the biophysical details of the growth of van Gogh bundles
+(parameterization of such a model would be impossible), but rather to make a simple phenomenological
+model to shape our intuition [..]" \cite{vanGestel2015}.
+While the authors correctly assessed that the parametrization of such a model with just one
+particular experiment would be very difficult, multiple sources combined which treat individual
+aspects of each cellular aspect can yield enough information to meaningfully produce results.
+\cite{Dong2022} showed that van Gogh bundles aid in the self-healing of bacterial colonies.
+They observed that an artificially introduced cut heals better at lower curvatures, which
+corresponds to a higher rigidity of the ensemble being placed more towards the outer region of the
+triangular-shaped cut.
+This work served as a precursor for a very recent study by \cite{Li2025} in which they picked up on
+the Agent-Based model.
+Here, they investigated the interplay of nutrient depletion and multiple biofilms on the
+capacity to form van Gogh bundles.
+Their model used linear growth on the cellular level which is only a first-order approximation to
+the experimentally observed exponential growth discussed previously.
+Furthermore, no forces were calculated between the bacteria but a "shoving algorithm" (collision
+detection) moved the agents around such that collisions were avoided.
+Based on the approach of \cite{vanGestel2015} they implemented cell-turning with.
+But more significantly, they implemented a reaction-diffusion system
+
+\begin{equation}
+    \frac{\partial C_s}{\partial t} = D_n \nabla C_s + r_n
+\end{equation}
+
+where $\nabla$ is the gradient, $D_n$ the diffusion coefficient and $r_n$ is the nutrient sink or
+source.
+More precisely, the nutrient sinks (sources) $r_n$ have to be located at the positions of cells.
+If we assume a simplification to a point-like interaction with the external environment, we can
+write as
+
+\begin{equation}
+    \frac{\partial C_s}{\partial t} = D_n \nabla C_s  + \sum\limits_i u_i r_n (x_i) \delta(x-x_i)
+\end{equation}
+
+where the sum ranges over all cells $i=1..$ and each cell might have an individual exchange range
+$u_i$ located at position $x_i$ which is denoted by the well-known dirac delta-distribution
+$\delta(x-x_i)$.
+The authors compared a single-biofilm system with a multi-biofilm system and showed that
+motile cells can convert into matrix-producing cells in a nutrient depleted system.
+The authors show that spores in the case of a nutrient-depleted system
+
 \section{Mathematical \& Computational Frameworks}
-\subsection{(Required) Modeling Aspects}
+
+In order to describe the multicellular systems we looked at in the preceding sections, multiple
+different aspects of cellular behaviour and their interactions with the surrounding domain need to
+be considered and implemented.
+Table \ref{table:simulation-aspects-supplement} summarizes these aspects and points to the relevant
+experiments.
+Aspects (1-5) take place inside the cell, (6,7) correspond to interactions between different
+cellular agents and (8,9) to interactions with the domain.
+It should be noted explicitly that these simulation aspects can be coupled to each other.
+We have already seen such an example in the results of @Takeuchi2005 and @Ursell2014 where the
+continued growth modulates the mechanical response of the cell.
+Additionally, Aspect (5) is an overarching concept which is relevant for all processes.
+Especially for the parameters which facilitate growth, we can assume that there is no direct
+inheritance from one generation to the next but only a stochastic distribution of parameters from
+which the new value is drawn (see supplement).
+
+\subsection{Single-Cell Modeling Aspects}
 
 \begin{table}[H]
     \centering
@@ -226,9 +456,112 @@ any additional biochemical or genetic functions.
 \end{table}
 
 \subsection{Computational Modeling Frameworks}
-\subsubsection{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
-\subsubsection{Varying Support for Rod-Shaped Bacteria}
+
+Since the beginning of this decade, multiple tools have emerged which are able to describe living
+systems on a cellular individual-based approach in various details.
+A good reason for choosing a framework over a purpose-built solution is to follow the Findability,
+Accessibility, Interoperability and Reuse) FAIR principles by \cite{Wilkinson2016}.
+These criteria have been designed to improve the overall infrastructure surrounding (re)usability of
+scholarly data and methods.
+In our previous work, we investigated their differences and features and capacity to model
+individual behaviour of cells \cite{Pleyer2023}.
+Using one of these existing toolkits means that already existing functionality can be used to
+develop own models and the produced research results can be fed back to the library for fellow
+researchers to reuse.
+This begs the question, which of these existing models is able to support the long list of aspects
+that we set out to describe with the experimentally gathered evidence.
+
+\paragraph{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
+
+Of the most popular frameworks, most do not support rod-shaped bacteria out of the box.
+The very popular Cellular Potts Model (CPM) \cite{Graner1992} is mostly applied in 2D and only
+represents cells as lattice grid points.
+Since CompuCell3D \cite{Swat2012} exclusively builds upon the CPM, it can not model rod-shaped
+bacteria.
+PhysiCell \cite{Ghaffarizadeh2018} was designed to answer questions surrounding cancer research and
+currently only supports spherical agents.
+Chaste \cite{Cooper2020} was also designed for cancer research but further targets the heart and
+tissues.
+Naturally its Agent-Based Model supports cell-centre and vertex-based models but no rod shapes.
+Morpheus \cite{Starru2014} also employs the CPM along with other spatial representations such as
+vertex-based models or PDEs but has no support for Rod-Shaped bacteria.
+Even purpose-built solutions such as BNSim \cite{Wei2013} which specifically targets bacterial
+networks, assumes a simplified spherical representation for their bacterial agents.
+
+\paragraph{Varying Support for Rod-Shaped Bacteria}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{example-image-a}
+    \includegraphics[width=0.3\textwidth]{example-image-b}
+    \includegraphics[width=0.3\textwidth]{example-image-c}
+    \caption{TODO: Snapshots of Modeling Frameworks}
+\end{figure}
+
+As we have seen, many frameworks do not provide existing functionality for rod-shaped bacteria.
+However, some others do have various levels of support.
+Biocellion \cite{Kang2014} can model agents with cylindrical interaction potentials but does not
+model any of the MreB-related bending and rigidity or polar interactions.
+They acknowledge this shortcoming: "Mapping a cell to multiple agents is also necessary to
+separately model subcellular compartments [..].
+However, Biocellion does not yet support this." \cite{Kang2014}
+BSim2.0 represents cells as rigid capsular cells made from a cylindrical center part and two
+half-spheres, which are placed at the ends of the cylinder to round out the shape.
+In order to calculate interactions between cells, possible overlaps are determined and minimized,
+thus determining the position values of the next iteration step.
+It also accounts for many other phenomena, which are displayed in \textbf{TODO replace}.
+BSim does not consider bending forces for individual cells or polar interactions.
+The `gro` programming language was designed to simulate the growth of colonies and cell-cell
+communication.
+Its "physics computation has been optimized for rigid rod-shaped bodies, like E. coli bacteria"
+\cite{Gutirrez2017}.
+They recognize two types of forces which are acting on the cellular agents:
+\textit{Local forces} which are calculated between adjacent bacteria and a \textit{global force}
+which pushes bacteria outwards of the colony.
+The latter of these is a phenomenological implementation of the observed colony expansion and the
+associated central pressure with it.
+This assumption may yield incorrect results for sparsely populated cases.
+The engine is limited to 2D and does not consider polar interactions or bending of the rods.
+
 \subsection{Purpose-Built Models}
+
+\begin{itemize}
+    \item \cite{Abar2017} "Agent Based Modelling and Simulation tools: A review of the state-of-art software"
+    \item other generic frameworks exist, which may allow to model the desired functions
+    \item \cite{Winkle2017} "Modeling mechanical interactions in growing populations of rod-shaped bacteria"
+    \item \cite{Doumic2020} "A purely mechanical model with asymmetric features for early morphogenesis of
+  rod-shaped bacteria micro-colony"
+    \begin{itemize}
+        \item This is a really good paper for referencing
+        \item no bending in mathematical model
+        \item Compare distributions of "Read-Outs" to data
+        \item uses steric force (see also previously \cite{Trejo2013})
+    \end{itemize}
+    \item \cite{Grant2014} purposely-built model written in `C++`
+    \begin{itemize}
+        \item describes bacteria as collection of overlapping spheres
+        \item spheres are coupled by non-linear springs (Euler-Bernoulli dynamic beam theory);
+        This assumption is unfounded; they show however that it does not alter their results in this
+        case
+        \item only model repulsive forces; no attraction, adhesion
+    \end{itemize}
+    \item \cite{Cho2007} only 2D, no bending, no parameter estimation; based on work done in 
+        \cite{Jnsson2005}
+    \item \cite{Storck2014} TODO;
+    41 Parameters for various cases;
+    only 8 parameters taken from literature values/quantified;
+    generated growth rate randomly (normal distribution), but for each growth step; this is
+      stochastically equivalent but numerically slightly more intense;
+    \item \cite{Volfson2008} TODO; continuum model, equations of nematodynamics \cite{Doi1988-ad}
+    \begin{align}
+        \partial_t \rho + \partial_z (\rho \nu) &= \alpha \rho\\
+        \partial_t q + \nu \partial_z q &= B(1-q^2) \partial_z \nu\\
+        \partial_t(\rho \nu) + \nu \partial_z (\rho \nu) &= - \partial_z p - \mu \rho \nu
+    \end{align}
+    \item \cite{Pleyer2023} TODO "Modeling mechanical interactions in growing populations of rod-shaped bacteria"
+    \item \cite{Kong2014} TODO "Swimming motion of rod-shaped magnetotactic bacteria: the effects of shape and growing magnetic moment"
+\end{itemize}
+
 
 \section{Discussion}
 \section{Conclusion}
@@ -236,6 +569,44 @@ any additional biochemical or genetic functions.
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{S\arabic{subsection}}
+
 \section{Supplementary Material}
+\subsection{Inheritance of Growth-Relevant Parameters}
+
+We consider a distribution of parameters $rho(x)$ for
+which the rate of proliferation of any cell is proportional to the value of the parameter $x$.
+The rate of proliferation and thus the rate with which $rho(x)$ changes is given by
+$partial_rho(x,t) x = lambda rho(x,t) x$.
+This Ordinary Differential Equation (ODE) is trivially solvable with solution
+
+\begin{equation}
+    \rho(x,t) = \rho(x,t_0) \exp(\lambda t x)
+\end{equation}
+
+For the simple example of a Gaussian distribution
+$\rho(x,t_0) = 1/\sqrt{2 pi \sigma^2} \exp(-x^2/(2 \sigma^2))$, we can calculate the expectation
+value for the parameter $x$ via
+
+\begin{align}
+    E[x(t)]
+    &= 1/\sqrt{2 \pi \sigma^2} \int \rho(x,t) x op("dx")\\
+    &= 1/\sqrt{2 \pi \sigma^2} \int x \exp{-x^2/(2 \sigma^2} + \lambda t x) op("dx")\\
+    % &= 1/sqrt(2 pi sigma^2) integral x exp( -(x - lambda sigma^2 t)^2/(2 sigma^2) - lambda^2 sigma^2 t^2) op("dx")\
+    % &= 1/sqrt(2 pi sigma^2) integral x exp( -(x - lambda sigma^2 t)^2/(2 sigma^2) + (lambda^2 sigma^2 t^2) /2) op("dx")\
+    % &= 1/sqrt(2 pi sigma^2) integral [- sigma^2 partial/(partial x) +lambda sigma^2 t] exp( -(x - lambda sigma^2 t)^2/(2 sigma^2))exp((lambda^2 sigma^2 t^2) /2) op("dx")\
+    % &= 1/sqrt(2 pi sigma^2) integral lambda sigma^2 t exp( -(x - lambda sigma^2 t)^2/(2 sigma^2))exp((lambda^2 sigma^2 t^2) /2) op("dx")\
+    &= \lambda \sigma^2 t \exp{(\lambda^2 \sigma^2 t^2)/2}.
+\end{align}
+
+We can see that the expected value $E[x(t)]$ keeps increasing faster than regular exponential growth
+and indefinitely which is contrary to observation (see Figure \textbf{TODO}) and intuition.
+The same qualitative result will emerge for different distributions.
+With these considerations, we can assume that the new parameters of freshly divided cells are drawn
+from a random distribution which carries no temporal correlation between the mother and daughter
+cell. (TODO this should be provable more rigorously)
+It has to be stated explicitly that these considerations were done under the assumption that the
+proliferation of the cell is affected and proportional to the value of the parameter.
 
 \end{document}
