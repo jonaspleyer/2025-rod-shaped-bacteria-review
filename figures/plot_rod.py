@@ -20,7 +20,7 @@ def remove_sphere_points(sphere, cylinder):
     return sphere.remove_points(selected["SelectedPoints"].view(bool))[0]
 
 
-if __name__ == "__main__":
+def create_initial_mesh(seed=0):
     radius = 0.5
 
     theta_resolution = 30
@@ -85,8 +85,10 @@ if __name__ == "__main__":
     freq2 = [50, 50, 50]
     noise1 = pv.perlin_noise(0.05, freq1, (0, 0, 0))
 
+    rng = np.random.default_rng(seed)
+
     def noise2(_p):
-        return np.random.normal(scale=0.02)
+        return rng.normal(scale=0.02)
 
     mesh["scalars1"] = [noise1.EvaluateFunction(p) for p in mesh.points]
     # mesh.smooth(n_iter=250, inplace=True)
@@ -95,7 +97,13 @@ if __name__ == "__main__":
     mesh = mesh.warp_by_scalar("scalars2")
     mesh.smooth(n_iter=250, inplace=True)
 
-    mesh["colors"] = np.random.normal(180, scale=10, size=(len(mesh.points), 3))
+    return mesh, radius, points
+
+
+if __name__ == "__main__":
+    mesh, radius, points = create_initial_mesh()
+    rng = np.random.default_rng(0)
+    mesh["colors"] = rng.normal(180, scale=10, size=(len(mesh.points), 3))
 
     domain_size = np.max(points) + radius
     plotter = pv.Plotter(
