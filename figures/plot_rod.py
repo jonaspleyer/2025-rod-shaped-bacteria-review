@@ -1,23 +1,18 @@
 import pyvista as pv
 import numpy as np
+import pyacvd
 
 points = [
     [0, 0, 0],
-    [1, 0.7, 0],
+    [0.5, 0.3, 0],
+    [1, 0.8, 0],
+    [1.5, 1.5, 0],
     [2, 2.1, 0],
-    [3, 2.6, 0],
+    [3, 2.99, 0],
     [4, 3.8, 0],
     [5, 4.7, 0],
 ]
 points = np.array(points)
-
-
-def points_in_cylinder(pt1, pt2, r, q):
-    vec = pt2 - pt1
-    const = r * np.linalg.norm(vec)
-    # cond1 = np.where(np.dot(q - pt1, vec)) >= 0 and np.dot(q - pt2, vec) <= 0
-    # cond2 = np.linalg.norm(np.cross(q - pt1, vec)) <= const)
-    # return cond1 and cond2
 
 
 def remove_sphere_points(sphere, cylinder):
@@ -27,8 +22,6 @@ def remove_sphere_points(sphere, cylinder):
 
 if __name__ == "__main__":
     radius = 0.5
-
-    # spheres = [ for p in points]
 
     theta_resolution = 30
     meshes = [
@@ -82,8 +75,6 @@ if __name__ == "__main__":
     mesh = cloud.reconstruct_surface().clean()
     mesh.compute_normals(inplace=True)
 
-    import pyacvd
-
     clus = pyacvd.Clustering(mesh)
     clus.subdivide(2)
     clus.cluster(2000, iso_try=20)
@@ -91,24 +82,53 @@ if __name__ == "__main__":
 
     # Prepare perlin noise
     freq1 = [0.689, 0.562, 0.683]
-    freq2 = [16, 15, 14]
-    noise1 = pv.perlin_noise(0.01, freq1, (0, 0, 0))
-    noise2 = pv.perlin_noise(0.05, freq2, (0, 0, 0))
+    freq2 = [50, 50, 50]
+    noise1 = pv.perlin_noise(0.05, freq1, (0, 0, 0))
+
+    def noise2(_p):
+        return np.random.normal(scale=0.02)
 
     mesh["scalars1"] = [noise1.EvaluateFunction(p) for p in mesh.points]
-    mesh = mesh.warp_by_scalar("scalars1")
-    mesh.smooth(n_iter=10, inplace=True)
-    mesh.subdivide(3)
-    mesh["scalars2"] = [noise2.EvaluateFunction(p) for p in mesh.points]
+    # mesh.smooth(n_iter=250, inplace=True)
+    mesh.subdivide(4, inplace=True)
+    mesh["scalars2"] = [noise2(p) for p in mesh.points]
     mesh = mesh.warp_by_scalar("scalars2")
+    mesh.smooth(n_iter=250, inplace=True)
 
-    mesh.plot(
+    mesh["colors"] = np.random.normal(180, scale=10, size=(len(mesh.points), 3))
+
+    domain_size = np.max(points) + radius
+    plotter = pv.Plotter(
+        off_screen=True,
+        window_size=[int(np.ceil(domain_size)) * 300] * 2,
+    )
+    p1 = np.array([-radius] * 3)
+    p2 = np.array([domain_size, domain_size, -radius])
+    p3 = np.array([-radius, domain_size, -radius])
+    rect = pv.Rectangle(np.array([p1, p2, p3]))
+    plotter.add_mesh(rect)
+    bounds = (-radius, domain_size, -radius, domain_size, -radius, radius)
+    pv.Plotter.view_xy(plotter, bounds=bounds)
+    pv.Plotter.enable_parallel_projection(plotter)
+    plotter.camera.tight(padding=0)
+    plotter.camera.position = (*plotter.camera.position[:2], 100 * domain_size)
+    camera = plotter.camera.copy()
+    plotter.clear_actors()
+
+    actor = plotter.add_mesh(
+        mesh,
         # show_edges=True,
-        # opacity=0.5,
         show_scalar_bar=False,
-        scalars=None,
-        color=[150, 150, 150],
+        # scalars=None,
+        # color=[150, 150, 150],
+        scalars="colors",
+        cmap="Grays",
         smooth_shading=True,
         metallic=1,
         roughness=0,
     )
+    actor.UseBoundsOff()
+
+    plotter.disable_anti_aliasing()
+    plotter.screenshot("figures/rod_render.png")
+    plotter.close()
