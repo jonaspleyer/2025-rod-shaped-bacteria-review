@@ -1,1 +1,2 @@
-pyvista==0.46
+pyvista>=0.46
+pyacvd>=0.3
