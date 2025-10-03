@@ -484,6 +484,9 @@ which the new value is drawn (see supplement).
 \end{itemize}
 
 \begin{table}[H]
+    \newcounter{aspect}
+    \setcounter{aspect}{1}
+    \newcommand{\asp}{(\arabic{aspect}\refstepcounter{aspect})}
     \centering
     \def\arraystretch{1.3}
     \begin{tabularx}{\textwidth}{c l X}
@@ -491,36 +494,38 @@ which the new value is drawn (see supplement).
         \toprule
         &\textbf{(C) Cellular}\\
         \midrule
-        (1) & Rod-Shaped Mechanics &
+        \asp & Rod-Shaped Mechanics &
             Rod-shaped bacteria are flexible rods which are able to freely move around (off-lattice
             approach) \cite{Takeuchi2005,Ursell2014,Amir2014_2}.\\
-        (2) & Growth &
+        \asp & Movement &
+            \textbf{TODO} Flagellum, Swimming\\
+        \asp & Growth &
             Cells grow exponentially by inserting new material either along the circular part of the
             rod or at the tip~\cite{Robert2014,Takeuchi2005}.\\
-        (3) & Differentiation &
+        \asp & Differentiation &
             \textit{B.subtilis} is known to differentiate into matrix-producing and
             surfactin-producing cells \cite{vanGestel2015,Lpez2010}.\\
-        (4) & Division &
+        \asp & Division &
             The formation and continuation of van Gogh bundles is driven by cell division
             \cite{vanGestel2015}.
             Bacteria can form multilayers during their growth phase \cite{Duvernoy2018}.\\
-        (5) & Variable Parameters &
+        \asp & Variable Parameters &
             Parameters for individual cells are not fixed values but rather taken from a
             distribution \cite{Koutsoumanis2013}.\\
         &\textbf{(CC) Cell-Cell Interactions}\\
         \midrule
-        (6) & Adhesion &
+        \asp & Adhesion &
             Bacteria adhere to each other at longer distances and attach when in close contact
             \cite{Verwey1947,Trejo2013}.
             The interaction between rods can be polarized \cite{Duvernoy2018}.\\
-        (7) & Friction &
+        \asp & Friction &
             Friction between cells \cite{Grant2014} can be asymmetrical \cite{Doumic2020}.\\
         &\textbf{(DC) Domain-Cell Interactions}\\
         \midrule
-        (8) & External Forces &
+        \asp & External Forces &
             Bacteria tend to stick to surfaces \cite{vanLoosdrecht1989}.
             The extracellular gel exerts a force onto the cells \cite{Grant2014}.\\
-        (9) & Extracellular Reactions &
+        \asp & Extracellular Reactions &
             Bacteria can take up nutrients or possible secrete/take up signalling molecules
             \cite{Li2025}.\\
         \bottomrule
