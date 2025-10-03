@@ -127,6 +127,8 @@ pdfkeywords={},
         \item question; which biological required? answer: mesoscopic; want to get to emergent
             collective phenomena from single-cell behaviour
     \end{itemize}
+
+
 \end{abstract}
 
 % keywords can be removed
@@ -169,8 +171,10 @@ Order of this review
 \begin{itemize}
     \item \cite{Amir2014} "Getting into shape: How do rod-like bacteria control their geometry?"
     \item \cite{Lleo1990} "Bacterial cell shape regulation ..."
-    \item \cite{Gitai2005} MReB is a crystal
     \item \cite{Bratton2018} MReB decides shape of bacteria
+    \item \cite{Daniel2003} "Two Distinct Ways to Make a Rod-Shaped Cell"
+    \item \cite{Gitai2005} MReB is a crystal
+    \item \cite{Cooper1991} "New" (1991) understanding of how cell wall forms during division cycle
     \item \cite{Garner2021} "Toward a Mechanistic Understanding of Bacterial Rod Shape Formation and
         Regulation"
     \item \cite{IWAI2002} compound that can induce spherical cells
@@ -182,6 +186,8 @@ Order of this review
     \item \cite{Si2015} "Bacterial growth and form under mechanical compression" (push on cells;
         make them into flat disk-like structures; analyse growth)
     \item \cite{Zapun2008} "The different shapes of cocci"
+    \item \cite{DenBlaauwen2008} Nice paper about the molecular processes which are involved to
+        maintain the shape of the rods
 \end{itemize}
 
 The last decades have fundamentally challenged and changed our understanding of how bacteria retain
@@ -282,6 +288,7 @@ to the behaviour of the cells.
 
 \begin{itemize}
     \item \cite{BrettFinlay2014} bacteria stick to surfaces
+    \item \cite{Shah2022} Some rod-shaped bacteria glide on top of surfaces
 \end{itemize}
 
 A colony of bacteria is known to form biofilms~\cite{Dunne2002}.
@@ -458,6 +465,12 @@ The authors show that spores in the case of a nutrient-depleted system
     \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
         Numerical model for rigid rods which move with flagella)
     \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by mesoscale hydrodynamic simulations"
+    \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
+        have been determined, in part, to obtain the most efficient shape for moving through liquids."
+    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
+        have in-silico model
+    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
+        "morphogenetic noise"
 \end{itemize}
 
 In order to describe the multicellular systems we looked at in the preceding sections, multiple
@@ -590,7 +603,7 @@ In order to calculate interactions between cells, possible overlaps are determin
 thus determining the position values of the next iteration step.
 It also accounts for many other phenomena, which are displayed in \textbf{TODO replace}.
 BSim does not consider bending forces for individual cells or polar interactions.
-The `gro` programming language was designed to simulate the growth of colonies and cell-cell
+The \texttt{gro} programming language was designed to simulate the growth of colonies and cell-cell
 communication.
 Its "physics computation has been optimized for rigid rod-shaped bodies, like E. coli bacteria"
 \cite{Gutirrez2017}.
@@ -601,6 +614,12 @@ The latter of these is a phenomenological implementation of the observed colony 
 associated central pressure with it.
 This assumption may yield incorrect results for sparsely populated cases.
 The engine is limited to 2D and does not consider polar interactions or bending of the rods.
+
+\begin{itemize}
+    \item \cite{Kreft1998,Kreft2001} (BacSim) "Individual-based modelling of biofilms Free"
+    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
+    \item \cite{Gutirrez2017} \texttt{gro}
+\end{itemize}
 
 \subsection{Purpose-Built Models}
 
@@ -637,8 +656,12 @@ The engine is limited to 2D and does not consider polar interactions or bending 
         \partial_t q + \nu \partial_z q &= B(1-q^2) \partial_z \nu\\
         \partial_t(\rho \nu) + \nu \partial_z (\rho \nu) &= - \partial_z p - \mu \rho \nu
     \end{align}
-    \item \cite{Pleyer2023} TODO "Modeling mechanical interactions in growing populations of rod-shaped bacteria"
-    \item \cite{Kong2014} TODO "Swimming motion of rod-shaped magnetotactic bacteria: the effects of shape and growing magnetic moment"
+    \item \cite{Pleyer2023} TODO "Modeling mechanical interactions in growing populations of
+        rod-shaped bacteria"
+    \item \cite{Kong2014} TODO "Swimming motion of rod-shaped magnetotactic bacteria: the effects of
+        shape and growing magnetic moment"
+    \item \cite{Constantino2016} "Helical and rod-shaped bacteria swim in helical trajectories with
+        little additional propulsion from helical shape"
     \item \cite{Starru} TODO very interesting FEM-based model
     \item \cite{Martins2015} "'miSimBa' — A simulator of synthetic time-lapsed microscopy images of
         bacterial cells"
@@ -649,9 +672,13 @@ The engine is limited to 2D and does not consider polar interactions or bending 
 
 \paragraph{Common Methods used for Analysis}
 \begin{itemize}
-    \item Segmentation \cite{}
-    \item Comparisons of Tracking Algorithms \cite{Maka2014,Ulman2017}; Cell Tracking challenge
-        \cite{Maka2023}
+    \item Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022}, cellpose~\cite{Stringer2020}
+    \item 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
+        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
+    \item Optimization method
+    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
+        \cite{Heinrich2025}
+    \item 
 \end{itemize}
 
 \begin{itemize}
