@@ -20,7 +20,7 @@ def remove_sphere_points(sphere, cylinder):
     return sphere.remove_points(selected["SelectedPoints"].view(bool))[0]
 
 
-def create_initial_mesh(seed=0):
+def create_initial_mesh(seed=0, noise: tuple[float, float] | None = (0.05, 0.02)):
     radius = 0.5
 
     theta_resolution = 30
@@ -80,15 +80,17 @@ def create_initial_mesh(seed=0):
     clus.cluster(2000, iso_try=20)
     mesh = clus.create_mesh().compute_normals()
 
+    if noise is None:
+        return mesh
+
     # Prepare perlin noise
     freq1 = [0.689, 0.562, 0.683]
-    freq2 = [50, 50, 50]
-    noise1 = pv.perlin_noise(0.05, freq1, (0, 0, 0))
+    noise1 = pv.perlin_noise(noise[0], freq1, (0, 0, 0))
 
     rng = np.random.default_rng(seed)
 
     def noise2(_p):
-        return rng.normal(scale=0.02)
+        return rng.normal(scale=noise[1])
 
     mesh["scalars1"] = [noise1.EvaluateFunction(p) for p in mesh.points]
     # mesh.smooth(n_iter=250, inplace=True)
