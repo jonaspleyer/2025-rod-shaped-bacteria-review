@@ -11,3 +11,5 @@
 
 pred-prey/target
 pred-prey/Cargo.lock
+
+figures/__pycache__
