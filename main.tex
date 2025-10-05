@@ -129,24 +129,36 @@ pdfkeywords={},
     %     \item question; which biological required? answer: mesoscopic; want to get to emergent
     %         collective phenomena from single-cell behaviour
     % \end{itemize}
-    \textbf{TODO Formulate in own words; This is from ChatGPT}
-    Rod-shaped bacteria are among the most ubiquitous forms of life, encompassing a wide range of
-    species found in diverse environments.
-    Their elongated shape plays a crucial role in key biological processes, influencing motility,
-    growth, and collective behaviors such as swarming and biofilm formation.
-    A central question in understanding these systems is how the behavior of individual cells gives
-    rise to emergent collective phenomena.
-    Mathematical modeling provides a powerful framework to bridge this gap, linking single-cell
-    dynamics to population-level patterns.
-    In this review, we summarize the current state of mathematical approaches to rod-shaped
-    bacteria, with particular emphasis on mesoscopic models that capture essential biological
-    details while remaining tractable for studying emergent collective effects.
-    Our goal is to highlight how these models help reveal the fundamental principles connecting
-    microscopic cellular behavior to macroscopic organization in bacterial communities.
+    Rod-shaped bacteria are ubiquitous forms of life which can be found in diverse microenvironments
+    encompassing a wide, diverse range of species.
+    Their elongated shape plays a crucial role in many biological processes such as enhancing
+    swimming capabilities or promoting surface interactions.
+    The individual behaviour of many bacteria can lead to emergent phenomena such as swarming and
+    biofilm formation.
+    A key question is how single-cell processes link to the emergence of collective phenomena.
+    Mathematical and computational methods provide powerful tools which allow for an ansatz that
+    can bridge this gap systematically.
+    In this review we capture the current state of mathematical and computational approaches which
+    are able to describe a wide range of biological processes, emphasizing flexible, mesoscopic
+    models which are able to encompass the essential biological details that lead to a variety of
+    collective effects.
+    % Rod-shaped bacteria are among the most ubiquitous forms of life, encompassing a wide range of
+    % species found in diverse environments.
+    % Their elongated shape plays a crucial role in key biological processes, influencing motility,
+    % growth, and collective behaviors such as swarming and biofilm formation.
+    % A central question in understanding these systems is how the behavior of individual cells gives
+    % rise to emergent collective phenomena.
+    % Mathematical modeling provides a powerful framework to bridge this gap, linking single-cell
+    % dynamics to population-level patterns.
+    % In this review, we summarize the current state of mathematical approaches to rod-shaped
+    % bacteria, with particular emphasis on mesoscopic models that capture essential biological
+    % details while remaining tractable for studying emergent collective effects.
+    % Our goal is to highlight how these models help reveal the fundamental principles connecting
+    % microscopic cellular behavior to macroscopic organization in bacterial communities.
 \end{abstract}
 
 % keywords can be removed
-\keywords{Single-Cell \and Mechanics \and Rod-Shaped \and Bacteria \and Mathematics}
+\keywords{Single-Cell \and Mechanics \and Rod-Shaped \and Bacteria \and Modeling \and Mathematics}
 
 % \textbf{POSSIBLE TITLES}
 % \begin{itemize}
@@ -270,14 +282,20 @@ any additional biochemical or genetic functions.
 
 \paragraph{Bending Stiffness}
 
+\begin{itemize}
+    \item \cite{Shen2022} "Bending stiffness characterization of Bacillus subtilis’ flagellar
+        filament"
+    \item \cite{Moreau2018} "collective gliding dynamics of ultra-long filamentous cyanobacteria"
+\end{itemize}
+
 As discussed previously, the major contributor which allows rod-shaped bacteria to grow an keep
 their shape is MreB.
 If left alone, the rod will be straight but external effects can alter the morphology
 permanently~\cite{Takeuchi2005}.
 Multiple efforts have been made in recent years to measure and analyze the bending properties of
 individual bacteria.
-\cite{Amir2014_2} designed an experiment similar to \cite{Wang2010} but instead of optically trapped
-beads, a flow was used to apply a uniform force on the rod.
+\cite{Amir2014_2} designed an experiment similar to \cite{Wang2010,Wang2010_protocol} but instead of
+optically trapped beads, a flow was used to apply a uniform force on the rod.
 Their method is non-invasive and allows for larger force scales.
 Cell-division was suppressed with SulA, thus altering the cellular biochemistry.
 Since the cells grow continuously, a straight shape was recovered in every case.
@@ -475,6 +493,19 @@ motile cells can convert into matrix-producing cells in a nutrient depleted syst
 The authors show that spores in the case of a nutrient-depleted system
 
 \section{Mathematical \& Computational Frameworks}
+
+\textbf{include some references of soft-matter studies}
+\begin{itemize}
+    \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
+        (no division, no intracellular dynamics, no growth)
+    \item \cite{Joshi2019} "The interplay between activity and filament flexibility determines the
+        emergent properties of active nematics"
+    \item \cite{Modica2024} "Soft confinement of self-propelled rods: simulation and theory"
+    \item \cite{Peruani2006} "Nonequilibrium clustering of self-propelled rods"
+    \item \cite{Saintillan2013} "Active suspensions and their nonlinear models" (suspensions of
+        self-propelled microorganisms, dynamics of chemotactically responsive)
+    \item \cite{Wensink2012} "Meso-scale turbulence in living fluids" (contains coarse-graining)
+\end{itemize}
 
 \begin{itemize}
     \item \cite{breitwieser_biodynamo_2022} BioDynamo TODO mention this; I think no support
