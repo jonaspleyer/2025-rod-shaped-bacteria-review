@@ -523,6 +523,10 @@ The authors show that spores in the case of a nutrient-depleted system
 \begin{itemize}
     \item \cite{breitwieser_biodynamo_2022} BioDynamo TODO mention this; I think no support
     \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
+    \item \cite{Kreft1998,Kreft2001} (BacSim) "Individual-based modelling of biofilms Free"
+    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
+    \item \cite{Gutirrez2017} \texttt{gro}
+    \item \cite{Pleyer2025} \texttt{cellular\_raza}
     \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
     \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
         Numerical model for rigid rods which move with flagella)
@@ -628,6 +632,14 @@ that we set out to describe with the experimentally gathered evidence.
 
 \paragraph{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
 
+\begin{itemize}
+    \item \cite{Ghaffarizadeh2018} PhysiCell; no rods
+    \item \cite{Swat2012} CompuCell; uses \ac{cpm}; no rods
+    \item \cite{Cooper2020} Chaste; no rods
+    \item \cite{Starru2014} Morpheus
+    \item \cite{Wei2013} BNSim
+\end{itemize}
+
 Of the most popular frameworks, most do not support rod-shaped bacteria out of the box.
 The very popular Cellular Potts Model (CPM) \cite{Graner1992} is mostly applied in 2D and only
 represents cells as lattice grid points.
@@ -677,12 +689,6 @@ The latter of these is a phenomenological implementation of the observed colony 
 associated central pressure with it.
 This assumption may yield incorrect results for sparsely populated cases.
 The engine is limited to 2D and does not consider polar interactions or bending of the rods.
-
-\begin{itemize}
-    \item \cite{Kreft1998,Kreft2001} (BacSim) "Individual-based modelling of biofilms Free"
-    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
-    \item \cite{Gutirrez2017} \texttt{gro}
-\end{itemize}
 
 \subsection{Purpose-Built Models}
 
