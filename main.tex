@@ -505,11 +505,18 @@ The authors compared a single-biofilm system with a multi-biofilm system and sho
 motile cells can convert into matrix-producing cells in a nutrient depleted system.
 The authors show that spores in the case of a nutrient-depleted system
 
+\section{Mathematical \& Computational Frameworks}
+
 \subsection{Modeling Aspects}
 
 \begin{itemize}
-    \item \cite{Dang2020} "Cellular Dialogues: Cell-Cell Communication through Diffusible Molecules
-        Yields Dynamic Spatial Patterns"
+    \item biological phenomena have been summarized before
+    \item emphasize: more than just mechanics, also incorporate cell-cycle, extracellular
+        reactions, (polar) interactions, etc.
+    \item present "grouping" of biological phenomena into: (C) Cellular, (CC) Cell-Cell, (DC)
+        Domain-Cell aspects \textbf{TODO possibly rename Domain to Environment}
+    \item explain aspect-groups
+    \item discuss table \ref{table:simulation-aspects}
 \end{itemize}
 
 \begin{table}[H]
@@ -556,27 +563,29 @@ The authors show that spores in the case of a nutrient-depleted system
             The extracellular gel exerts a force onto the cells \cite{Grant2014}.\\
         \asp & Extracellular Reactions &
             Bacteria can take up nutrients or possible secrete/take up signalling molecules
-            \cite{Li2025}.\\
+            \cite{Li2025}.\textbf{TODO citation signalling}\\
         \bottomrule
     \end{tabularx}
-    \label{table:simulation-aspects-supplement}
+    \label{table:simulation-aspects}
     \caption{TODO}
 \end{table}
 
-\section{Mathematical \& Computational Frameworks}
+In order to describe the multicellular systems we looked at in the preceding sections, multiple
+different aspects of cellular behaviour and their interactions with the surrounding domain need to
+be considered and implemented.
+Table \ref{table:simulation-aspects} summarizes these aspects and points to the relevant
+experiments.
+Aspects (1-5) take place inside the cell, (6,7) correspond to interactions between different
+cellular agents and (8,9) to interactions with the domain.
+It should be noted explicitly that these simulation aspects can be coupled to each other.
+We have already seen such an example in the results of @Takeuchi2005 and @Ursell2014 where the
+continued growth modulates the mechanical response of the cell.
+Additionally, Aspect (5) is an overarching concept which is relevant for all processes.
+Especially for the parameters which facilitate growth, we can assume that there is no direct
+inheritance from one generation to the next but only a stochastic distribution of parameters from
+which the new value is drawn (see supplement).
 
-\textbf{include some references of soft-matter studies}
-\begin{itemize}
-    \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
-        (no division, no intracellular dynamics, no growth)
-    \item \cite{Joshi2019} "The interplay between activity and filament flexibility determines the
-        emergent properties of active nematics"
-    \item \cite{Modica2024} "Soft confinement of self-propelled rods: simulation and theory"
-    \item \cite{Peruani2006} "Nonequilibrium clustering of self-propelled rods"
-    \item \cite{Saintillan2013} "Active suspensions and their nonlinear models" (suspensions of
-        self-propelled microorganisms, dynamics of chemotactically responsive)
-    \item \cite{Wensink2012} "Meso-scale turbulence in living fluids" (contains coarse-graining)
-\end{itemize}
+\subsection{Computational Modeling Frameworks}
 
 \textbf{Frameworks}
 \begin{itemize}
@@ -596,38 +605,6 @@ The authors show that spores in the case of a nutrient-depleted system
     \item \cite{Grimm2006} \textbf{TODO} "A standard protocol for describing individual-based and
         agent-based models" and update: \cite{Grimm2010}
 \end{itemize}
-
-\textbf{Others}
-\begin{itemize}
-    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
-    \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
-        Numerical model for rigid rods which move with flagella)
-    \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by
-        mesoscale hydrodynamic simulations"
-    \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
-        have been determined, in part, to obtain the most efficient shape for moving through liquids."
-    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
-        have in-silico model
-    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
-        "morphogenetic noise"
-\end{itemize}
-
-In order to describe the multicellular systems we looked at in the preceding sections, multiple
-different aspects of cellular behaviour and their interactions with the surrounding domain need to
-be considered and implemented.
-Table \ref{table:simulation-aspects-supplement} summarizes these aspects and points to the relevant
-experiments.
-Aspects (1-5) take place inside the cell, (6,7) correspond to interactions between different
-cellular agents and (8,9) to interactions with the domain.
-It should be noted explicitly that these simulation aspects can be coupled to each other.
-We have already seen such an example in the results of @Takeuchi2005 and @Ursell2014 where the
-continued growth modulates the mechanical response of the cell.
-Additionally, Aspect (5) is an overarching concept which is relevant for all processes.
-Especially for the parameters which facilitate growth, we can assume that there is no direct
-inheritance from one generation to the next but only a stochastic distribution of parameters from
-which the new value is drawn (see supplement).
-
-\subsection{Computational Modeling Frameworks}
 
 Since the beginning of this decade, multiple tools have emerged which are able to describe living
 systems on a cellular individual-based approach in various details.
@@ -706,6 +683,34 @@ The engine is limited to 2D and does not consider polar interactions or bending 
 
 \subsection{Purpose-Built Models}
 
+\textbf{include some references of soft-matter studies}
+\begin{itemize}
+    \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
+        (no division, no intracellular dynamics, no growth)
+    \item \cite{Joshi2019} "The interplay between activity and filament flexibility determines the
+        emergent properties of active nematics"
+    \item \cite{Modica2024} "Soft confinement of self-propelled rods: simulation and theory"
+    \item \cite{Peruani2006} "Nonequilibrium clustering of self-propelled rods"
+    \item \cite{Saintillan2013} "Active suspensions and their nonlinear models" (suspensions of
+        self-propelled microorganisms, dynamics of chemotactically responsive)
+    \item \cite{Wensink2012} "Meso-scale turbulence in living fluids" (contains coarse-graining)
+\end{itemize}
+
+\textbf{Others}
+\begin{itemize}
+    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
+    \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
+        Numerical model for rigid rods which move with flagella)
+    \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by
+        mesoscale hydrodynamic simulations"
+    \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
+        have been determined, in part, to obtain the most efficient shape for moving through liquids."
+    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
+        have in-silico model
+    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
+        "morphogenetic noise"
+\end{itemize}
+
 \begin{itemize}
     \item \cite{Abar2017} "Agent Based Modelling and Simulation tools: A review of the state-of-art software"
     \item other generic frameworks exist, which may allow to model the desired functions
@@ -751,19 +756,32 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \item \cite{You2018} Hard-Rod model, continuous model
 \end{itemize}
 
-\subsection{Parameter Estimation Approaches}
+\subsection{Parameter Estimation \& Techniques}
 
-\paragraph{Common Methods used for Analysis}
+\textbf{Strategies for comparing simulation with data}
 \begin{itemize}
-    \item Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022}, cellpose~\cite{Stringer2020}
-    \item 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
+    \item Simply do not compare: "Biolgically-inspired"
+    \item Select specific feature to investigate
+    \begin{itemize}
+        \item Compare particular value
+        \item Compare distribution
+    \end{itemize}
+    \item Fix some parameters from literature
+    \item directly fit parameters from data (rare)
+\end{itemize}
+
+\textbf{Common Methods used for Analysis}
+\begin{itemize}
+    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
+        cellpose~\cite{Stringer2020}
+    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
         \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
     \item Optimization method
     \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
         \cite{Heinrich2025}
-    \item 
 \end{itemize}
 
+\textbf{Papers which did some sort of parameter estimation}
 \begin{itemize}
     \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
         literature values/quantified
@@ -771,6 +789,8 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
     \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
         rod-shaped bacteria
+    \item \textbf{TODO add more of the soft-matter papers}
+    \item \textbf{TODO see if any of the frameworks do have estimates}
 \end{itemize}
 
 \section{Discussion}
