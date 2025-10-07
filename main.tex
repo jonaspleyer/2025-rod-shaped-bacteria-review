@@ -505,6 +505,64 @@ The authors compared a single-biofilm system with a multi-biofilm system and sho
 motile cells can convert into matrix-producing cells in a nutrient depleted system.
 The authors show that spores in the case of a nutrient-depleted system
 
+\subsection{Modeling Aspects}
+
+\begin{itemize}
+    \item \cite{Dang2020} "Cellular Dialogues: Cell-Cell Communication through Diffusible Molecules
+        Yields Dynamic Spatial Patterns"
+\end{itemize}
+
+\begin{table}[H]
+    \newcounter{aspect}
+    \setcounter{aspect}{1}
+    \newcommand{\asp}{(\arabic{aspect}\refstepcounter{aspect})}
+    \centering
+    \def\arraystretch{1.3}
+    \begin{tabularx}{\textwidth}{c l X}
+        &\textbf{Aspect} & \textbf{Description}\\
+        \toprule
+        &\textbf{(C) Cellular}\\
+        \midrule
+        \asp & Rod-Shaped Mechanics &
+            Rod-shaped bacteria are flexible rods which are able to freely move around (off-lattice
+            approach) \cite{Takeuchi2005,Ursell2014,Amir2014_2}.\\
+        \asp & Movement &
+            \textbf{TODO} Flagellum, Swimming\\
+        \asp & Growth &
+            Cells grow exponentially by inserting new material either along the circular part of the
+            rod or at the tip~\cite{Robert2014,Takeuchi2005}.\\
+        \asp & Differentiation &
+            \textit{B.subtilis} is known to differentiate into matrix-producing and
+            surfactin-producing cells \cite{vanGestel2015,Lpez2010}.\\
+        \asp & Division &
+            The formation and continuation of van Gogh bundles is driven by cell division
+            \cite{vanGestel2015}.
+            Bacteria can form multilayers during their growth phase \cite{Duvernoy2018}.\\
+        \asp & Variable Parameters &
+            Parameters for individual cells are not fixed values but rather taken from a
+            distribution \cite{Koutsoumanis2013}.\\
+        &\textbf{(CC) Cell-Cell Interactions}\\
+        \midrule
+        \asp & Adhesion &
+            Bacteria adhere to each other at longer distances and attach when in close contact
+            \cite{Verwey1947,Trejo2013}.
+            The interaction between rods can be polarized \cite{Duvernoy2018}.\\
+        \asp & Friction &
+            Friction between cells \cite{Grant2014} can be asymmetrical \cite{Doumic2020}.\\
+        &\textbf{(DC) Domain-Cell Interactions}\\
+        \midrule
+        \asp & External Forces &
+            Bacteria tend to stick to surfaces \cite{vanLoosdrecht1989}.
+            The extracellular gel exerts a force onto the cells \cite{Grant2014}.\\
+        \asp & Extracellular Reactions &
+            Bacteria can take up nutrients or possible secrete/take up signalling molecules
+            \cite{Li2025}.\\
+        \bottomrule
+    \end{tabularx}
+    \label{table:simulation-aspects-supplement}
+    \caption{TODO}
+\end{table}
+
 \section{Mathematical \& Computational Frameworks}
 
 \textbf{include some references of soft-matter studies}
@@ -568,65 +626,6 @@ Additionally, Aspect (5) is an overarching concept which is relevant for all pro
 Especially for the parameters which facilitate growth, we can assume that there is no direct
 inheritance from one generation to the next but only a stochastic distribution of parameters from
 which the new value is drawn (see supplement).
-
-\subsection{Modeling Aspects}
-
-\begin{itemize}
-    \item \cite{Dang2020} "Cellular Dialogues: Cell-Cell Communication through Diffusible Molecules
-        Yields Dynamic Spatial Patterns"
-    \item 
-\end{itemize}
-
-\begin{table}[H]
-    \newcounter{aspect}
-    \setcounter{aspect}{1}
-    \newcommand{\asp}{(\arabic{aspect}\refstepcounter{aspect})}
-    \centering
-    \def\arraystretch{1.3}
-    \begin{tabularx}{\textwidth}{c l X}
-        &\textbf{Aspect} & \textbf{Description}\\
-        \toprule
-        &\textbf{(C) Cellular}\\
-        \midrule
-        \asp & Rod-Shaped Mechanics &
-            Rod-shaped bacteria are flexible rods which are able to freely move around (off-lattice
-            approach) \cite{Takeuchi2005,Ursell2014,Amir2014_2}.\\
-        \asp & Movement &
-            \textbf{TODO} Flagellum, Swimming\\
-        \asp & Growth &
-            Cells grow exponentially by inserting new material either along the circular part of the
-            rod or at the tip~\cite{Robert2014,Takeuchi2005}.\\
-        \asp & Differentiation &
-            \textit{B.subtilis} is known to differentiate into matrix-producing and
-            surfactin-producing cells \cite{vanGestel2015,Lpez2010}.\\
-        \asp & Division &
-            The formation and continuation of van Gogh bundles is driven by cell division
-            \cite{vanGestel2015}.
-            Bacteria can form multilayers during their growth phase \cite{Duvernoy2018}.\\
-        \asp & Variable Parameters &
-            Parameters for individual cells are not fixed values but rather taken from a
-            distribution \cite{Koutsoumanis2013}.\\
-        &\textbf{(CC) Cell-Cell Interactions}\\
-        \midrule
-        \asp & Adhesion &
-            Bacteria adhere to each other at longer distances and attach when in close contact
-            \cite{Verwey1947,Trejo2013}.
-            The interaction between rods can be polarized \cite{Duvernoy2018}.\\
-        \asp & Friction &
-            Friction between cells \cite{Grant2014} can be asymmetrical \cite{Doumic2020}.\\
-        &\textbf{(DC) Domain-Cell Interactions}\\
-        \midrule
-        \asp & External Forces &
-            Bacteria tend to stick to surfaces \cite{vanLoosdrecht1989}.
-            The extracellular gel exerts a force onto the cells \cite{Grant2014}.\\
-        \asp & Extracellular Reactions &
-            Bacteria can take up nutrients or possible secrete/take up signalling molecules
-            \cite{Li2025}.\\
-        \bottomrule
-    \end{tabularx}
-    \label{table:simulation-aspects-supplement}
-    \caption{TODO}
-\end{table}
 
 \subsection{Computational Modeling Frameworks}
 
