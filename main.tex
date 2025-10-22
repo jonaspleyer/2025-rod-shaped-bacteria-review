@@ -38,6 +38,7 @@
 \newacro{bsubtilis}[\textit{B.subtilis}]{\textit{Bacillus subtilis}}
 \newacro{spombe}[\textit{S.pombe}]{\textit{Schizosaccharomyces pombe}}
 \newacro{paeruginosa}[\textit{P.aeruginosa}]{\textit{Pseudomonas aeruginosa}}
+\newacro{pg}[PG]{peptidoglycan}
 
 \newcommand{\todo}[1]{\colorbox{WildStrawberry}{\textcolor{white}{#1}}}
 
@@ -201,22 +202,26 @@ Among the Well-studied examples include rod-shaped bacteria. Including gram nega
 Including gram negative as well as gram positive bacteria \ac{ecoli} (a Gram-negative bacterium) and \ac{bsubtilis} (Gram-positive) \cite{Chang2014}.
 
 \subsubsection{Cell shape}
-point from book:
-Intracytoplasmic membranes
-Membrane structure
-Periplasm
-Capsule
-S-layer (surface layer)
 
-\cite{Shi2018}
+\paragraph{Interplay of Cell Wall and Cytoskeleton}
+\begin{itemize}
+    \item \cite{Garner2021} "Toward a Mechanistic Understanding of Bacterial Rod Shape Formation and Regulation" \todo{why are we citing this?}
+    \item \cite{Daniel2003} 2 ways maintaining rod shape: with/without MReB: A few rod-shaped bacteria have no MreB system.
+        Different mechanism based on use of polar growth zones derived from the division machinery (\ac{pg} and FtsZ)
+    \item It was long believed that bacteria lack cytoskeletal filaments but with the end of the last century, it was discovered that the MreB protein fills this role since it "[..] forms an actin-like cytoskeleton in bacteria [..]" \cite{Erickson2001}.
+    \item It can polymerize and form filaments which behave similar to actin microfilaments \cite{Dersch2020}.
+    \item Studies of its crystal structure further showed the similarity to actin~\cite{vandenEnt2001} and the MreB, MreC and MreD proteins were identified as homologues of actin \cite{Lowe2017_lj}.
+    \item \cite{Ausmees2003} extension to point before: Intermediate filaments (IFs) bacterial equivalent to IF proteins, named crescentin
+    \item \cite{Bratton2018} role of "cytosceleton": MReB decides shape of bacteria
+    \item \cite{vanTeeffelen2018} "Recent advances in understanding how rod-like bacteria stably maintain their cell shapes" \todo{@Toqi what can we learn from this citation?}
+    \item \cite{Shi2018} \todo{remove this when done} points from book: Intracytoplasmic membranes,
+        Membrane structure, Periplasm, Capsule, S-layer (surface layer)
+    \item \cite{Amir2014} bacterial cell shape is physically determined by the \ac{pg} cell wall
+    \item \ac{pg} not sufficient for maintaining rod-shape on its own, need more effects \todo{do we need more details from this paper?}
+    \item \cite{Huan2021} Understanding \ac{pg} assembly and bacterial morphogenesis as well as de novo estabilshement of Cell Poles in gram-negative bacterium Myxococcus xanthus \todo{sort this somewhere}
+\end{itemize}
 
-bacterial cell shape is physically determined by the peptidoglycan (PG) cell wall \cite{Amir2014}
-How do rod-like bacteria maintaining the rod shape is a non-trivial task - glycan strands are placed in parallel to the existing ones would not be stable to the random fluctuations of growth.
-turgo pressur m different PG stiffness - later stiffness on it's own?
-
-Understanding PG assembly and bacterial morphogenesis as well as de novo estabilshement of Cell Poles in gram-negative bacterium Myxococcus xanthus \cite{Huan2021} 
-
-\paragraph{MReB Bending Text from other Paper (I like this)}
+\paragraph{Cells are flexible/filamentous, not always straight}
 
 In bacteria the MreB protein forms an actin-like cytoskeleton~\cite{Erickson2001}.
 It can polymerize and form filaments which behave similar to actin microfilaments~\cite{Dersch2020}.
@@ -238,29 +243,6 @@ different conditions.
 When treating cells with A22, an antibiotic which disassembles
 MreB~\cite{IWAI2002,Gitai2005,Karczmarek2007,Bean2009}, a higher displacement with identical force
 could be measured, thus indicating that MreB increases mechanical rigidity of the cell.
-
-\paragraph{Toqis sorting}
-
-\cite{Garner2021} "Toward a Mechanistic Understanding of Bacterial Rod Shape Formation and Regulation"
-
-two ways maintaining rod shape: without MReB However, a few rod-shaped bacteria have no MreB system.
-different mechanism based on use of polar growth zones derived from the division machinery (PG and FtsZ)\cite{Daniel2003} 
-
-Intracytoplasmatische Membranen, Membranaufbau, Periplasma, Kapsel, S-Layer
-
-It was long believed that bacteria lack cytoskeletal filaments but with the end of the last century, it was discovered that the MreB protein fills this role since it "[..] forms an actin-like cytoskeleton in bacteria [..]" \cite{Erickson2001} (supplement: [p. 1]) 
-
-Intermediate filaments (IFs) bacterial equivalent to IF proteins, named crescentin,   \cite{Ausmees2003}
-
-role of "cytosceleton" \cite{Bratton2018} MReB decides shape of bacteria
-\cite{DenBlaauwen2008} Nice paper about the molecular processes which are involved to maintain the shape of the rods
-It can polymerize and form filaments which behave similar to actin microfilaments \cite{Dersch2020}.
-
-\cite{vanTeeffelen2018} "Recent advances in understanding how rod-like bacteria stably maintain their cell shapes"
-
-Studies of its crystal structure further showed the similarity to actin~\cite{vandenEnt2001} and the MreB, MreC and MreD proteins were identified as homologues of actin \cite{Lowe2017_lj}.\
-MreB travels along the axis of elongation with a velocity that depends on the size of the filament
-\cite{Olshausen2013}.
 
 MReB also improtant/essential for actin-like MreB protein in bacterial chromosome segregation can be inhibited by A22 \cite{Gitai2005}A22 Disrupts the Bacterial Actin Cytoskeleton by Directly Binding and Inducing a Low-Affinity State in MreB \cite{Bean2009}
 
@@ -289,6 +271,11 @@ It is important to note that this experiment controlled only the shape of bacter
 any additional biochemical or genetic functions.
 
 \subsubsection{Growth, Division and Regulation - intracellular}
+
+\begin{itemize}
+    \item \cite{DenBlaauwen2008} Nice paper about the molecular processes which are involved to maintain the shape of the rods
+    \item MreB travels along the axis of elongation with a velocity that depends on the size of the filament \cite{Olshausen2013}. \todo{do we need this?}
+\end{itemize}
 
 \textbf{TODO look for other cell-division literature (specific to rods)} 
 \cite{Lleo1990} "Bacterial cell shape regulation ..." \cite{Cooper1991}   growth of the gram-negative bacterial cell wall - cell surface during the division cycle 
