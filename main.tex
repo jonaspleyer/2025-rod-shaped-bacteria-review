@@ -187,8 +187,8 @@ Including gram negative as well as gram positive bacteria \ac{ecoli} (a Gram-neg
 
 \subsubsection{Cell shape}
 
-\paragraph{Interplay of Cell Wall and Cytoskeleton}
-Here we first present the cell wall and cytoskeletal. Then how they are coupled. Then describe how they contribute in rod shape maintenance. To then give briefly mentioning other forms.
+Here we first present the cell wall and cytoskeletal. Then how they are coupled.
+
 \paragraph{Cell Wall}
 \begin{itemize}
     \item points from book: Intracytoplasmic membranes, Membrane structure, Periplasm, Capsule, S-layer (surface layer) \todo{remove when all points have a citation}
@@ -219,6 +219,19 @@ Here we first present the cell wall and cytoskeletal. Then how they are coupled.
     \item \cite{Olshausen2013} got good resolution of MreB dynamics with the help of \ac{tirf}. Their mathematical model confirms that MreB acts as mechanical organizer, coupling the cytoskeleton with cell wall synthesis to maintain rod shape.
 \end{itemize}
 
+\subsubsection{Growth, Division and Regulation}
+Here we first describe how rod-shape bacteria can grow. Further we show how the single machineries contribute in rod shape maintenance/shape lost. Then the division regulation is described. Finally, we give a brief outlook to other forms.
+
+\paragraph{Growth}
+\begin{itemize}
+    \item \cite{Cooper1991} \cite{Wang2010_2} \ac{pg} synthesis is spatially and temporally regulated. During elongation, cells grow at a constant diameter, expanding surface mainly along the sidewall. During constriction polar synthesis is initiated forming new polar caps
+    \item \cite{Chang2014} cell elongation is comparable for gram-negative and gram-positive bacteria (\ac{bsubtilis} and \ac{ecoli}) despite their wall thickness
+    \item \cite{Billaudeau2017} wall thickness influence elongation dynamics (species-specific coordination) (details if needed: in \ac{bsubtilis} and \ac{ecoli} \ac{pg} assembly, spatial pattern, wall thickness, and machinery organization differ, leading to distinct elongation dynamics )
+    \item \cite{DePedro2003} new \ac{pg} is inserted in discrete patches along the lateral sidewall
+    \item \cite{Billaudeau2017} Growth is MreB-dependent, maintaining constant diameter
+    \item \cite{Si2015} Bacterial morphogenesis and \ac{pg} synthesis are mechanically sensitive, showing that growth patterns are adaptive and coupled to physical forces.
+\end{itemize}
+
 \paragraph{Maintaining/Loosing Rod-shape}
 \begin{itemize}
     \item \cite{Jones2001} MreB is responsible for cell width regulation and Mbl is responsible for linear axis regulation. Beyond rod-shaped bacteria.
@@ -228,16 +241,33 @@ Here we first present the cell wall and cytoskeletal. Then how they are coupled.
     \item Switch in or \denovo \ac{pg} synthesis is sufficient to regenerate the cell wall and restore a rod-shape morphology \cite{Huan2021} spherical to rod-shape  \cite{Kawai2014} L-form to rod-shape
     \item \cite{Garner2021} MreB filaments move circumferentially around rods of any width, but filament motion was isotropic in spherical cells, moving in all directions\todo{why are we citing this?}
 \end{itemize}
-    
+
+\paragraph{Cell division}
+\begin{itemize}
+    \item \cite{Bramkamp2009} Two inhibitory systems regulates the assembly FtsZ \cite{Oliva2004}: i) Min system prevents division near poles and ii) nucleoid occlusion prevents cell division over the nucleoids
+    \item adding to first point \cite{Koch1995} central FtsZ-ring assembly is favored by mechanical forces. Its regulation is thereby a combination of mechanical cues and biochemical regulation.
+    \item FtsZ filaments are forming a ring (Z-ring) at division site \cite{Li2007} generating constriction force for division. The ring tension is regulating \ac{pg} synthesis \cite{Lan2007}
+    \item \cite{DenBlaauwen2008} divisome or septosome switches \ac{pg} synthesis from dispersed to a concentrated local to from new cell poles
+    \item \cite{Woldringh1987} \cite{Cooper1991} surface synthesis rate increase at the start of constriction, elongation and pole formation use distinct, spatially regulated \ac{pg} insertion modes, supporting the idea of separate elongation and division machineries (divisome/septosome)
+    \item \cite{Kruse2005} \cite{Gitai2005} MreB contributes in forming a bacterial mitotic-like machine and control Bacterial DNA segregation
+    \item \cite{Karczmarek2007} DNA and origin region segregation are not affected by the transition from rod to sphere after inhibition of Escherichia coli MreB by \ac{a22} \todo{do we really need this extra information?}
+    \item \cite{denBlaauwen2018} bacterial morphogenetic is plastic and can be reprogrammed changing growth and division axis \todo{@toqi do we really need this for modelling EMERGENT phenomena?}
+\end{itemize}
+
 \paragraph{Rod-shape vs. other shape}
 \begin{itemize}
     \item \cite{Young2006} shape is an evolutionary trait which influence nutrient uptake, cell division and segregation, adhesion, passive and aktive motility, predator avoidance, and cellular differentiation.
-    \item e.g. for point before: \cite{Takeuchi2005} changed \ac{ecoli} morphologie without altering any additional biochemical or genetic functions and automatically altered cell motility
+    \item e.g. for point before: \cite{Takeuchi2005} changed \ac{ecoli} morphologies without altering any additional biochemical or genetic functions and automatically altered cell motility
     \item Other shapes often request other or additional cell-wall-machineries \cite{Zapun2008} or cytoskeletal components like crescentin which are bacterial equivalent to intermediate filaments (IFs\cite{Ausmees2003}
-    \item to conclude: \cite{Jones2001} "We therefore suggest that a sphere is the default shape taken by cells in the absence of an active, mreB-dependent shape determining system, and that more complex shapes are usually determined in part by \textit{mreB} systems". \cite{Young2006} "It can be argued that the earliest cells consisted of "[..] rods and filaments with cocci being
+    \item to conclude: \cite{Jones2001} "We therefore suggest that a sphere is the default shape taken by cells in the absence of an active, mreB-dependent shape determining system, and that more complex shapes are usually determined in part by \textit{mreB} systems". \cite{Young2006} "It can be argued that the earliest cells consisted of "[...] rods and filaments with cocci being
 \end{itemize}
 
+\todo{@ Toqi: Sort it in one paragraph}
+\cite{Shen2022} "Bending stiffness characterization of Bacillus subtilis’ flagellar filament" 
+As discussed previously, the major contributor which allows rod-shaped bacteria to grow an keep their shape is MreB.
+If left alone, the rod will be straight but external effects can alter the morphology permanently~\cite{Takeuchi2005}.
 
+\textbf{[Note (Jonas)]}
 \paragraph{Cells are flexible/filamentous, not always straight} \todo{@Joans do you want to keep this like that, all citations are also sorted in the pullet points}
 In bacteria the MreB protein forms an actin-like cytoskeleton~\cite{Erickson2001}.
 It can polymerize and form filaments which behave similar to actin microfilaments~\cite{Dersch2020}.
@@ -257,59 +287,34 @@ They could now exert a force on the free part and thus study the response of the
 different conditions.
 When treating cells with \ac{a22},~\cite{IWAI2002,Gitai2005,Karczmarek2007,Bean2009}, a higher displacement with identical force could be measured, thus indicating that MreB increases mechanical rigidity of the cell. \todo{@Jonas I do not find this information in those citations? Those citations all have to do with DNA segregation. Which did you mean?}
 
+\subsubsection{Nutrient uptake/distribution, Movement, pathogens and adaptation} %  Stiffness? here or by shape section?
 
-\subsubsection{Growth, Division and Regulation}
-
-\paragraph{Growth}
-
+\paragraph{Nutrient uptake/distribution}
+TODO Nutrient uptake/distribution
 \begin{itemize}
-    \item \cite{Cooper1991} \cite{Wang2010_2} \ac{pg} synthesis is spatially and temporally regulated. During elongation, cells grow at a constant diameter, expanding surface mainly along the sidewall. During constriction polar synthesis is initiated forming new polar caps
-    \item \cite{Chang2014} cell elongation is comparable for gram-negative and gram-positive bacteria (\ac{bsubtilis} and \ac{ecoli}) despite their wall thickness
-    \item \cite{Billaudeau2017} wall thickness influence elongation dynamics (species-specific coordination) (details if needed: in \ac{bsubtilis} and \ac{ecoli} \ac{pg} assembly, spatial pattern, wall thickness, and machinery organization differ, leading to distinct elongation dynamics )
-    \item \cite{DePedro2003} new \ac{pg} is inserted in discrete patches along the lateral sidewall
-    \item \cite{Billaudeau2017} Growth is MreB-dependent, maintaining constant diameter
-    \item \cite{Si2015} Bacterial morphogenesis and \ac{pg} synthesis are mechanically sensitive, showing that growth patterns are adaptive and coupled to physical forces.
+    \item
 \end{itemize}
 
-
-\paragraph{Cell division}
+\paragraph{Movement}
+TODO Adhesion/attachment to surfaces
 \begin{itemize}
-    \item \cite{Bramkamp2009} Two inhibitory systems regulates the assembly FtsZ \cite{Oliva2004}: i) Min system prevents division near poles and ii) nucleoid occlusion prevents cell division over the nucleoids
-    \item adding to first point \cite{Koch1995} central FtsZ-ring assembly is favored by mechanical forces . It's regulation is thereby a combination of mechanical cues and biochemical regulation.
-    \item FtsZ filaments are forming a ring (Z-ring) at division site \cite{Li2007} generating constriction force for division. The ring tension is regulating \ac{pg} synthesis \cite{Lan2007}
-    \item \cite{DenBlaauwen2008} divisome or septosome switches \ac{pg} synthesis from dispersed to a concentrated local to from new cell poles
-    \item \cite{Woldringh1987} \cite{Cooper1991} surface synthesis rate increase at the start of constriction, elongation and pole formation use distinct, spatially regulated \ac{pg} insertion modes, supporting the idea of separate elongation and division machineries (divisome/septosome)
-    \item \cite{Kruse2005} \cite{Gitai2005} MreB contributes in forming a bacterial mitotic-like machine and control Bacterial DNA segregation
-    \item \cite{Karczmarek2007} DNA and origin region segregation are not affected by the transition from rod to sphere after inhibition of Escherichia coli MreB by \ac{a22} \todo{do we really need this extra information?}
-    \item \cite{denBlaauwen2018} bacterial morphogenetic is plastic and can be reprogrammed changing growth and division axis \todo{@toqi do we really need this for modelling EMERGENT phenomena?}
+    \item
 \end{itemize}
 
-\paragraph{?}
+\paragraph{Pathogens}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\paragraph{Adaptation}
 \begin{itemize}
     \item \cite{Bertrand2019} bacteria encountering new nutrients have an adaptive phase: lag-phase in which there is now division. While this dormant stage metabolic adaptation and macromolecular synthesis occur to prepare  for rapid cell growth and robust cell division
 \end{itemize}
 
-\subsubsection{Nutrient uptake/distribution, Movement, pathogens and addaptation} %  Stiffness? here or by shape section?
-
-As discussed previously, the major contributor which allows rod-shaped bacteria to grow an keep their shape is MreB.
-If left alone, the rod will be straight but external effects can alter the morphology permanently~\cite{Takeuchi2005}.
-
-\cite{Shen2022} "Bending stiffness characterization of Bacillus subtilis’ flagellar filament"
-
-\textbf{[Note (Jonas)]} \textit{In principle, this stress will be dependent on the position inside the cell~\cite{Chatterjee1988}.}
-
-Multiple efforts have been made in recent years to measure and analyze the bending properties of individual bacteria.
-\cite{Amir2014_2} designed an experiment similar to \cite{Wang2010,Wang2010_protocol} but instead of optically trapped beads, a flow was used to apply a uniform force on the rod.
-Their method is non-invasive and allows for larger force scales.
-Cell-division was suppressed with SulA, thus altering the cellular biochemistry.
-Since the cells grow continuously, a straight  hape was recovered in every case.
-With these methods, they demonstrated that the bacteria "[..] exhibit two fundamentally different modes of deformations and recover from them" \cite{Amir2014_2}.
-These modes are elastic in which the cell recovers immediately and plastic which requires growth to restore its morphology.
-Short pulses of forces resulted in elastic  eformations from which the cell recovered immediately.
-Plastic changes in morphology were only possible under longer periods of persistent force exertion.
-Figure X(B) compares the angle  of deflection before and after the snap-back which occurs after turning off the flow.
-The linear fit of 66 experimental results under varying conditions shows that both modes contribute to the behaviour of the cells.
-
+\todo{@ Toqi: Sort it in one paragraph}
+\cite{Amir2014_2} 
+\cite{Wang2010,Wang2010_protocol}
+\cite{Chatterjee1988}
 \cite{Moreau2018} "collective gliding dynamics of ultra-long filamentous cyanobacteria"
 \cite{BrettFinlay2014} bacteria stick to surfaces
 \cite{Shah2022} Some rod-shaped bacteria glide on top of surfaces
@@ -318,10 +323,6 @@ movement:
 Flavobacterium (phylum bacteroidetes) cell-surface adhesins and rotary motors, Myxococcus (phylum proteobacteria) soil-dwelling microbe both are rod shaped while Mycoplasma (phylum firmicutes) a wall-less bacterial parasites (flask shaped) do gliding (do not have flagelaten) \cite{Shrivastava2015}
 More details to gliding Myxococcus with pili \todo{@Toqi find citation}
 swimming \cite{Kong2014} often Flagella propeled \cite{Harshey2015}
-
-TODO Nutrient uptake/distribution
-TODO Adhesion/attachment to surfaces
-
 
 Asynchrony in the growth and motility responses to environmental changes by individual bacterial cells \cite{Senkei2007}
 movement with type-IV pili \cite{Ellison2021}
@@ -339,6 +340,22 @@ starvation-dependent and starvation-independent pathways of sporulation and prod
 B. subtilis can divide asymmetrically during sporulation one cell differentiation process \cite{Barák2019}
 
 Baceriophagen \cite{Duckworth2002}
+
+\textbf{[Note (Jonas)]} \textit{In principle, this stress will be dependent on the position inside the cell~\cite{Chatterjee1988}.}
+
+Multiple efforts have been made in recent years to measure and analyze the bending properties of individual bacteria.
+\cite{Amir2014_2} designed an experiment similar to \cite{Wang2010,Wang2010_protocol} but instead of optically trapped beads, a flow was used to apply a uniform force on the rod.
+Their method is non-invasive and allows for larger force scales.
+Cell-division was suppressed with SulA, thus altering the cellular biochemistry.
+Since the cells grow continuously, a straight  hape was recovered in every case.
+With these methods, they demonstrated that the bacteria "[..] exhibit two fundamentally different modes of deformations and recover from them" \cite{Amir2014_2}.
+These modes are elastic in which the cell recovers immediately and plastic which requires growth to restore its morphology.
+Short pulses of forces resulted in elastic  eformations from which the cell recovered immediately.
+Plastic changes in morphology were only possible under longer periods of persistent force exertion.
+Figure X(B) compares the angle  of deflection before and after the snap-back which occurs after turning off the flow.
+The linear fit of 66 experimental results under varying conditions shows that both modes contribute to the behaviour of the cells.
+
+
 
 \subsection{Cell-Cell interaction, differentiation, biofilms and emergent phenomena} %  Stiffness? here or by shape section?
 
