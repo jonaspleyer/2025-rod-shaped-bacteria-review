@@ -194,7 +194,6 @@ Here we first present the cell wall and cytoskeletal. Then how they are coupled.
 
 \paragraph{Cell Wall}
 \begin{itemize}
-    \item points from book: Intracytoplasmic membranes, Membrane structure, Periplasm, Capsule, S-layer (surface layer) \todo{remove when all points have a citation}
     \item \cite{Cava2014} main cell envelope of bacteria is a mesh-like macromolecule of glycan strands that are crosslinked via short peptides. Thus  peptidoglycan \ac{pg}
     \item \cite{vanTeeffelen2018} \ac{pg} PG meshwork mechanically resists the high turgor pressure and gives the cell its specific cell shape
     \item \cite{Cochrane2020} \ac{pg} chemically unique (to bacteria) and essential for cell survival. Therfore it's synthesis and turnover is targeted by a range of antibacterial treatments
@@ -257,6 +256,7 @@ Here we first describe how rod-shape bacteria can grow. Further we show how the 
     \item \cite{Kruse2005} \cite{Gitai2005} MreB contributes in forming a bacterial mitotic-like machine and control Bacterial DNA segregation
     \item \cite{Karczmarek2007} DNA and origin region segregation are not affected by the transition from rod to sphere after inhibition of Escherichia coli MreB by \ac{a22} \todo{do we really need this extra information?}
     \item \cite{denBlaauwen2018} bacterial morphogenetic is plastic and can be reprogrammed changing growth and division axis \todo{@toqi do we really need this for modelling EMERGENT phenomena?}
+    \item \cite{Stewart2005} despite symmetric division aging and mortality can occur by asymmetric inheritance of cellular damage (older “mother” cell poles accumulate damage or growth defects over generations)
 \end{itemize}
 
 \paragraph{Rod-shape vs. other shape}
@@ -272,7 +272,7 @@ Here we first describe how rod-shape bacteria can grow. Further we show how the 
 \paragraph{Nutrient uptake/distribution}
 \begin{itemize}
     \item \cite{Davies2021, Niederweis2008, Tanaka2018} Bacterial nutrient uptake is mediated by highly selective transporter systems (e.g., ABC transporters, TRAP systems, and PTS) that import sugars, amino acids, ions, carbon, nitrogen, iron, and lipids; bacteria can also modulate cell envelope permeability and secrete enzymes to facilitate nutrient acquisition
-    \item \cite{Velicer2009Pred}  \cite{Rory2015} a diverse part of bacterial are predators and found in various environments, plaing a significant role in microbial community structure and dynamics, with different modes of predation and independent evolutionary origins
+    \item \cite{Velicer2009,Rory2015} a diverse part of bacterial are predators and found in various environments, plaing a significant role in microbial community structure and dynamics, with different modes of predation and independent evolutionary origins
     \item \cite{Caron1994} Bacteria acquire significant nitrogen and phosphorus from dissolved inorganic nutrients, competing with phytoplankton and influencing the microbial loop; overall contribution to ocean nutrient uptake is poorly understood
     \item \cite{Watteaux2015} Motile chemotactic bacteria have an enhances nutrient uptake rate. 2.2 times faster than non-motile 
     \item \cite{Li2025} matrix-producing improve access to nutrients, supporting growth under nutrient-limited conditions
@@ -289,11 +289,13 @@ Here we first describe how rod-shape bacteria can grow. Further we show how the 
     \item \cite{Harshey2015} compared to swimming which direct a single through chemotaxis to find nutrients and avoid toxic environments swarming is a collective motion suppressing chemotaxis and using the dynamics of their collective motion to continuously expand and acquire new territory
     \item \textbf{gliding}
     \item \cite{ContrerasM2024} gliding relies on a outer-membrane complex that attaches the substrate at fixed sites of focal adhesion enabling directional gliding motility
-    \item \cite{Chang2016}type IV pili generates retraction force for twitching motility, pulling the cell across surfaces (glinding-motion in a collective way)
+    \item \cite{Chang2016}type IV pili generates retraction force for twitching motility, pulling the cell across surfaces 
     \item \cite{Shah2022} model shows that non-Newtonian slime behavior enhances gliding motility by optimizing force transmission and energy use
     \item \cite{Shrivastava2015} \ac{flavo} and \textit{Myxococcus xanthus} are gliding rod-shpaed flagelaten-free spicies. Their gliding relies on rotary motors driving mobile surface filaments, providing continuous propulsion analogous to a snowmobile
     \item \textbf{adhesion}
-    \item \cite{BrettFinlay2014, Berne2018} Adhesins, pili/fimbriae, and surface proteins mediate the binding to \ac{ecm} components/ adhesion is a highly heterogeneous and dynamic process
+    \item \cite{vanLoosdrecht1989, Hori2010} Bacterial adhesion is driven by physicochemical interactions: van der Waals, electrostatic, hydrophobic, and acid-base forces and it's strength is determined by both surfaces properties (charge, hydrophobicity, roughness) determine
+    \item \cite{BrettFinlay2014, Berne2018} Adhesins, pili/fimbriae, and surface proteins mediate the binding to \ac{ecm} components/ adhesion is a highly heterogeneous and dynamic process. Binding to a host \cite{Beachey1981, Vaca2019}
+    \item \cite{Vaca2019,Beachey1981} Gram-negative bacteria (eg. \ac{ecoli}) express outer membrane proteins (adhesins) which allow them to attach to various hosts
     \item Type IV pili \cite{Ellison2021} or flagella in general \cite{Haiko2013} are more than force-generating structures that coordinate bacterial movement, they play an important role in the direct adhesion, and environmental interaction
 \end{itemize}
 
@@ -315,65 +317,61 @@ Here we first describe how rod-shape bacteria can grow. Further we show how the 
     \item \cite{Nikita2009, Bourret2002} Chemotaxis, is the most common and best studied form of taxis. It is a receptor-mediated signaling network that integrates external chemical cues to modulate flagellar motion and control movement direction.
 \end{itemize}
 
-\todo{Sorting following citations into above paragraphs}
-Gram-negative bacteria (eg. \ac{ecoli}) express outer membrane proteins (adhesins) which allow them to attach to various hosts \cite{Vaca2019,Beachey1981}.
-
-
 
 \subsection{Cell-Cell interaction, differentiation, biofilms, self organization and emergent phenomena} %  Stiffness? here or by shape section?
 
-
-\begin{itemize}
-    \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
-    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
-    \item \cite{Starru2007} TODO also swarming; also has very nice model for rod-shaped bacteria; I have
-        not seen this anywhere else; very nice
-    \item \cite{Stewart2005} "Aging and Death in an Organism That Reproduces by Morphologically
-        Symmetric Division"
-    \item \cite{Jin2020} "Influence of cell interaction forces on growth of bacterial biofilms"
-\end{itemize}
-
-
-
-\paragraph{Cell-Cell interaction}
-
+\todo{Sorting following citations into paragraphs down here}
 some bacteria can fuse to each other when they are long enough at close distance \cite{Kudryashev2011}
-Biofilm dispersion and quorum sensing \cite{Solano2014}
-
-\begin{itemize}
-    \item \cite{MorenoGmez2023} Quorum sensing as a mechanism to harness the wisdom of the crowds
-    \item \cite{Liu2025} Quorum Sensing: Not Just a Bridge Between Bacteria
-    \item \cite{Boyer2009} "Many factors other than cell density were shown to affect N-acyl-homoserine lactones accumulation and interfere with the QS signalling process." "This review aims to resent all factors interfering with the AHL-mediated signalling process, at the levels of signal production, diffusion and perception."
-\end{itemize}
 
 \paragraph{Differentiation \& Fruiting bodies and sporilation}
 \todo{think about shuffling it to previous section}
 \begin{itemize}
-    \item \cite{Jose2016} some bacterial can have lifecycle Myxococcus xanthus \cite{Branda2001} \ac{bsubtilis}
-e.g for task division
-    \item \cite{Huan2021} Sporulation and Germination of M. xanthus. Myxococcus xanthus degrade their PG and form spherical spores - germination reconstruct their PG layer and regain their rod shape without relying on any preexisting structural template - sphere to rod 
-    \item starvation-dependent and starvation-independent pathways of sporulation and produce structurally different spores \cite{Licking2000} B. subtilis can divide asymmetrically during sporulation one cell differentiation process \cite{Barák2019}
+    \item some bacterial can have lifecycle like Myxococcus xanthus \cite{Jose2016}  \ac{bsubtilis} \cite{Branda2001} for e.g task division and environmental adaptation
+    \item \cite{Huan2021} Myxococcus xanthus sporulat and make fruiting bodies. They have starvation-dependent and starvation-independent pathways of sporulation and produce structurally different spores \cite{Licking2000}
+    \item \cite{Lopez2010} Extracellular signalling in \ac{bsubtilis} orchestrates diverse, co-existing cell fates via specific signal-sensor-regulator cascades, enabling a community of genetically identical cells to specialize into distinct roles.
+    \item \cite{Barák2019} \ac{bsubtilis} can divide asymmetrically during sporulation one cell differentiation process 
+    \item \cite{Flemming2016} cellular differentiation in biofilms (matrix production, motility, sporulation)
+
 \end{itemize}
 
+\paragraph{Quorum sensing}
+\begin{itemize}
+    \item \cite{Stephen2007} Bacteria produce and secrete small signaling molecules called autoinducers called Quorum sensing. Coordinate gene expression collectively, enabling adaptive group behavior
+    \item \cite{MorenoGmez2023} Quorum sensing allows bacteria to collectively process information enhancing decision accuracy through population-level coordination
+    \item \cite{Hense2007, Boyer2009}  Quorum sensing not only within single species, but also interspecies and cross-kingdom (e.g., bacteria-host, bacteria-virus). \cite{Liu2025} Highlights some applications in biomedical and environmental technologies 
+    \item \cite{Solano2014} Quorum sensing plays a key role in mature biofilms for e.g transition from a sessile community to a free-living state
+\end{itemize}
 
 \paragraph{Biofilms}
 \begin{itemize}
     \item \cite{Dunne2002} Bacterial adhesion is a dynamic, regulated process that underlies biofilm formation and persistence on diverse surfaces
-    \item Biofilms: an emergent form of bacterial life \cite{Flemming2016}
-    \item cell "differentiation" when forming biofilms - \cite{Lopez2010}
-    \item Enhanced survival of multi-species biofilms under stress \cite{Wisnu2022}
-    \item multi-species biofilms the stretegies to avoid neighbors due to competition \cite{Rendueles2012}
-    \item \cite{Li2025} citation from van-gogh bundles
+    \item \cite{Flemming2016} “Biofilms: an emergent form of bacterial life” names emergent phenomena: Enhanced stress tolerance, Collective resource capture, Spatial organization and division of labor, Self-structuring and architecture formation
+    \item \cite{Wisnu2022} Mixed-species biofilms have enhanced survival, mediated by antimicrobial-resistant keystone species
+    \item \cite{Ong1999, vanLoosdrecht1989, Hori2010} initial colonization and biofilm potential is governed by the bacterial features and biomaterial properties
+    \item \cite{Rendueles2012} Competition in biofilms has a key role. Rivality in surface-colonisation leads to strategies that target adhesion, signalling and matrix dynamics allowing mixed-species biofilms to regulate neighbour entry and community structure
     \item following points are already in text
-    \item \cite{Duvernoy2018} shaping early biofilm morphogenesis by asymmetric adhesion of rod-shaped bacteria to surfaces
-    \item early biofilm transition architecture from 2D to 3D structure when confinement and under mechanical forces 
+    \item \cite{Duvernoy2018} shaping early biofilm morphogenesis by asymmetric adhesion of rod-shaped bacteria to surfaces early biofilm transition architecture from 2D to 3D structure when confinement and under mechanical forces.
+    \item \cite{Grant2014} Elasticity of the bacterial cells and elastic interactions plus the frictional forces between the bacteria and the surrounding agarose medium are key features of the 2D to 3D transition
+\end{itemize}
+
+\paragraph{Spacial Colonie Organizationn}
+\begin{itemize}
+    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
+    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
+    \item \cite{Jin2020} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
+    \item \cite{Trejo2013} \ac{bsubtilis} pellicles is mechanically driven process, where extracellular matrix elastity leads to wrinkled morphology
+    \item \cite{Li2025, vanGestel2015} biofilm expansion relies on division of labor. Surface-colonising regulated by cell differentiation. i) matrix-producers forming aligned bundels(“van Gogh bundles”) which physical properties set the expansion rate of the colony ii) surfactin-producers reduce surface friction.
+    \item \cite{Dong2022} mechanical organization contributes to community robustness. biofilm self-healing mechanisme by reconnecting and regrowing van Gogh bundles 
 \end{itemize}
 
 \todo{Division of task outside of biofilms}
 \section{Mathematical \& Computational Frameworks}
-\paragraph{Toqis citation}
+
+\paragraph{Toqi suggest those for modeling section}
 \begin{itemize}
 \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
+\item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
+\item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
 \end{itemize}
 
 
