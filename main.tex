@@ -475,7 +475,7 @@ which the new value is drawn (see supplement).
 
 \subsection{Computational Modeling Frameworks}
 
-\textbf{Frameworks}
+\subsubsection{List Frameworks}
 \begin{itemize}
     \item \cite{breitwieser_biodynamo_2022} BioDynamo TODO mention this; I think no support
     \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
@@ -509,8 +509,7 @@ researchers to reuse.
 This begs the question, which of these existing models is able to support the long list of aspects
 that we set out to describe with the experimentally gathered evidence.
 
-\paragraph{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
-
+\subsubsection{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
 \begin{itemize}
     \item \cite{Ghaffarizadeh2018} PhysiCell; no rods
     \item \cite{Swat2012} CompuCell; uses \ac{cpm}; no rods
@@ -534,8 +533,7 @@ vertex-based models or PDEs but has no support for Rod-Shaped bacteria.
 Even purpose-built solutions such as BNSim \cite{Wei2013} which specifically targets bacterial
 networks, assumes a simplified spherical representation for their bacterial agents.
 
-\paragraph{Varying Support for Rod-Shaped Bacteria}
-
+\subsubsection{Varying Support for Rod-Shaped Bacteria}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{example-image-a}
@@ -574,7 +572,7 @@ The engine is limited to 2D and does not consider polar interactions or bending 
 \textbf{soft-matter keywords}
 filamentous, nematic order
 
-\textbf{include some references of soft-matter studies}
+\subsubsection{Soft-matter Studies}
 \begin{itemize}
     \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
         (no division, no intracellular dynamics, no growth)
@@ -588,7 +586,7 @@ filamentous, nematic order
     \item \textbf{TODO look for more mixed-morphology (rods \& spheres) papers}
 \end{itemize}
 
-\textbf{Others}
+\subsubsection{Others}
 \begin{itemize}
     \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
     \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
@@ -603,6 +601,7 @@ filamentous, nematic order
         "morphogenetic noise"
 \end{itemize}
 
+\subsubsection{Promosing Candidates}
 \begin{itemize}
     \item \cite{Abar2017} "Agent Based Modelling and Simulation tools: A review of the state-of-art software"
     \item other generic frameworks exist, which may allow to model the desired functions
@@ -652,31 +651,7 @@ filamentous, nematic order
 
 \subsection{Parameter Estimation \& Techniques}
 
-\textbf{Strategies for comparing simulation with data}
-\begin{itemize}
-    \item Simply do not compare: "Biolgically-inspired"
-    \item Select specific feature to investigate
-    \begin{itemize}
-        \item Compare particular value (possibly with uncertainty)
-        \item Compare multiple values
-        \item Compare distribution
-    \end{itemize}
-    \item Fix some parameters from literature
-    \item directly fit parameters from data (rare)
-\end{itemize}
-
-\textbf{Common Methods used for Analysis}
-\begin{itemize}
-    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
-        cellpose~\cite{Stringer2020}
-    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
-        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
-    \item Optimization method \textbf{TODO Citation}
-    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
-        \cite{Heinrich2025}
-\end{itemize}
-
-\textbf{Papers which did some sort of parameter estimation}
+\subsubsection{Papers which did some sort of parameter estimation}
 \begin{itemize}
     \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
         literature values/quantified
@@ -696,6 +671,30 @@ filamentous, nematic order
         TODO FAKE FIGURES. Peak at $\approx2008$ likely comes from CRISPR Cas.
     }
 \end{figure}
+
+\subsubsection{Strategies for comparing simulation with data}
+\begin{itemize}
+    \item Simply do not compare: "Biolgically-inspired"
+    \item Select specific feature to investigate
+    \begin{itemize}
+        \item Compare particular value (possibly with uncertainty)
+        \item Compare multiple values
+        \item Compare distribution
+    \end{itemize}
+    \item Fix some parameters from literature
+    \item directly fit parameters from data (rare)
+\end{itemize}
+
+\subsubsection{Common Methods used for Analysis}
+\begin{itemize}
+    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
+        cellpose~\cite{Stringer2020}
+    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
+        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
+    \item Optimization method \textbf{TODO Citation}
+    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
+        \cite{Heinrich2025}
+\end{itemize}
 
 \section{Discussion}
 
