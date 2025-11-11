@@ -94,8 +94,8 @@ def studies_over_time(data):
     """
     Data has shape (N_entries, 3) and contains (year, citecount1, citecount2)
     """
-    data1 = data[:118]
-    data2 = data[118:]
+    data1 = data[:108]
+    data2 = data[108:]
     data1 = data1[data1[:, 0] >= 1980]
     data2 = data2[data2[:, 0] >= 1980]
     years1 = data1[:, 0]
@@ -106,6 +106,7 @@ def studies_over_time(data):
 
     ax.hist(
         [years1, years2],
+        np.arange(np.min(years1), np.max(years2))[::4],
         stacked=True,
         color=[COLOR1, COLOR4],
         label=["Biological", "Computational"],
