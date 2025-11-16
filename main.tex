@@ -31,6 +31,7 @@
 \newacro{abm}[ABM]{Agent-Based Model}
 \newacro{cabm}[CABM]{Cellular Agent-Based Model}
 \newacro{ode}[ODE]{Ordinary Differential Equation}
+\newacro{sde}[SDE]{Stochastic Differential Equation}
 \newacro{pde}[PDE]{Partial Differential Equation}
 \newacro{ca}[CA]{Cellular Automaton}
 \newacro{ib}[IB]{Individual-Based}
@@ -493,54 +494,27 @@ which the new value is drawn (see supplement).
 
 \subsection{Computational Modeling Frameworks}
 
-\subsubsection{List Frameworks}
-\begin{itemize}
-    \item \cite{breitwieser_biodynamo_2022} BioDynamo TODO mention this; I think no support
-    \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
-    \item \cite{Kreft1998,Kreft2001,Lin2023} (BacSim) "Individual-based modelling of biofilms Free"
-    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
-    \item \cite{Wei2013} BNSim; cells are spheres
-    \item \cite{Gutirrez2017} \texttt{gro}
-    \item \cite{Pleyer2025} \texttt{cellular\_raza}
-    \item \cite{Bogdanowski2022} McComedy
-    \item \cite{Lardon2011} iDynomics \textbf{TODO check how this can model rods (it should)}
-    \item \cite{GoiMoreno2015} DiSCUS \textbf{TODO}
-    \item \cite{Li2019} NUFEB \textbf{TODO}
-    \item \cite{Breitwieser2021} BioDynaMo \textbf{TODO}
-    \item \cite{Dang2020} MultiCellSim \textbf{TODO}
-    \item \cite{Hoehme2010} Tisim/CellSys \textbf{TODO}
-    \item \cite{Grimm2006,Grimm2010} \textbf{TODO} "A standard protocol for describing individual-based and
-        agent-based models" and update: \cite{Jang2012}
-    \item \cite{Rudge2012} CellModeller, has rod-shaped support and some predefined chemical
-        reactions etc.
-    \item \cite{Banitz2015,vanderWal2013} Netlogo (citations are only for specific applications, not Netlogo itself)
-    \item \cite{Harcombe2014} COMETS \textbf{TODO}
-\end{itemize}
+\subsubsection{Modeling Frameworks}
 
 \begin{table}
     \centering
+    \textbf{Only include frameworks if they have rods}\\
     \begin{tabularx}{\textwidth}{lccccccccc}
-        \textbf{Only include frameworks if they have rods}\\
         \toprule
         Name & Shapes & Intra & Extra & Motility & Chemotaxis & Ext. Forces & Dim & Date\\
         \midrule
-        AgentCell~\cite{Emonet2005} & & & & & & & & 2005\\
         % BacSim~\cite{Kreft1998,Kreft2001} & S & Fix & Diff & - & - & - & 2 & 1998\\
         % BNSim~\cite{Wei2013} & S & O,So & Diff & R & \checkmark & - & 3 & 2013\\
         Biocellion~\cite{Kang2014} & S,C & Discr & R,Diff & R & - & - & 3 & 2014\\
         BioDynamo~\cite{breitwieser_biodynamo_2022} & S,C & O,U & Diff & R,U & \checkmark & - & 3 & 2022\\
         BSim~\cite{Gorochowski2012,Matyjaszkiewicz2017} & C & O & Diff & R & - & - & 2,3 & 2013\\
         \texttt{cellular\_raza}~\cite{Pleyer2025} & S,C,F,U & O,U & Diff,U & R,U & U & U & 2,3 & 2025\\
-        CellModeller~\cite{Rudge2012} & & & & & & & & 2012\\ % has rod-shaped support and some predefined chemical reactions etc.\\
-        COMETS~\cite{Harcombe2014} & & & & & & & & 2014\\
-        DiSCUS~\cite{GoiMoreno2015} & & & & & & & & 2015\\
-        \texttt{gro}~\cite{Gutirrez2017} & & & & & & & & 2017\\
-        iDynomics~\cite{Lardon2011} & & & & & & & & 2011\\
-        McComedy~\cite{Bogdanowski2022} & & & & & & & & 2022\\
-        MultiCellSim~\cite{Dang2020} & & & & & & & & 2020\\
-        Netlogo~\cite{Banitz2015,vanderWal2013} & & & & & & & & 2013\\
-        NUFEB~\cite{Li2019} & & & & & & & & 2019\\
-        Tisim/CellSys~\cite{Hoehme2010} & & & & & & & & 2010\\
+        CellModeller~\cite{Rudge2012} & C & O,Discr & Diff & - & - & F & 3 & 2012\\
+        % has rod-shaped support and some predefined chemical reactions etc.\\
+        DiSCUS~\cite{GoiMoreno2015} & C & O & - & - & - & - & 2 & 2015\\
+        \texttt{gro}~\cite{Gutirrez2017} & C & O & Diff & - & - & - & 2 & 2017\\
+        iDynomics~\cite{Lardon2011} & S,C & O & Diff & - & - & F & 2,3 & 2011\\
+        Tisim/CellSys~\cite{Hoehme2010} & S & O & Diff & R & - & - & 2,3 & 2010\\
         \bottomrule
     \end{tabularx}
     \begin{minipage}{0.4\textwidth}
@@ -552,9 +526,10 @@ which the new value is drawn (see supplement).
             \textbf{Legend}\\
             \midrule
             Cell shapes & (S) Spherical, (C) Cylindrical, (F) Flexible\\
-            Intracellular & (O) \acp{ode}, (So) Stochastic \acp{ode}, (Discr) Discrete\\
+            Intracellular & (O) \acp{ode}/\acp{sde}, (Discr) Discrete\\
             Extracellular & (R) Reactions, (Diff) Diffusion\\
             Motility & (R) Random/Stochastic Motion\\
+            External Forces & (F) Fluid/Flow\\
             Other & (Fix) Fixed model choice, (U) User definable\\
             \bottomrule
         \end{tabularx}
@@ -582,6 +557,16 @@ that we set out to describe with the experimentally gathered evidence.
     \item \cite{Cooper2020} Chaste; cell-centre and vertex-based; no rods
     \item \cite{Starru2014} Morpheus, uses \ac{cpm}; no rods
     \item \cite{Wei2013} BNSim; cells are spheres
+    \item \cite{Kreft1998,Kreft2001,Lin2023} (BacSim) "Individual-based modelling of biofilms Free"
+    \item \cite{Wei2013} BNSim; cells are spheres
+    \item \cite{Li2019} NUFEB \textbf{TODO}
+    \item \cite{Hoehme2010} Tisim/CellSys \textbf{TODO}
+    \item AgentCell~\cite{Emonet2005} no rods
+    \item COMETS~\cite{Harcombe2014} grid-based approach
+    \item McComedy~\cite{Bogdanowski2022} only spherical
+    \item MultiCellSim~\cite{Dang2020} only lattice points (or spheres depending on interpretation)
+    \item Netlogo~\cite{Banitz2015,vanderWal2013} very generalized \ac{abm}, not particular for biology (citations are only for specific applications, not Netlogo itself)
+    \item NUFEB~\cite{Li2019} only soft spheres
 \end{itemize}
 
 Of the most popular frameworks, most do not support rod-shaped bacteria out of the box.
@@ -632,6 +617,25 @@ The latter of these is a phenomenological implementation of the observed colony 
 associated central pressure with it.
 This assumption may yield incorrect results for sparsely populated cases.
 The engine is limited to 2D and does not consider polar interactions or bending of the rods.
+
+\paragraph{With Rods}
+\begin{itemize}
+    \item \cite{Breitwieser2021,breitwieser_biodynamo_2022} BioDynamo, cylinders
+    \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
+    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
+    \item \cite{Gutirrez2017} \texttt{gro} only rods
+    \item \cite{Pleyer2025} \texttt{cellular\_raza} flexible rods
+    \item \cite{Lardon2011} iDynomics
+    \item \cite{GoiMoreno2015} DiSCUS cylinders
+    \item \cite{Rudge2012} CellModeller, has rod-shaped support and some predefined chemical reactions etc.
+\end{itemize}
+
+\paragraph{Additional Information}
+\begin{itemize}
+    \item \cite{Grimm2006,Grimm2010} \textbf{TODO} "A standard protocol for describing individual-based and
+        agent-based models" and update: \cite{Jang2012}
+\end{itemize}
+
 
 \subsection{Purpose-Built Models}
 
