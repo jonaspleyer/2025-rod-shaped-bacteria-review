@@ -208,9 +208,9 @@ stuff which is important for us.}
 
 The shape of bacteria is mainly determined by their envelope and its growth. Most bacteria are surrounded by peptidoglycan \ac{pg}, a mesh-like macromolecule of glycan strands that are crosslinked via short peptides, which is chemically unique to bacteria~\cite{Cava2014, Amir2014, Cochrane2020}. This essential structure mechanically resists high turgor pressure, giving the cell its specific shape, isolating and regulating environmental uptake, which is indispensable for bacterial survival~\cite{Cochrane2020, vanTeeffelen2018}.
 
-Although rod morphology is physically defined by \ac{pg}, the rod shape requires cytoskeletal support. At the end of the last century, an actin-like protein MreB was discovered~\cite{Erickson2001}.  It's crystal structure \cite{Lowe2017_lj} and filament-forming dynamic \cite{Dersch2020} show strong similarity to actin. Additional actin-homologues, MreC, and MreD were later identified \cite{vandenEnt2001}.
+Although rod morphology is physically defined by \ac{pg}, the rod shape requires cytoskeletal support. At the end of the last century, an actin-like protein MreB was discovered~\cite{Erickson2001}.  It's crystal structure \cite{Lowe2017_lj} and filament-forming dynamic \cite{Dersch2020} show strong similarity to actin. Additional actin-homologues, MreC, and MreD were later identified \cite{vandenEnt2001} playing an important role in shaping the rod.
 
-MreB filaments make/form a spiral-like or banded pattern along the length of the cell, moving circumferentially around the rod, coordinating \ac{pg} synthesis \cite{Garner2021, White2012, López2006}. Thus, MreB polymers' dynamics actively restrict and/or control the mobility of cell wall elongation complexes \cite{DEscobar2011}, thereby linking cytoskeletal organisation with local changes of cell shape \cite{Shi2018}. MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contributing to a rod-shaped \cite{vanTeeffelen2018}. The transmembrane protein, like RodZ, modulates MreB curvature preference \cite{Bratton2018}, altering MerB localisation and density. 
+MreB filaments make/form a spiral-like or banded pattern along the length of the cell, moving circumferentially around the rod, coordinating \ac{pg} synthesis \cite{Garner2021, White2012, López2006}. Thus, MreB polymers' dynamics actively restrict and/or control the mobility of cell wall elongation complexes \cite{DEscobar2011}, thereby linking cytoskeletal organisation with local changes of cell shape \cite{Shi2018}. MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contributing to a rod-shaped \cite{vanTeeffelen2018, Olshausen2013}. The transmembrane protein, like RodZ, modulates MreB curvature preference \cite{Bratton2018}, altering MerB localisation and density. 
 
 
 \paragraph{Cell Wall}
@@ -237,22 +237,32 @@ MreB filaments make/form a spiral-like or banded pattern along the length of the
     \item \cite{Shi2018} MreB is a cytoskeletal organizing element it's localization also directs cell growth to locally change cell shape 
     \item \cite{vanTeeffelen2018} MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contribtuting to a rod-shape
     \item \cite{DEscobar2011} MreB polymers actively restrict and/or control the mobility of cell wall elongation complexes
-    \item \todo{not used following two}
-    \item \cite{Wang2010, Wang2010_protocol} MreB and \ac{pg} contributes to nearly equal parts to the stiffness of a cell
     \item \cite{Olshausen2013} got good resolution of MreB dynamics with the help of \ac{tirf}. Their mathematical model confirms that MreB acts as mechanical organizer, coupling the cytoskeleton with cell wall synthesis to maintain rod shape.
 \end{itemize}
 
 \subsubsection{Growth, Maintenance \& Division}
+
+Cell growth relies on the spatial and temporal regulation of \ac{pg} synthesis by different cytoskeletal molecules. The cell wall elongation is achieved by new \ac{pg} being inserted in discrete patches at the surface of the cytoplasmic membrane, a process coordinated by MreB and/or its homologues \cite{DePedro2003}. There are two growth mechanisms. During elongation, cells maintain a constant diameter \cite{Billaudeau2017}, expanding their surface area primarily along the sidewall. During constriction, polar \ac{pg} synthesis initiates the formation of new polar caps \cite{Cooper1991, Wang2010_2}. This process is comparable for both gram-negative and gram-positive bacteria, despite their varying wall thicknesses \cite{Chang2014}. However, species-specific differences in wall architecture and thickness influence elongation dynamics (for example, variations in \ac{pg} assembly patterns and machinery organisation lead to distinct elongation behaviors in \ac{bsubtilis} and \ac{ecoli}, as shown by  \cite{Billaudeau2017}). Most rod-shaped bacteria obtain their elongation through MreB-dependent lateral growth. In contrast, a few species lacking an MreB system elongate at the poles using division machinery that remains active after division/constriction \cite{Daniel2003}. Beyond these biochemical processes, morphogenesis and \ac{pg} synthesis are mechanically sensitive. This indicates that growth patterns are adaptive and coupled to physical forces \cite{Si2015}, and spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection \cite{Chatterjee1988}.
+
+Despite growing, the cell has to maintain its shape. Cell shape is balanced by two processes: i) wall elongation and ii) septum formation. A lack of elongation due to evolution or mutation results in cocci-shaped cells \cite{Lleo1990}. Consistently, ac{mre} mutants \cite{Wachi1987}, \textit{rodZ} deletion mutants \cite{Shiomi2008}, as well as cells treated with \ac{a22} \cite{IWAI2002}, which disrupts MreB assembly \cite{Bean2009}, were found to cause spherical cell shape. This indicates that cell shape maintenance involves proteins encoded by the \ac{mre}  genes, such as MreB, or proteins that interact with them.
+Furthermore, \cite{Jones2001}  showed that MreB regulates cell width, whereas Mbl controls linear axis regulation. MreB filaments move circumferentially around rods of any width; however, filament motion is isotropic in spherical cells, moving in all directions \cite{Garner2021}. Highlighting the fact that the regulation of geometry by the cytoskeleton extends beyond rod-shaped bacteria.
+Finally, a switch in, or de novo, \ac{pg} synthesis is sufficient to regenerate the cell wall and restore a rod-shaped morphology, both in spherical cells \cite{Huan2021} and in L-forms \cite{Kawai2014}.
+
+Cell division is inhibited by two systems: i) the Min system, which prevents division near the cell poles, and ii) nucleoid occlusion, which prevents cell division over nucleoids  \cite{Bramkamp2009, Oliva2004}. When both systems are inactivated, FtsZ assembles to form a central ring (Z-ring), generating the constriction forces required for division. In addition to these two regulatory systems, the division site is favoured by mechanical forces \cite{Li2007, Koch1995, Chatterjee1988}. The ring tension regulates \ac{pg} synthesis \cite{Lan2007}, switching it from dispersed insertion to a concentrated local mode for new synthesis at the cell poles \cite{DenBlaauwen2008}. Additionally, the surface synthesis rate increases, supporting the idea of separate elongation and division machineries  \cite{Woldringh1987, Cooper1991}. Furthermore, MreB contributes to the formation of a bacterial mitotic-like machine and controls bacterial DNA segregation  \cite{Kruse2005, Gitai2005}. Despite symmetric division, aging and mortality can occur through the asymmetric inheritance of cellular damage (the older 'mother' cell poles accumulate damage or growth defects over generations) \cite{Stewart2005}
+Segregation of the origin region is unaffected by \ac{a22} treatment \cite{Karczmarek2007}. In addition, bacterial morphogenesis is plastic and can be reprogrammed to change the growth and division axis \cite{denBlaauwen2018}.
+
+
 \paragraph{Growth}
 \begin{itemize}
-    \item \cite{Daniel2003} 2 ways maintaining rod shape: with/without MReB: A few rod-shaped bacteria have no MreB system. MreB-guided lateral wall growth or polar elongation
-    \item \cite{Cooper1991} \cite{Wang2010_2} \ac{pg} synthesis is spatially and temporally regulated. During elongation, cells grow at a constant diameter, expanding surface mainly along the sidewall. During constriction polar synthesis is initiated forming new polar caps
-    \item \cite{Chatterjee1988} spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection.
     \item \cite{Chang2014} cell elongation is comparable for gram-negative and gram-positive bacteria (\ac{bsubtilis} and \ac{ecoli}) despite their wall thickness
-    \item \cite{Billaudeau2017} wall thickness influence elongation dynamics (species-specific coordination) (details if needed: in \ac{bsubtilis} and \ac{ecoli} \ac{pg} assembly, spatial pattern, wall thickness, and machinery organization differ, leading to distinct elongation dynamics )
-    \item \cite{DePedro2003} new \ac{pg} is inserted in discrete patches along the lateral sidewall
+    \item \cite{Cooper1991} \cite{Wang2010_2} \ac{pg} synthesis is spatially and temporally regulated. During elongation, cells grow at a constant diameter, expanding surface mainly along the sidewall. During constriction polar synthesis is initiated forming new polar caps
     \item \cite{Billaudeau2017} Growth is MreB-dependent, maintaining constant diameter
+    \item \cite{Daniel2003} 2 ways maintaining rod shape: with/without MReB: A few rod-shaped bacteria have no MreB system. MreB-guided lateral wall growth or polar elongation
+    \item \cite{DePedro2003} new \ac{pg} is inserted in discrete patches along the lateral sidewall
+    \item 
     \item \cite{Si2015} Bacterial morphogenesis and \ac{pg} synthesis are mechanically sensitive, showing that growth patterns are adaptive and coupled to physical forces.
+    \item \cite{Chatterjee1988} spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection.
+    \item \cite{Billaudeau2017} wall thickness influence elongation dynamics (species-specific coordination) (details if needed: in \ac{bsubtilis} and \ac{ecoli} \ac{pg} assembly, spatial pattern, wall thickness, and machinery organization differ, leading to distinct elongation dynamics )
 \end{itemize}
 
 \paragraph{Maintaining/Loosing Rod-shape}
@@ -261,8 +271,8 @@ MreB filaments make/form a spiral-like or banded pattern along the length of the
     \item \cite{Lleo1990} shape is balanced by two reaction i) wall elongation ii) septum formation. cocci shaped lost i) or are induced by mutations in i)
     \item e.g. for lacking i): \ac{a22} treated cells \cite{IWAI2002}, \textit{rodZ} deletion mutants \cite{Shiomi2008} and \ac{mre} mutants \cite{Wachi1987} were found to induce spherical cells shape indicating that cell shape maintenance involves proteins encoded by the \ac{mre} like MreB or interacting with them
     \item extension to point before: specifying what \ac{a22} is. \cite{Bean2009} \ac{a22} binds directly to nucleotide-free MreB, due to its high affinity to the nucleotide-binding pocket of MreB. Thereby disrupting MreB assembly
-    \item Switch in or \denovo \ac{pg} synthesis is sufficient to regenerate the cell wall and restore a rod-shape morphology \cite{Huan2021} spherical to rod-shape  \cite{Kawai2014} L-form to rod-shape
     \item \cite{Garner2021} MreB filaments move circumferentially around rods of any width, but filament motion was isotropic in spherical cells, moving in all directions\todo{why are we citing this?}
+    \item Switch in or \denovo \ac{pg} synthesis is sufficient to regenerate the cell wall and restore a rod-shape morphology \cite{Huan2021} spherical to rod-shape  \cite{Kawai2014} L-form to rod-shape
 \end{itemize}
 
 \paragraph{Cell division}
@@ -328,6 +338,7 @@ MreB filaments make/form a spiral-like or banded pattern along the length of the
     \item \textbf{cell-cell forces}
     \item some bacteria can fuse to each other when they are long enough at close distance \cite{Kudryashev2011}
     \item \todo{More about friction/physical cell-cell interactions}
+    \item \cite{Wang2010, Wang2010_protocol} MreB and \ac{pg} contributes to nearly equal parts to the stiffness of a cell
 
 \end{itemize}
 
