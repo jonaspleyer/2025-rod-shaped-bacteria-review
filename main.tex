@@ -45,6 +45,8 @@
 \newacro{mre}[\textit{mre}]{murein formation gene cluster E}
 \newacro{tirf}[TIRF-M]{total internal reflection fluorescence microscopy}
 \newacro{ecm}[ECM]{extracellular matrix}
+\newacro{qs}[QS]{quorum sensing}
+\newacro{crispr}[CRISPR]{Clustered Regularly Interspaced Short Palindromic Repeats)}
 \newacro{flavo}[\textit{F. johnsoniae}]{\textit{Flavobacterium johnsoniae}}
 \newacro{serratia}[\textit{S. marcescens}]{\textit{Serratia marcescens}}
 
@@ -190,8 +192,6 @@ Order of this review
 \end{enumerate}
 
 \section{Biological Building Blocks}
-\subsection{Cell Shape}
-
 \textbf{TODO Put a disclaimer here that says that we do not treat every aspect, but try to focus on
 stuff which is important for us.}
 
@@ -204,7 +204,7 @@ stuff which is important for us.}
     \item Brief outlook to other forms
 \end{enumerate}
 
-\subsubsection{Cell Wall, Cytoskeleton \& Interplay}
+\subsection{Cell Wall, Cytoskeleton \& Interplay}
 
 The shape of bacteria is mainly determined by their envelope and its growth. Most bacteria are surrounded by peptidoglycan \ac{pg}, a mesh-like macromolecule of glycan strands that are crosslinked via short peptides, which is chemically unique to bacteria~\cite{Cava2014, Amir2014, Cochrane2020}. This essential structure mechanically resists high turgor pressure, giving the cell its specific shape, isolating and regulating environmental uptake, which is indispensable for bacterial survival~\cite{Cochrane2020, vanTeeffelen2018}.
 
@@ -212,35 +212,7 @@ Although rod morphology is physically defined by \ac{pg}, the rod shape requires
 
 MreB filaments make/form a spiral-like or banded pattern along the length of the cell, moving circumferentially around the rod, coordinating \ac{pg} synthesis \cite{Garner2021, White2012, López2006}. Thus, MreB polymers' dynamics actively restrict and/or control the mobility of cell wall elongation complexes \cite{DEscobar2011}, thereby linking cytoskeletal organisation with local changes of cell shape \cite{Shi2018}. MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contributing to a rod-shaped \cite{vanTeeffelen2018, Olshausen2013}. The transmembrane protein, like RodZ, modulates MreB curvature preference \cite{Bratton2018}, altering MerB localisation and density. 
 
-
-\paragraph{Cell Wall}
-\begin{itemize}
-    \item \cite{Cava2014} main cell envelope of bacteria is a mesh-like macromolecule of glycan strands that are crosslinked via short peptides. Thus  peptidoglycan \ac{pg}
-    \item \cite{vanTeeffelen2018} \ac{pg} PG meshwork mechanically resists the high turgor pressure and gives the cell its specific cell shape
-    \item \cite{Cochrane2020} \ac{pg} chemically unique (to bacteria) and essential for cell survival. Therfore it's synthesis and turnover is targeted by a range of antibacterial treatments
-        Different mechanism based on use of polar growth zones derived from the division machinery (\ac{pg} and FtsZ)
-    \item \cite{Amir2014} bacterial cell shape is physically determined by the \ac{pg} cell wall but not sufficient for maintaining rod-shape on its own, need more effects \todo{do we need more details from this paper?}
-\end{itemize}
-
-\paragraph{Cytoskeleton}
-\begin{itemize}
-    \item It was long believed that bacteria lack cytoskeletal filaments but with the end of the last century, it was discovered that the MreB protein fills this role since it "[..] forms an actin-like cytoskeleton in bacteria [..]" \cite{Erickson2001}.
-    \item \cite{Dersch2020} It can polymerize and form filaments which behave similar to actin microfilaments 
-    \item \cite{Lowe2017_lj} Studies of its crystal structure further showed the similarity to actin~\cite{vandenEnt2001} and the MreB, MreC and MreD proteins were identified as homologues of actin 
-    \item \cite{Bratton2018} trans-membrane protein RodZ can modulate MreB density. It has a direct effect on MreB curvature preference
-\end{itemize}
-
-\paragraph{Interplay}
-\begin{itemize}
-    \item \cite{White2012} \cite{López2006} MreB adopts a spiral-like or banded pattern along the length of the cell coordinating \ac{pg} synthesis  
-    \item  \cite{Shi2018} MreB filaments move circumferentially around rods \cite{Garner2021} of any width, resultant \ac{pg} synthesis around the rod circumference is stabilizing rod shape against the internal pressure
-    \item \cite{Shi2018} MreB is a cytoskeletal organizing element it's localization also directs cell growth to locally change cell shape 
-    \item \cite{vanTeeffelen2018} MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contribtuting to a rod-shape
-    \item \cite{DEscobar2011} MreB polymers actively restrict and/or control the mobility of cell wall elongation complexes
-    \item \cite{Olshausen2013} got good resolution of MreB dynamics with the help of \ac{tirf}. Their mathematical model confirms that MreB acts as mechanical organizer, coupling the cytoskeleton with cell wall synthesis to maintain rod shape.
-\end{itemize}
-
-\subsubsection{Growth, Maintenance \& Division}
+\subsection{Growth, Maintenance \& Division}
 
 Cell growth relies on the spatial and temporal regulation of \ac{pg} synthesis by different cytoskeletal molecules. The cell wall elongation is achieved by new \ac{pg} being inserted in discrete patches at the surface of the cytoplasmic membrane, a process coordinated by MreB and/or its homologues \cite{DePedro2003}. There are two growth mechanisms. During elongation, cells maintain a constant diameter \cite{Billaudeau2017}, expanding their surface area primarily along the sidewall. During constriction, polar \ac{pg} synthesis initiates the formation of new polar caps \cite{Cooper1991, Wang2010_2}. This process is comparable for both gram-negative and gram-positive bacteria, despite their varying wall thicknesses \cite{Chang2014}. However, species-specific differences in wall architecture and thickness influence elongation dynamics (for example, variations in \ac{pg} assembly patterns and machinery organisation lead to distinct elongation behaviors in \ac{bsubtilis} and \ac{ecoli}, as shown by  \cite{Billaudeau2017}). Most rod-shaped bacteria obtain their elongation through MreB-dependent lateral growth. In contrast, a few species lacking an MreB system elongate at the poles using division machinery that remains active after division/constriction \cite{Daniel2003}. Beyond these biochemical processes, morphogenesis and \ac{pg} synthesis are mechanically sensitive. This indicates that growth patterns are adaptive and coupled to physical forces \cite{Si2015}, and spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection \cite{Chatterjee1988}.
 
@@ -253,158 +225,41 @@ Segregation of the origin region is unaffected by \ac{a22} treatment \cite{Karcz
 
 Bacterial morphogenesis is plastic and can be reprogrammed to change the growth and division axis \cite{denBlaauwen2018}.  \cite{Takeuchi2005} experimentally altered \ac{ecoli} morphologies without modifying any additional biochemical or genetic functions and thereby automatically altered cell motility, suggesting that cell shape is an evolutionary trait influencing nutrient uptake, cell division and segregation, adhesion, passive and active motility, predator avoidance, and cellular differentiation \cite{Young2006}. \cite{Young2006} also suggested that the earliest cells consisted of rods and filaments, with cocci being less common. More complex shapes oftenrequire distinct or additional cell-wall-machineries \cite{Zapun2008} or cytoskeletal components like crescentin the bacterial equivalent of intermediate filaments (IFs)\cite{Ausmees2003}. This hints that in the absence of an active, MreB-dependent shape-determining system, the default shape is spherical \cite{Jones2001}, whereas rod shape represents the simplest morphology mediated by \textit{mreB} systems.
 
-\paragraph{Growth}
-\begin{itemize}
-    \item \cite{Chang2014} cell elongation is comparable for gram-negative and gram-positive bacteria (\ac{bsubtilis} and \ac{ecoli}) despite their wall thickness
-    \item \cite{Cooper1991} \cite{Wang2010_2} \ac{pg} synthesis is spatially and temporally regulated. During elongation, cells grow at a constant diameter, expanding surface mainly along the sidewall. During constriction polar synthesis is initiated forming new polar caps
-    \item \cite{Billaudeau2017} Growth is MreB-dependent, maintaining constant diameter
-    \item \cite{Daniel2003} 2 ways maintaining rod shape: with/without MReB: A few rod-shaped bacteria have no MreB system. MreB-guided lateral wall growth or polar elongation
-    \item \cite{DePedro2003} new \ac{pg} is inserted in discrete patches along the lateral sidewall
-    \item 
-    \item \cite{Si2015} Bacterial morphogenesis and \ac{pg} synthesis are mechanically sensitive, showing that growth patterns are adaptive and coupled to physical forces.
-    \item \cite{Chatterjee1988} spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection.
-    \item \cite{Billaudeau2017} wall thickness influence elongation dynamics (species-specific coordination) (details if needed: in \ac{bsubtilis} and \ac{ecoli} \ac{pg} assembly, spatial pattern, wall thickness, and machinery organization differ, leading to distinct elongation dynamics )
-\end{itemize}
-
-\paragraph{Maintaining/Loosing Rod-shape}
-\begin{itemize}
-    \item \cite{Jones2001} MreB is responsible for cell width regulation and Mbl is responsible for linear axis regulation. Beyond rod-shaped bacteria.
-    \item \cite{Lleo1990} shape is balanced by two reaction i) wall elongation ii) septum formation. cocci shaped lost i) or are induced by mutations in i)
-    \item e.g. for lacking i): \ac{a22} treated cells \cite{IWAI2002}, \textit{rodZ} deletion mutants \cite{Shiomi2008} and \ac{mre} mutants \cite{Wachi1987} were found to induce spherical cells shape indicating that cell shape maintenance involves proteins encoded by the \ac{mre} like MreB or interacting with them
-    \item extension to point before: specifying what \ac{a22} is. \cite{Bean2009} \ac{a22} binds directly to nucleotide-free MreB, due to its high affinity to the nucleotide-binding pocket of MreB. Thereby disrupting MreB assembly
-    \item \cite{Garner2021} MreB filaments move circumferentially around rods of any width, but filament motion was isotropic in spherical cells, moving in all directions\todo{why are we citing this?}
-    \item Switch in or \denovo \ac{pg} synthesis is sufficient to regenerate the cell wall and restore a rod-shape morphology \cite{Huan2021} spherical to rod-shape  \cite{Kawai2014} L-form to rod-shape
-\end{itemize}
-
-\paragraph{Cell division}
-\begin{itemize}
-    \item \cite{Bramkamp2009} Two inhibitory systems regulates the assembly FtsZ \cite{Oliva2004}: i) Min system prevents division near poles and ii) nucleoid occlusion prevents cell division over the nucleoids
-    \item adding to first point \cite{Koch1995} \cite{Chatterjee1988} central FtsZ-ring assembly is favored by mechanical forces. Its regulation is thereby a combination of mechanical cues and biochemical regulation
-    \item FtsZ filaments are forming a ring (Z-ring) at division site \cite{Li2007} generating constriction force for division. The ring tension is regulating \ac{pg} synthesis \cite{Lan2007}
-    \item \cite{DenBlaauwen2008} divisome or septosome switches \ac{pg} synthesis from dispersed to a concentrated local to from new cell poles
-    \item \cite{Woldringh1987} \cite{Cooper1991} surface synthesis rate increase at the start of constriction, elongation and pole formation use distinct, spatially regulated \ac{pg} insertion modes, supporting the idea of separate elongation and division machineries (divisome/septosome)
-    \item \cite{Kruse2005} \cite{Gitai2005} MreB contributes in forming a bacterial mitotic-like machine and control Bacterial DNA segregation
-    \item \cite{Karczmarek2007} DNA and origin region segregation are not affected by the transition from rod to sphere after inhibition of Escherichia coli MreB by \ac{a22} \todo{do we really need this extra information?}
-    \item \cite{denBlaauwen2018} bacterial morphogenetic is plastic and can be reprogrammed changing growth and division axis \todo{@toqi do we really need this for modelling EMERGENT phenomena?}
-    \item \cite{Stewart2005} despite symmetric division aging and mortality can occur by asymmetric inheritance of cellular damage (older “mother” cell poles accumulate damage or growth defects over generations)
-\end{itemize}z
-
-\subsubsection{Rod vs other shape (To Rod or not to Rod?)}
-\paragraph{Rod-shape vs. other shape}
-\begin{itemize}
-    \item \cite{Young2006} shape is an evolutionary trait which influence nutrient uptake, cell division and segregation, adhesion, passive and active motility, predator avoidance, and cellular differentiation.
-    \item e.g. for point before: \cite{Takeuchi2005} changed \ac{ecoli} morphologies without altering any additional biochemical or genetic functions and automatically altered cell motility
-    \item Other shapes often request other or additional cell-wall-machineries \cite{Zapun2008} or cytoskeletal components like crescentin which are bacterial equivalent to intermediate filaments (IFs\cite{Ausmees2003}
-    \item to conclude: \cite{Jones2001} "We therefore suggest that a sphere is the default shape taken by cells in the absence of an active, mreB-dependent shape determining system, and that more complex shapes are usually determined in part by \textit{mreB} systems". \cite{Young2006} "It can be argued that the earliest cells consisted of "[...] rods and filaments with cocci being
-\end{itemize}
-
 \subsection{Reaction to Environmental Factors}
-
 Bacteria continuously sense, interpret and respond to environmental cues through a variety of physical, biochemical and behavioural mechanisms.
-One such mechanism is taxis, which is highly adapted to the species' environment. It enables the integration of multiple diverse external stimuli, such as chemicals (chemotaxis), light (phototaxis), oxygen (aerotaxis), temperature (thermotaxis), and magnetic fields (magnetotaxis). Hence, it allows for species-specific and highly adapted navigation strategies \cite{Krell2011}. Of these, chemotaxis is one of the most common and best studied. It is a receptor-mediated signalling network that integrates external chemical cues to modulate flagellar motion and control movement direction \cite{Nikita2009, Bourret2002}.
+One such mechanism is taxis, which is highly adapted to the species' environment. It enables the integration of multiple diverse external stimuli, such as chemicals (chemotaxis), light (phototaxis), oxygen (aerotaxis), temperature (thermotaxis), and magnetic fields (magnetotaxis). Hence, it allows for species-specific and highly adapted navigation strategies \cite{Krell2011}. Of these, chemotaxis is one of the most common and best studied. It is a receptor-mediated signalling network that integrates external chemical cues to controling movement direction \cite{Nikita2009, Bourret2002}.
 
-Guiding cells away from harmful conditions to more survival-friendly habitats, linking environmental sensing to survival and nutrient acquisition. Bacterial nutrient uptake is mediated by highly selective transporter systems (e.g., ABC transporters, TRAP systems, and PTS) that import sugars, amino acids, ions, carbon, nitrogen, iron, and lipids. Bacteria can also modulate cell envelope permeability and secrete enzymes to facilitate nutrient acquisition \cite{Davies2021, Niederweis2008, Tanaka2018, Li2025}. 
-Further, bacteria can acquire a significant amount of nutrients, dissolve inorganic sources, and modify their surroundings, competing with other microorganisms \cite{Caron1994}. Additionally, a diverse part of bacteria are predators and found in various environments, shaping microbial community structure and dynamics, through distinct predatory strategies with independent evolutionary origins \cite{Velicer2009, Rory2015}.
+Guiding cells away from harmful conditions to more survival-friendly habitats, linking environmental sensing to survival and nutrient acquisition. Bacterial nutrient uptake is mediated by highly selective transporter systems (e.g., ABC transporters, TRAP systems, and PTS) that import sugars, amino acids, ions, carbon, nitrogen, iron, and lipids. Bacteria can also modulate cell envelope permeability and secrete enzymes to facilitate nutrient acquisition \cite{Davies2021, Niederweis2008, Tanaka2018, Li2025}.
+Significant nutrient uptake can dissolve inorganic sources and modify the cell environment, competing with other microorganisms \cite{Caron1994}. Additionally, a diverse part of bacteria are predators and found in various environments, shaping microbial community structure and dynamics, through distinct predatory strategies with independent evolutionary origins \cite{Velicer2009, Rory2015}. 
 Motile chemotactic bacteria have an enhanced nutrient uptake rate compared to non-motile cells \cite{Watteaux2015}, highlighting the importance of movement and adherence in competitive and challenging environments.
+
 Bacteria employ different modes of motion depending on their morphology and appendages.
-Swimming cells are short, mononucleate, flagellated for planktonic motility \cite{Alberti1990}. The swimming motion of rod-shaped bacteria is regulated by shape and taxis \cite{Kong2014}, and the bending stiffness of the flagellar filament supports propulsion and reorientation during swimming, which remains constant over time \cite{Shen2022}. Most of the swimmers can differentiate into swarmer cells when growing on surfaces, increasing in cell length and number of flagella per cell \cite{Alberti1990}. 
-Swarming, in contrast to the directed, single-cell movement of swimming, swarming is a collective behavior in which individual cells suppress chemotaxis and instead exploit the dynamics of the group to continuously expand and acquire new territory \cite{Harshey2015}.
-Gliding is a flagella-independent mode of surface motility, relying on an outer-membrane complex that attaches to the substrate at fixed focal adhesion sites, enabling directional movement \cite{ContrerasM2024, Shrivastava2015}. Type IV pili generate retraction forces for twitching motility, pulling the cell across surfaces \cite{Chang2016}, and the non-Newtonian behavior of extracellular slime further enhances gliding by optimizing force transmission and energy use \cite{Shah2022}.
+Swimming cells are short, mononucleate, flagellated for planktonic motility \cite{Alberti1990}. The swimming motion of rod-shaped bacteria is regulated by shape and taxis \cite{Kong2014}, and the bending stiffness of the flagellar filament supports propulsion and reorientation during swimming, which remains constant over time \cite{Shen2022}. Most of the swimmers can differentiate into swarmer cells when growing on surfaces, increasing in cell length and number of flagella per cell \cite{Alberti1990, Harshey1994}. 
+Swarming, in contrast to the directed, single-cell movement of swimming, is a collective behavior in which individual cells suppress chemotaxis and instead exploit the dynamics of the group to continuously expand and acquire new territory \cite{Harshey2015, Kearns2010}.
+Twitching represents another form of appendage-generated movement. A Type IV pili generate retraction forces, pulling the cell across surfaces \cite{Chang2016}, and the non-Newtonian behavior of extracellular slime further enhances gliding by optimizing force transmission and energy use \cite{Shah2022}.
+Gliding is a flagella-independent mode of surface motility, relying on an outer-membrane complex that attaches to the substrate at fixed focal adhesion sites, enabling directional movement \cite{ContrerasM2024, Shrivastava2015}.
+Sliding describes passive surface spreading driven by cell growth and surfactant-mediated surface tension reduction rather than active appendage-based motility \cite{Kearns2010}.
 
+Cell appendages, in addition, are not only used for locomotion. Type IV pili \cite{Ellison2021, Maier2015} or flagella in general \cite{Haiko2013} are more than force-generating structures that coordinate bacterial movement; they also play an important role in adhesion and environmental interaction. This is mainly driven by physicochemical interactions: van der Waals, electrostatic, hydrophobic, and acid-base forces, whose strength is determined by the surface properties (charge, hydrophobicity, roughness) \cite{vanLoosdrecht1989, Hori2010}. It is a highly heterogeneous and dynamic process mediated by additional surface structures e.g. adhesins, fimbriae, cadherins and other surface proteins, allowing specific binding to \ac{ecm} components \cite{BrettFinlay2014, Berne2018} attachment to a host \cite{Beachey1981, Vaca2019}, formation of mechanical links between neighboring cells \cite{Whitfield2006} or pulling cells together and promoting microcolony formation \cite{Ellison2021}. In some rare cases, bacteria can fuse when they remain in close proximity for extended periods \cite{Kudryashev2011}.
 
+\todo{think to put the following paragraph somewhere else?}
+Beyond environmental sensing and movement, bacterial survival also depends on adaptive responses to changing conditions. When encountering new nutrients, bacteria enter a lag phase. An adaptive phase in which there is no division. During this dormant stage, metabolic adaptation and macromolecular synthesis occur to prepare for rapid cell growth and robust cell division \cite{Bertrand2019}. This response is heterogeneous and asynchronous, providing it an adaptive advantage \cite{Senkei2007}.
+Further, they evolved an adaptive resistance mechanism against bacteriophages \ac{crispr} \cite{Duckworth2002, Barrangou2007} (\cite{Borges2017} some protein families have anti-CRISPR function)
 
-\subsubsection{Taxi}
-\begin{itemize}
-    \item \cite{Krell2011} multiple diverse taxis systems integrating chemical (chemotaxis), light (phototaxis), oxygen (aerotaxis), temperature (thermotaxis), and magnetic fields (magnetotaxis) stimuli. Bacterial taxis are versatile and highly evolutionary adapted to the species environment.
-    \item \cite{Nikita2009, Bourret2002} Chemotaxis, is the most common and best studied form of taxis. It is a receptor-mediated signaling network that integrates external chemical cues to modulate flagellar motion and control movement direction.
-\end{itemize}
+\todo{\cite{Kearns2010} fig. 1. good movement review}
 
-\subsubsection{Nutrient uptake/distribution}
-\begin{itemize}
-    \item \cite{Davies2021, Niederweis2008, Tanaka2018} Bacterial nutrient uptake is mediated by highly selective transporter systems (e.g., ABC transporters, TRAP systems, and PTS) that import sugars, amino acids, ions, carbon, nitrogen, iron, and lipids; bacteria can also modulate cell envelope permeability and secrete enzymes to facilitate nutrient acquisition
-    \item \cite{Li2025} matrix-producing improve access to nutrients, supporting growth under nutrient-limited conditions
-    \item \cite{Watteaux2015} Motile chemotactic bacteria have an enhances nutrient uptake rate. 2.2 times faster than non-motile 
-    \item \cite{Caron1994} Bacteria acquire significant nitrogen and phosphorus from dissolved inorganic nutrients, competing with phytoplankton and influencing the microbial loop; overall contribution to ocean nutrient uptake is poorly understood
-    \item \cite{Velicer2009,Rory2015} a diverse part of bacterial are predators and found in various environments, plaing a significant role in microbial community structure and dynamics, with different modes of predation and independent evolutionary origins
-\end{itemize}
-
-\subsubsection{Movement (swimming, gliding, recipe for swarming)}
-\begin{itemize}
-    \item \textbf{swimming}
-    \item \cite{Shen2022} bending stiffness of the flagellar filament support propulsion and reorientation during swimming, it does not vary
-    \item \cite{Kong2014} swimming motion of rod-shaped magnetotactic bacteria is regulated by shape and magnetism
-    \item \cite{Alberti1990} swimming cells are short, mononucleate, flagellated for planktonic motility. Can differentiate to swamers, when growing on and surface
-    \item \textbf{swarming}
-    \item \cite{Harshey2015} compared to swimming which direct a single through chemotaxis to find nutrients and avoid toxic environments swarming is a collective motion suppressing chemotaxis and using the dynamics of their collective motion to continuously expand and acquire new territory
-    \item \textbf{gliding}
-    \item \cite{ContrerasM2024} gliding relies on a outer-membrane complex that attaches the substrate at fixed sites of focal adhesion enabling directional gliding motility
-    \item \cite{Chang2016}type IV pili generates retraction force for twitching motility, pulling the cell across surfaces 
-    \item \cite{Shah2022} model shows that non-Newtonian slime behavior enhances gliding motility by optimizing force transmission and energy use
-    \item \cite{Shrivastava2015} \ac{flavo} and \textit{Myxococcus xanthus} are gliding rod-shpaed flagelaten-free spicies. Their gliding relies on rotary motors driving mobile surface filaments, providing continuous propulsion analogous to a snowmobile
-\end{itemize}
-
-\subsubsection{Cell-Cell Forces/Adhesion/Friction}
-\begin{itemize}
-    \item \textbf{adhesion}
-    \item \cite{vanLoosdrecht1989, Hori2010} Bacterial adhesion is driven by physicochemical interactions: van der Waals, electrostatic, hydrophobic, and acid-base forces and it's strength is determined by both surfaces properties (charge, hydrophobicity, roughness) determine
-    \item \cite{BrettFinlay2014, Berne2018} Adhesins, pili/fimbriae, and surface proteins mediate the binding to \ac{ecm} components/ adhesion is a highly heterogeneous and dynamic process. Binding to a host \cite{Beachey1981, Vaca2019}
-    \item \cite{Vaca2019,Beachey1981} Gram-negative bacteria (eg. \ac{ecoli}) express outer membrane proteins (adhesins) which allow them to attach to various hosts
-    \item Type IV pili \cite{Ellison2021} or flagella in general \cite{Haiko2013} are more than force-generating structures that coordinate bacterial movement, they play an important role in the direct adhesion, and environmental interaction
-    \item \textbf{cell-cell forces}
-    \item some bacteria can fuse to each other when they are long enough at close distance \cite{Kudryashev2011}
-    \item \todo{More about friction/physical cell-cell interactions}
-    \item \cite{Wang2010, Wang2010_protocol} MreB and \ac{pg} contributes to nearly equal parts to the stiffness of a cell
-
-\end{itemize}
-
-\subsubsection{Adaptation}
-\begin{itemize}
-    \item \cite{Bertrand2019} bacteria encountering new nutrients have an adaptive phase: lag-phase in which there is now division. While this dormant stage metabolic adaptation and macromolecular synthesis occur to prepare  for rapid cell growth and robust cell division
-    \item \cite{Senkei2007} Bacterial populations exhibit heterogeneous, asynchronous responses in lag times, swimming speeds, or surface motility activation for adaptive advantage
-    \item \cite{Barrangou2007} CRISPR provides adaptive resistance against bacteriophages \cite{Duckworth2002} in prokaryotes (\cite{Borges2017} some protein families have anti-CRISPR function)
-    \item \cite{Amir2014_2} elastic deformations after pulse-like force do not change the shape permanently. Plastic deformations occur adapting to external bending forces causing the cell walls to grow differentially leading to persisting plastic deformations
-    \item \cite{Kim2003, Lai2009} Swarm-cell have elevated resistance to multiple antibiotics
-    \item \cite{Huan2021, Errington2020, Licking2000, Barák2019} a variety of bacteria can form spores in order to survive under unfavorable environmental conditions. Germination, these spores restore vegetative morphology
-    \item \cite{Licking2000, Jose2016, Branda2001} certain bacteria from fruiting bodies, a multicellular aggregation of differentiated cells, where spore formation is preferred
-\end{itemize}
 
 \subsection{Living as a Community}
 
-\subsubsection{Quorum Sensing}
-\begin{itemize}
-    \item \cite{Stephen2007} Bacteria produce and secrete small signaling molecules called autoinducers called Quorum sensing. Coordinate gene expression collectively, enabling adaptive group behavior
-    \item \cite{MorenoGmez2023} Quorum sensing allows bacteria to collectively process information enhancing decision accuracy through population-level coordination
-    \item \cite{Hense2007, Boyer2009}  Quorum sensing not only within single species, but also interspecies and cross-kingdom (e.g., bacteria-host, bacteria-virus). \cite{Liu2025} Highlights some applications in biomedical and environmental technologies 
-    \item \cite{Solano2014} Quorum sensing plays a key role in mature biofilms for e.g transition from a sessile community to a free-living state
-\end{itemize}
+While living in a dense community, crowding and cell-cell forces act together to constrain growth, linking intracellular density with external mechanical stress \cite{Alric2022}. These mechanical interactions can reshape cellular behaviour and gradients, enabling long-term adaptive diversification \cite{Badyaev2025}. Alongside this mechanical collective response, bacteria produce and secrete small signalling molecules called autoinducers, a process known as \ac{qs}. \ac{qs} enables cells to coordinate collective gene expression and adaptive group behaviour. Thereby, processing information at the population level and enhancing decision-making accuracy through coordinated responses \cite{Stephen2007, MorenoGmez2023}.  \ac{qs} does not only mediate communication within a single species; it also mediates communication between species and across kingdoms, such as in bacteria-host or bacteria-virus systems. \cite{Hense2007, Boyer2009, Liu2025}. It is a key mechanism in mature biofilms for coordinating differentiation, for example, enabling transition from a sessile community to a free-living state \cite{Solano2014}.
 
-\subsubsection{Differentiation}
-\begin{itemize}
-    \item \textbf{swarming}
-    \item \cite{Harshey1994} swarming is active and rapid surface motility. Swarmer cell is are usually long, multinucleate, hyperflagellated bacterial cell
-    \item \textbf{sporilation}
-    \item some bacterial can have lifecycle like Myxococcus xanthus \cite{Jose2016}  \ac{bsubtilis} \cite{Branda2001} for e.g task division and environmental adaptation
-    \item \cite{Licking2000}  Myxococcus xanthus have starvation-dependent and starvation-independent pathways of sporulation and produce structurally different spores
-    \item \cite{Barák2019} \ac{bsubtilis} can divide asymmetrically during sporulation one cell differentiation process 
-    \item \textbf{fruiting bodies}
-    \item \cite{Huan2021} Myxococcus xanthus sporulat and make fruiting bodies. 
-    \item \textbf{task division}
-    \item \cite{Lopez2010} Extracellular signalling in \ac{bsubtilis} orchestrates diverse, co-existing cell fates via specific signal-sensor-regulator cascades, enabling a community of genetically identical cells to specialize into distinct roles.
-    \item \cite{Flemming2016} cellular differentiation/task division in biofilms (matrix production, motility, sporulation)
+Cells have adapted a variety of multicellular strategies to survive in a community. One previously mentioned example is the swarming cell, which is a long, multinucleate, hyperflagellated bacterial cell that enables active and rapid surface motility. In this state, cells exhibit increased resistance to multiple antibiotics \cite{Kim2003, Lai2009}. Cellular differentiation not only helps the community to survive, but also serves other purposes. e.g., the distinction between matrix producers and surfactin-producing cells helps stabilise, repair, and coordinate colonial expansion \cite{Lopez2010, Flemming2016}.
+Furthermore, various bacteria can form spores to survive under harsh environmental conditions. When these spores germinate, they restore vegetative morphology \cite{Huan2021, Errington2020, Licking2000, Barák2019, Jose2016, Branda2001}. The sporulation process itself is highly individual for the species. Some bacteria have starvation-dependent and starvation-independent pathways \cite{Licking2000}, while others can divide asymmetrically during sporulation \cite{Barák2019}. Some bacteria have developed even more complex life cycles, leading to the formation of fruiting bodies. These are multicellular aggregations of differentiated cells where spore formation is favoured \cite{Licking2000, Jose2016, Branda2001}.
+Together, these multicellular behaviors contribute to the emergent lifestyle observed in biofilms.The initial colonization and persistence of bacteria on different surfaces are determined by bacterial features and the properties of the biomaterial, with bacterial adhesion underlying this phenomenon \cite{Dunne2002, Ong1999, van Loosdrecht1989, Hori2010}. Competition for surface colonization drives strategies that target adhesion, signaling, and matrix dynamics, allowing mixed-species biofilms to regulate neighbor entry and community structure \cite{Rendueles2012}.
+Despite the strong competition, biofilms are a favored lifestyle. In addition to the differentiation effect, mixed-species enhances survival and stress tolerance mediated by antimicrobial-resistant keystone species \cite{Wisnu2022, Flemming2016}. Three-dimensional biofilm growth and matrix architecture facilitate the collective capture of resources. \cite{Nadell2017, Arjes2021}.
+The dense package of cells in a biofilm relies on spatial organization, which is driven primarily by the division of labor \cite{Huan2021, Errington2020, Licking2000, Barák2019, Jose2016, Branda2001}, self-structuring \cite{Lopez2010, Flemming2016}, mechanical interaction, and architectural transitions \cite{Flemming2016}. Confinement and mechanical forces further drive the transition of biofilms from 2D to 3D structures, a process dependent on cell elasticity, elastic interactions, and friction between bacteria and the surrounding agarose medium \cite{Duvernoy2018, Grant2014}.
 
-\end{itemize}
 
-\subsubsection{Biofilms}
-\begin{itemize}
-    \item \cite{Dunne2002} Bacterial adhesion is a dynamic, regulated process that underlies biofilm formation and persistence on diverse surfaces
-    \item \cite{Flemming2016} “Biofilms: an emergent form of bacterial life” names emergent phenomena: Enhanced stress tolerance, Collective resource capture, Spatial organization and division of labor, Self-structuring and architecture formation
-    \item \cite{Wisnu2022} Mixed-species biofilms have enhanced survival, mediated by antimicrobial-resistant keystone species
-    \item \cite{Ong1999, vanLoosdrecht1989, Hori2010} initial colonization and biofilm potential is governed by the bacterial features and biomaterial properties
-    \item \cite{Rendueles2012} Competition in biofilms has a key role. Rivality in surface-colonisation leads to strategies that target adhesion, signalling and matrix dynamics allowing mixed-species biofilms to regulate neighbour entry and community structure
-    \item following points are already in text
-    \item \cite{Duvernoy2018} shaping early biofilm morphogenesis by asymmetric adhesion of rod-shaped bacteria to surfaces early biofilm transition architecture from 2D to 3D structure when confinement and under mechanical forces.
-    \item \cite{Grant2014} Elasticity of the bacterial cells and elastic interactions plus the frictional forces between the bacteria and the surrounding agarose medium are key features of the 2D to 3D transition
-\end{itemize}
 
 \section{Mathematical \& Computational Frameworks}
 
@@ -425,6 +280,7 @@ Gliding is a flagella-independent mode of surface motility, relying on an outer-
     \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
     \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
 \end{itemize}
+
 
 \subsection{Modeling Aspects}
 
