@@ -204,6 +204,15 @@ stuff which is important for us.}
     \item Brief outlook to other forms
 \end{enumerate}
 
+\begin{figure}
+    \centering
+    % \includegraphics[width=0.5\textwidth]{figures/studies-scatterplots.pdf}%
+    \includegraphics[width=0.5\textwidth]{figures/studies-over-time.pdf}
+    \caption{
+        TODO UPDATE FIGURES!
+    }
+\end{figure}
+
 \subsection{Cell Wall, Cytoskeleton \& Interplay}
 
 The shape of bacteria is mainly determined by their envelope and its growth. Most bacteria are surrounded by peptidoglycan \ac{pg}, a mesh-like macromolecule of glycan strands that are crosslinked via short peptides, which is chemically unique to bacteria~\cite{Cava2014, Amir2014, Cochrane2020}. This essential structure mechanically resists high turgor pressure, giving the cell its specific shape, isolating and regulating environmental uptake, which is indispensable for bacterial survival~\cite{Cochrane2020, vanTeeffelen2018}.
@@ -260,30 +269,9 @@ Despite the strong competition, biofilms are a favored lifestyle. In addition to
 The dense package of cells in a biofilm relies on spatial organization, which is driven primarily by the division of labor \cite{Huan2021, Errington2020, Licking2000, Barák2019, Jose2016, Branda2001}, self-structuring \cite{Lopez2010, Flemming2016}, mechanical interaction, and architectural transitions \cite{Flemming2016}. Confinement and mechanical forces further drive the transition of biofilms from 2D to 3D structures, a process dependent on cell elasticity, elastic interactions, and friction between bacteria and the surrounding agarose medium \cite{Duvernoy2018, Grant2014}.
 
 
-
 \section{Mathematical \& Computational Frameworks}
-
-\paragraph{Spatial Colony Organization}
-\begin{itemize}
-    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
-    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
-    \item \cite{Jin2020} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
-    \item \cite{Trejo2013} \ac{bsubtilis} pellicles is mechanically driven process, where extracellular matrix elastity leads to wrinkled morphology
-    \item \cite{Li2025, vanGestel2015} biofilm expansion relies on division of labor. Surface-colonising regulated by cell differentiation. i) matrix-producers forming aligned bundels(“van Gogh bundles”) which physical properties set the expansion rate of the colony ii) surfactin-producers reduce surface friction.
-    \item \cite{Dong2022} mechanical organization contributes to community robustness. biofilm self-healing mechanisme by reconnecting and regrowing van Gogh bundles 
-    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia)
-\end{itemize}
-
-\paragraph{Toqi suggest those for modeling section}
-\begin{itemize}
-    \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
-    \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
-    \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
-\end{itemize}
-
-
-\subsection{Modeling Aspects}
-
+\subsection{Modeling Requirements}
+\subsubsection{Taxonomy of Dynamic Processes}
 \begin{itemize}
     \item aspect groups (C), (CC), (CE) are related to computational approaches\\
         for c in cells\\
@@ -374,9 +362,116 @@ Especially for the parameters which facilitate growth, we can assume that there 
 inheritance from one generation to the next but only a stochastic distribution of parameters from
 which the new value is drawn (see supplement).
 
-\subsection{Computational Modeling Frameworks}
 
-\subsubsection{Modeling Frameworks}
+\subsubsection{Spatial Organization: Swarming, Clustering, and Pellicles}
+\begin{itemize}
+    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
+    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
+    \item \cite{Jin2020} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
+    \item \cite{Trejo2013} \ac{bsubtilis} pellicles is mechanically driven process, where extracellular matrix elastity leads to wrinkled morphology
+    \item \cite{Li2025, vanGestel2015} biofilm expansion relies on division of labor. Surface-colonising regulated by cell differentiation. i) matrix-producers forming aligned bundels(“van Gogh bundles”) which physical properties set the expansion rate of the colony ii) surfactin-producers reduce surface friction.
+    \item \cite{Dong2022} mechanical organization contributes to community robustness. biofilm self-healing mechanisme by reconnecting and regrowing van Gogh bundles 
+    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia)
+\end{itemize}
+
+\paragraph{Toqi suggest those for modeling section}
+\begin{itemize}
+    \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
+    \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
+    \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
+\end{itemize}
+
+\subsection{Computational Models}
+\subsubsection{Why ABMs are THE tool}
+
+Since the beginning of this decade, multiple tools have emerged which are able to describe living
+systems on a cellular individual-based approach in various details.
+A good reason for choosing a framework over a purpose-built solution is to follow the Findability,
+Accessibility, Interoperability and Reuse) FAIR principles by \cite{Wilkinson2016}.
+These criteria have been designed to improve the overall infrastructure surrounding (re)usability of
+scholarly data and methods.
+In our previous work, we investigated their differences and features and capacity to model
+individual behaviour of cells \cite{Pleyer2023}.
+Using one of these existing toolkits means that already existing functionality can be used to
+develop own models and the produced research results can be fed back to the library for fellow
+researchers to reuse.
+This begs the question, which of these existing models is able to support the long list of aspects
+that we set out to describe with the experimentally gathered evidence.
+
+\subsubsection{General-Purpose ABMs}
+\paragraph{To Rod .. or not to Rod}
+
+\begin{itemize}
+    \item \cite{Ghaffarizadeh2018} PhysiCell; no rods
+    \item \cite{Swat2012} CompuCell; uses \ac{cpm}; no rods
+    \item \cite{Cooper2020} Chaste; cell-centre and vertex-based; no rods
+    \item \cite{Starru2014} Morpheus, uses \ac{cpm}; no rods
+    \item \cite{Wei2013} BNSim; cells are spheres
+    \item \cite{Kreft1998,Kreft2001,Lin2023} (BacSim) "Individual-based modelling of biofilms Free"
+    \item \cite{Wei2013} BNSim; cells are spheres
+    \item \cite{Li2019} NUFEB \textbf{TODO}
+    \item \cite{Hoehme2010} Tisim/CellSys \textbf{TODO}
+    \item AgentCell~\cite{Emonet2005} no rods
+    \item COMETS~\cite{Harcombe2014} grid-based approach
+    \item McComedy~\cite{Bogdanowski2022} only spherical
+    \item MultiCellSim~\cite{Dang2020} only lattice points (or spheres depending on interpretation)
+    \item Netlogo~\cite{Banitz2015,vanderWal2013} very generalized \ac{abm}, not particular for biology (citations are only for specific applications, not Netlogo itself)
+    \item NUFEB~\cite{Li2019} only soft spheres
+\end{itemize}
+
+Of the most popular frameworks, most do not support rod-shaped bacteria out of the box.
+The very popular Cellular Potts Model (CPM) \cite{Graner1992} is mostly applied in 2D and only
+represents cells as lattice grid points.
+Since CompuCell3D \cite{Swat2012} exclusively builds upon the CPM, it can not model rod-shaped
+bacteria.
+PhysiCell \cite{Ghaffarizadeh2018} was designed to answer questions surrounding cancer research and
+currently only supports spherical agents.
+Chaste \cite{Cooper2020} was also designed for cancer research but further targets the heart and
+tissues.
+Naturally its Agent-Based Model supports cell-centre and vertex-based models but no rod shapes.
+Morpheus \cite{Starru2014} also employs the CPM along with other spatial representations such as
+vertex-based models or PDEs but has no support for Rod-Shaped bacteria.
+Even purpose-built solutions such as BNSim \cite{Wei2013} which specifically targets bacterial
+networks, assumes a simplified spherical representation for their bacterial agents.
+
+
+\subsubsection{Integrated Modeling Tools}
+\paragraph{With Rods (check and mention them)}
+\begin{itemize}
+    \item \cite{Breitwieser2021,breitwieser_biodynamo_2022} BioDynamo, cylinders
+    \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
+    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
+    \item \cite{Gutirrez2017} \texttt{gro} only rods
+    \item \cite{Pleyer2025} \texttt{cellular\_raza} flexible rods
+    \item \cite{Lardon2011} iDynomics
+    \item \cite{GoiMoreno2015} DiSCUS cylinders
+    \item \cite{Rudge2012} CellModeller, has rod-shaped support and some predefined chemical reactions etc.
+\end{itemize}
+
+As we have seen, many frameworks do not provide existing functionality for rod-shaped bacteria.
+However, some others do have various levels of support.
+Biocellion \cite{Kang2014} can model agents with cylindrical interaction potentials but does not
+model any of the MreB-related bending and rigidity or polar interactions.
+They acknowledge this shortcoming: "Mapping a cell to multiple agents is also necessary to
+separately model subcellular compartments [..].
+However, Biocellion does not yet support this." \cite{Kang2014}
+BSim2.0 represents cells as rigid capsular cells made from a cylindrical center part and two
+half-spheres, which are placed at the ends of the cylinder to round out the shape.
+In order to calculate interactions between cells, possible overlaps are determined and minimized,
+thus determining the position values of the next iteration step.
+It also accounts for many other phenomena, which are displayed in \textbf{TODO replace}.
+BSim does not consider bending forces for individual cells or polar interactions.
+The \texttt{gro} programming language was designed to simulate the growth of colonies and cell-cell
+communication.
+Its "physics computation has been optimized for rigid rod-shaped bodies, like E. coli bacteria"
+\cite{Gutirrez2017}.
+They recognize two types of forces which are acting on the cellular agents:
+\textit{Local forces} which are calculated between adjacent bacteria and a \textit{global force}
+which pushes bacteria outwards of the colony.
+The latter of these is a phenomenological implementation of the observed colony expansion and the
+associated central pressure with it.
+This assumption may yield incorrect results for sparsely populated cases.
+The engine is limited to 2D and does not consider polar interactions or bending of the rods.
 
 \begin{table}
     \centering
@@ -412,119 +507,17 @@ which the new value is drawn (see supplement).
             Extracellular & (R) Reactions, (Diff) Diffusion\\
             Motility & (R) Random/Stochastic Motion\\
             External Forces & (F) Fluid/Flow\\
-            Other & (Fix) Fixed model choice, (U) User definable\\
+            Other & (U) User definable\\
             \bottomrule
         \end{tabularx}
     \end{minipage}%
 \end{table}
 
-Since the beginning of this decade, multiple tools have emerged which are able to describe living
-systems on a cellular individual-based approach in various details.
-A good reason for choosing a framework over a purpose-built solution is to follow the Findability,
-Accessibility, Interoperability and Reuse) FAIR principles by \cite{Wilkinson2016}.
-These criteria have been designed to improve the overall infrastructure surrounding (re)usability of
-scholarly data and methods.
-In our previous work, we investigated their differences and features and capacity to model
-individual behaviour of cells \cite{Pleyer2023}.
-Using one of these existing toolkits means that already existing functionality can be used to
-develop own models and the produced research results can be fed back to the library for fellow
-researchers to reuse.
-This begs the question, which of these existing models is able to support the long list of aspects
-that we set out to describe with the experimentally gathered evidence.
 
-\subsubsection{Many general-purpose Frameworks lack explicit support for Rod-Shaped Bacteria}
-\begin{itemize}
-    \item \cite{Ghaffarizadeh2018} PhysiCell; no rods
-    \item \cite{Swat2012} CompuCell; uses \ac{cpm}; no rods
-    \item \cite{Cooper2020} Chaste; cell-centre and vertex-based; no rods
-    \item \cite{Starru2014} Morpheus, uses \ac{cpm}; no rods
-    \item \cite{Wei2013} BNSim; cells are spheres
-    \item \cite{Kreft1998,Kreft2001,Lin2023} (BacSim) "Individual-based modelling of biofilms Free"
-    \item \cite{Wei2013} BNSim; cells are spheres
-    \item \cite{Li2019} NUFEB \textbf{TODO}
-    \item \cite{Hoehme2010} Tisim/CellSys \textbf{TODO}
-    \item AgentCell~\cite{Emonet2005} no rods
-    \item COMETS~\cite{Harcombe2014} grid-based approach
-    \item McComedy~\cite{Bogdanowski2022} only spherical
-    \item MultiCellSim~\cite{Dang2020} only lattice points (or spheres depending on interpretation)
-    \item Netlogo~\cite{Banitz2015,vanderWal2013} very generalized \ac{abm}, not particular for biology (citations are only for specific applications, not Netlogo itself)
-    \item NUFEB~\cite{Li2019} only soft spheres
-\end{itemize}
-
-Of the most popular frameworks, most do not support rod-shaped bacteria out of the box.
-The very popular Cellular Potts Model (CPM) \cite{Graner1992} is mostly applied in 2D and only
-represents cells as lattice grid points.
-Since CompuCell3D \cite{Swat2012} exclusively builds upon the CPM, it can not model rod-shaped
-bacteria.
-PhysiCell \cite{Ghaffarizadeh2018} was designed to answer questions surrounding cancer research and
-currently only supports spherical agents.
-Chaste \cite{Cooper2020} was also designed for cancer research but further targets the heart and
-tissues.
-Naturally its Agent-Based Model supports cell-centre and vertex-based models but no rod shapes.
-Morpheus \cite{Starru2014} also employs the CPM along with other spatial representations such as
-vertex-based models or PDEs but has no support for Rod-Shaped bacteria.
-Even purpose-built solutions such as BNSim \cite{Wei2013} which specifically targets bacterial
-networks, assumes a simplified spherical representation for their bacterial agents.
-
-\subsubsection{Varying Support for Rod-Shaped Bacteria}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{example-image-a}
-    \includegraphics[width=0.3\textwidth]{example-image-b}
-    \includegraphics[width=0.3\textwidth]{example-image-c}
-    \caption{TODO: Snapshots of Modeling Frameworks}
-\end{figure}
-
-As we have seen, many frameworks do not provide existing functionality for rod-shaped bacteria.
-However, some others do have various levels of support.
-Biocellion \cite{Kang2014} can model agents with cylindrical interaction potentials but does not
-model any of the MreB-related bending and rigidity or polar interactions.
-They acknowledge this shortcoming: "Mapping a cell to multiple agents is also necessary to
-separately model subcellular compartments [..].
-However, Biocellion does not yet support this." \cite{Kang2014}
-BSim2.0 represents cells as rigid capsular cells made from a cylindrical center part and two
-half-spheres, which are placed at the ends of the cylinder to round out the shape.
-In order to calculate interactions between cells, possible overlaps are determined and minimized,
-thus determining the position values of the next iteration step.
-It also accounts for many other phenomena, which are displayed in \textbf{TODO replace}.
-BSim does not consider bending forces for individual cells or polar interactions.
-The \texttt{gro} programming language was designed to simulate the growth of colonies and cell-cell
-communication.
-Its "physics computation has been optimized for rigid rod-shaped bodies, like E. coli bacteria"
-\cite{Gutirrez2017}.
-They recognize two types of forces which are acting on the cellular agents:
-\textit{Local forces} which are calculated between adjacent bacteria and a \textit{global force}
-which pushes bacteria outwards of the colony.
-The latter of these is a phenomenological implementation of the observed colony expansion and the
-associated central pressure with it.
-This assumption may yield incorrect results for sparsely populated cases.
-The engine is limited to 2D and does not consider polar interactions or bending of the rods.
-
-\paragraph{With Rods}
-\begin{itemize}
-    \item \cite{Breitwieser2021,breitwieser_biodynamo_2022} BioDynamo, cylinders
-    \item \cite{Gorochowski2012,Matyjaszkiewicz2017} BSim; has rods
-    \item \cite{Kang2014} (Biocellion) only cylindrically-shaped potentials
-    \item \cite{Gutirrez2017} \texttt{gro} only rods
-    \item \cite{Pleyer2025} \texttt{cellular\_raza} flexible rods
-    \item \cite{Lardon2011} iDynomics
-    \item \cite{GoiMoreno2015} DiSCUS cylinders
-    \item \cite{Rudge2012} CellModeller, has rod-shaped support and some predefined chemical reactions etc.
-\end{itemize}
-
-\paragraph{Additional Information}
-\begin{itemize}
-    \item \cite{Grimm2006,Grimm2010} \textbf{TODO} "A standard protocol for describing individual-based and
-        agent-based models" and update: \cite{Jang2012}
-\end{itemize}
-
-
-\subsection{Purpose-Built Models}
-
-\textbf{soft-matter keywords}
+\subsubsection{Soft Matter}
+\textbf{keywords:}
 filamentous, nematic order
 
-\subsubsection{Soft-matter Studies}
 \begin{itemize}
     \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
         (no division, no intracellular dynamics, no growth)
@@ -540,6 +533,8 @@ filamentous, nematic order
     \item \cite{Boyer2011} "Buckling instability in ordered bacterial colonies"
 \end{itemize}
 
+\subsubsection{Hydrodynamics (Swimming,Flagella,Nematodynamics)}
+\subsubsection{Integrative (Growth,Division,Differentiation)}
 \subsubsection{Others}
 \begin{itemize}
     \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
@@ -555,20 +550,56 @@ filamentous, nematic order
         "morphogenetic noise"
 \end{itemize}
 
-\begin{table}
-    \centering
-    \begin{tabular}{llll}
-        \toprule
-        Study       & Rod Type      & Growth        & etc.\\
-        \midrule
-        \cite{Duman2018} ...\\
-        \bottomrule
-    \end{tabular}
-    \caption{TODO}
-\end{table}
-
-\subsubsection{Promising Candidates}
+\subsection{Parameter Estimation \& Techniques}
+\subsubsection{Papers which did some sort of parameter estimation}
 \begin{itemize}
+    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
+        literature values/quantified
+    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
+    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
+    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
+        rod-shaped bacteria
+    \item \textbf{TODO add more of the soft-matter papers}
+    \item \textbf{TODO see if any of the frameworks do have estimates}
+\end{itemize}
+
+\subsubsection{Strategies for comparing simulation with data}
+\begin{itemize}
+    \item Simply do not compare: "Biolgically-inspired"
+    \item Select specific feature to investigate
+    \begin{itemize}
+        \item Compare particular value (possibly with uncertainty)
+        \item Compare multiple values
+        \item Compare distribution
+    \end{itemize}
+    \item Fix some parameters from literature
+    \item directly fit parameters from data (rare)
+\end{itemize}
+
+\subsubsection{Common Methods used for Analysis}
+\begin{itemize}
+    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
+        cellpose~\cite{Stringer2020}
+    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
+        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
+    \item Optimization method \textbf{TODO Citation}
+    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
+        \cite{Heinrich2025}
+\end{itemize}
+
+\subsection{Remaining Challenges}
+
+\paragraph{Additional Information}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/Bacterial_morphology_diagram.png}
+    \caption{\textbf{TODO Mark where models have been constructed.}}
+\end{figure}
+
+\subsubsection{Unsorted Stuff}
+\begin{itemize}
+    \item \cite{Grimm2006,Grimm2010} \textbf{TODO} "A standard protocol for describing individual-based and
+        agent-based models" and update: \cite{Jang2012}
     \item \cite{Abar2017} "Agent Based Modelling and Simulation tools: A review of the state-of-art software"
     \item other generic frameworks exist, which may allow to model the desired functions
     \item \cite{Winkle2017} "Modeling mechanical interactions in growing populations of rod-shaped bacteria"
@@ -616,53 +647,6 @@ filamentous, nematic order
     \item \cite{Schwarzendahl2022} "Do active nematic self-mixing dynamics help growing bacterial colonies to maintain local genetic diversity?"
 \end{itemize}
 
-\subsection{Parameter Estimation \& Techniques}
-
-\subsubsection{Papers which did some sort of parameter estimation}
-\begin{itemize}
-    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
-        literature values/quantified
-    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
-    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
-    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
-        rod-shaped bacteria
-    \item \textbf{TODO add more of the soft-matter papers}
-    \item \textbf{TODO see if any of the frameworks do have estimates}
-\end{itemize}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/studies-scatterplots.pdf}%
-    \includegraphics[width=0.5\textwidth]{figures/studies-over-time.pdf}
-    \caption{
-        TODO FAKE FIGURES. Peak at $\approx2008$ likely comes from CRISPR Cas.
-    }
-\end{figure}
-
-\subsubsection{Strategies for comparing simulation with data}
-\begin{itemize}
-    \item Simply do not compare: "Biolgically-inspired"
-    \item Select specific feature to investigate
-    \begin{itemize}
-        \item Compare particular value (possibly with uncertainty)
-        \item Compare multiple values
-        \item Compare distribution
-    \end{itemize}
-    \item Fix some parameters from literature
-    \item directly fit parameters from data (rare)
-\end{itemize}
-
-\subsubsection{Common Methods used for Analysis}
-\begin{itemize}
-    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
-        cellpose~\cite{Stringer2020}
-    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
-        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
-    \item Optimization method \textbf{TODO Citation}
-    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
-        \cite{Heinrich2025}
-\end{itemize}
-
 \section{Discussion}
 
 \begin{itemize}
@@ -673,8 +657,6 @@ filamentous, nematic order
     \item completely missing: interaction of bacteria with other cell types (i.e. epithelial cells,
         plant cells, fungi, etc.)
 \end{itemize}
-
-\section{Conclusion}
 
 \begin{itemize}
     \item Large amount of biological processes that are relevant for spatial patterns
