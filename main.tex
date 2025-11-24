@@ -215,13 +215,19 @@ stuff which is important for us.}
 
 \subsection{Cell Wall, Cytoskeleton \& Interplay}
 
+\todo{Switch from "Rod-shaped" to "elongated" to cover wider range of shapes}
+
 The shape of bacteria is mainly determined by their envelope and its growth. Most bacteria are surrounded by peptidoglycan \ac{pg}, a mesh-like macromolecule of glycan strands that are crosslinked via short peptides, which is chemically unique to bacteria~\cite{Cava2014, Amir2014, Cochrane2020}. This essential structure mechanically resists high turgor pressure, giving the cell its specific shape, isolating and regulating environmental uptake, which is indispensable for bacterial survival~\cite{Cochrane2020, vanTeeffelen2018}.
 
 Although rod morphology is physically defined by \ac{pg}, the rod shape requires cytoskeletal support. At the end of the last century, an actin-like protein MreB was discovered~\cite{Erickson2001}.  It's crystal structure \cite{Lowe2017_lj} and filament-forming dynamic \cite{Dersch2020} show strong similarity to actin. Additional actin-homologues, MreC, and MreD were later identified \cite{vandenEnt2001} playing an important role in shaping the rod.
 
-MreB filaments make/form a spiral-like or banded pattern along the length of the cell, moving circumferentially around the rod, coordinating \ac{pg} synthesis \cite{Garner2021, White2012, López2006}. Thus, MreB polymers' dynamics actively restrict and/or control the mobility of cell wall elongation complexes \cite{DEscobar2011}, thereby linking cytoskeletal organisation with local changes of cell shape \cite{Shi2018}. MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, contributing to a rod-shaped \cite{vanTeeffelen2018, Olshausen2013}. The transmembrane protein, like RodZ, modulates MreB curvature preference \cite{Bratton2018}, altering MerB localisation and density. 
+MreB filaments make/form a spiral-like or banded pattern along the length of the cell, moving circumferentially around the rod, coordinating \ac{pg} synthesis \cite{Garner2021, White2012, López2006}. Thus, MreB polymers' dynamics actively restrict and/or control the mobility of cell wall elongation complexes \cite{DEscobar2011}, thereby linking cytoskeletal organisation with local changes of cell shape \cite{Shi2018}. MreB filaments are attracted to regions of negative Gaussian curvature and excluded from regions of positive Gaussian curvature, such as the cell poles, thus driving maintenance of the rod-shape \cite{vanTeeffelen2018, Olshausen2013}. The transmembrane protein, like RodZ, modulates MreB curvature preference \cite{Bratton2018}, altering MerB localisation and density.
+
+\todo{Add Stiffness due to MreB here! "Counteracts curvature"}
 
 \subsection{Growth, Maintenance \& Division}
+
+\todo{Only use i) and ii) if they are reused within the text and it is clear which one is referred to.}
 
 Cell growth relies on the spatial and temporal regulation of \ac{pg} synthesis by different cytoskeletal molecules. The cell wall elongation is achieved by new \ac{pg} being inserted in discrete patches at the surface of the cytoplasmic membrane, a process coordinated by MreB and/or its homologues \cite{DePedro2003}. There are two growth mechanisms. During elongation, cells maintain a constant diameter \cite{Billaudeau2017}, expanding their surface area primarily along the sidewall. During constriction, polar \ac{pg} synthesis initiates the formation of new polar caps \cite{Cooper1991, Wang2010_2}. This process is comparable for both gram-negative and gram-positive bacteria, despite their varying wall thicknesses \cite{Chang2014}. However, species-specific differences in wall architecture and thickness influence elongation dynamics (for example, variations in \ac{pg} assembly patterns and machinery organisation lead to distinct elongation behaviors in \ac{bsubtilis} and \ac{ecoli}, as shown by  \cite{Billaudeau2017}). Most rod-shaped bacteria obtain their elongation through MreB-dependent lateral growth. In contrast, a few species lacking an MreB system elongate at the poles using division machinery that remains active after division/constriction \cite{Daniel2003}. Beyond these biochemical processes, morphogenesis and \ac{pg} synthesis are mechanically sensitive. This indicates that growth patterns are adaptive and coupled to physical forces \cite{Si2015}, and spatial variation of mechanical stress in the cell also contributes to growth patterns, shape maintenance, and division site selection \cite{Chatterjee1988}.
 
@@ -253,10 +259,8 @@ Cell appendages, in addition, are not only used for locomotion. Type IV pili \ci
 
 \todo{think to put the following paragraph somewhere else?}
 Beyond environmental sensing and movement, bacterial survival also depends on adaptive responses to changing conditions. When encountering new nutrients, bacteria enter a lag phase. An adaptive phase in which there is no division. During this dormant stage, metabolic adaptation and macromolecular synthesis occur to prepare for rapid cell growth and robust cell division \cite{Bertrand2019}. This response is heterogeneous and asynchronous, providing it an adaptive advantage \cite{Senkei2007}.
-Further, they evolved an adaptive resistance mechanism against bacteriophages \ac{crispr} \cite{Duckworth2002, Barrangou2007} (\cite{Borges2017} some protein families have anti-CRISPR function)
-
-\todo{\cite{Kearns2010} fig. 1. good movement review}
-
+Further, they evolved an adaptive resistance mechanism against bacteriophages \ac{crispr} \cite{Duckworth2002, Barrangou2007} (\cite{Borges2017} some protein families have anti-CRISPR function).
+\todo{The accumulation of resistance is important for the survival of the whole community.}
 
 \subsection{Living as a Community}
 
@@ -264,9 +268,26 @@ While living in a dense community, crowding and cell-cell forces act together to
 
 Cells have adapted a variety of multicellular strategies to survive in a community. One previously mentioned example is the swarming cell, which is a long, multinucleate, hyperflagellated bacterial cell that enables active and rapid surface motility. In this state, cells exhibit increased resistance to multiple antibiotics \cite{Kim2003, Lai2009}. Cellular differentiation not only helps the community to survive, but also serves other purposes. e.g., the distinction between matrix producers and surfactin-producing cells helps stabilise, repair, and coordinate colonial expansion \cite{Lopez2010, Flemming2016}.
 Furthermore, various bacteria can form spores to survive under harsh environmental conditions. When these spores germinate, they restore vegetative morphology \cite{Huan2021, Errington2020, Licking2000, Barák2019, Jose2016, Branda2001}. The sporulation process itself is highly individual for the species. Some bacteria have starvation-dependent and starvation-independent pathways \cite{Licking2000}, while others can divide asymmetrically during sporulation \cite{Barák2019}. Some bacteria have developed even more complex life cycles, leading to the formation of fruiting bodies. These are multicellular aggregations of differentiated cells where spore formation is favoured \cite{Licking2000, Jose2016, Branda2001}.
+
 Together, these multicellular behaviors contribute to the emergent lifestyle observed in biofilms.The initial colonization and persistence of bacteria on different surfaces are determined by bacterial features and the properties of the biomaterial, with bacterial adhesion underlying this phenomenon \cite{Dunne2002, Ong1999, vanLoosdrecht1989, Hori2010}. Competition for surface colonization drives strategies that target adhesion, signaling, and matrix dynamics, allowing mixed-species biofilms to regulate neighbor entry and community structure \cite{Rendueles2012}.
 Despite the strong competition, biofilms are a favored lifestyle. In addition to the differentiation effect, mixed-species enhances survival and stress tolerance mediated by antimicrobial-resistant keystone species \cite{Wisnu2022, Flemming2016}. Three-dimensional biofilm growth and matrix architecture facilitate the collective capture of resources. \cite{Nadell2017, Arjes2021}.
 The dense package of cells in a biofilm relies on spatial organization, which is driven primarily by the division of labor \cite{Huan2021, Errington2020, Licking2000, Barák2019, Jose2016, Branda2001}, self-structuring \cite{Lopez2010, Flemming2016}, mechanical interaction, and architectural transitions \cite{Flemming2016}. Confinement and mechanical forces further drive the transition of biofilms from 2D to 3D structures, a process dependent on cell elasticity, elastic interactions, and friction between bacteria and the surrounding agarose medium \cite{Duvernoy2018, Grant2014}.
+
+\todo{include branching and vortex-like patterns}\\
+\todo{include cell conjugation}\\
+\todo{Look for repulsive forces between bacteria}
+
+\subsubsection{Spatial Organization: Swarming, Clustering, and Pellicles}
+\todo{Filter out which are modeling and not and include in text}
+\begin{itemize}
+    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
+    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
+    \item \cite{Jin2020,Jin2020_2} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
+    \item \cite{Trejo2013} \ac{bsubtilis} pellicles is mechanically driven process, where extracellular matrix elastity leads to wrinkled morphology
+    \item \cite{Li2025, vanGestel2015} biofilm expansion relies on division of labor. Surface-colonising regulated by cell differentiation. i) matrix-producers forming aligned bundels(“van Gogh bundles”) which physical properties set the expansion rate of the colony ii) surfactin-producers reduce surface friction.
+    \item \cite{Dong2022} mechanical organization contributes to community robustness. biofilm self-healing mechanisme by reconnecting and regrowing van Gogh bundles 
+    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia)
+\end{itemize}
 
 
 \section{Mathematical \& Computational Frameworks}
@@ -282,7 +303,10 @@ The dense package of cells in a biofilm relies on spatial organization, which is
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figures/concept-figure.png}
-    \caption{TODO}
+    \caption{
+        TODO
+        \todo{\cite{Kearns2010} fig. 1. good movement review, maybe include figure}
+    }
     \label{fig:concept-figure-aspects}
 \end{figure}
 
@@ -307,7 +331,7 @@ The dense package of cells in a biofilm relies on spatial organization, which is
         \toprule
         &\textbf{(C) Cellular}\\
         \midrule
-        \asp & Rod-Shaped Mechanics &
+        \asp & Spatial Representation &
             Rod-shaped bacteria are flexible rods which are able to freely move around (off-lattice
             approach) \cite{Takeuchi2005,Ursell2014,Amir2014_2}.\\
         \asp & Movement &
@@ -322,9 +346,6 @@ The dense package of cells in a biofilm relies on spatial organization, which is
             The formation and continuation of van Gogh bundles is driven by cell division
             \cite{vanGestel2015}.
             Bacteria can form multilayers during their growth phase \cite{Duvernoy2018}.\\
-        \asp & Variable Parameters &
-            Parameters for individual cells are not fixed values but rather taken from a
-            distribution \cite{Koutsoumanis2013}.\\
         &\textbf{(CC) Cell-Cell Interactions}\\
         \midrule
         \asp & Adhesion &
@@ -333,7 +354,7 @@ The dense package of cells in a biofilm relies on spatial organization, which is
             The interaction between rods can be polarized \cite{Duvernoy2018}.\\
         \asp & Friction &
             Friction between cells \cite{Grant2014} can be asymmetrical \cite{Doumic2020}.\\
-        &\textbf{(DC) Domain-Cell Interactions}\\
+        &\textbf{(EC) Environment-Cell Interactions}\\
         \midrule
         \asp & External Forces &
             Bacteria tend to stick to surfaces \cite{vanLoosdrecht1989}.
@@ -346,6 +367,9 @@ The dense package of cells in a biofilm relies on spatial organization, which is
     \label{table:simulation-aspects}
     \caption{TODO}
 \end{table}
+
+\todo{Variable Parameters}
+Parameters for individual cells are not fixed values but rather taken from a distribution \cite{Koutsoumanis2013}.
 
 In order to describe the multicellular systems we looked at in the preceding sections, multiple
 different aspects of cellular behaviour and their interactions with the surrounding domain need to
@@ -363,17 +387,6 @@ inheritance from one generation to the next but only a stochastic distribution o
 which the new value is drawn (see supplement).
 
 
-\subsubsection{Spatial Organization: Swarming, Clustering, and Pellicles}
-\begin{itemize}
-    \item \cite{Ingham2008} Swarming behavior with collective motility and chemotactic interactions dominates colony organization, leading to dynamic branching and vortex-like patterns
-    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
-    \item \cite{Jin2020} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
-    \item \cite{Trejo2013} \ac{bsubtilis} pellicles is mechanically driven process, where extracellular matrix elastity leads to wrinkled morphology
-    \item \cite{Li2025, vanGestel2015} biofilm expansion relies on division of labor. Surface-colonising regulated by cell differentiation. i) matrix-producers forming aligned bundels(“van Gogh bundles”) which physical properties set the expansion rate of the colony ii) surfactin-producers reduce surface friction.
-    \item \cite{Dong2022} mechanical organization contributes to community robustness. biofilm self-healing mechanisme by reconnecting and regrowing van Gogh bundles 
-    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia)
-\end{itemize}
-
 \paragraph{Toqi suggest those for modeling section}
 \begin{itemize}
     \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
@@ -381,7 +394,45 @@ which the new value is drawn (see supplement).
     \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
 \end{itemize}
 
-\subsection{Computational Models}
+\subsection{Physics Models}
+
+\subsubsection{Soft Matter}
+\textbf{keywords:}
+filamentous, nematic order
+
+\begin{itemize}
+    \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
+        (no division, no intracellular dynamics, no growth)
+    \item \cite{Joshi2019} "The interplay between activity and filament flexibility determines the
+        emergent properties of active nematics"
+    \item \cite{Modica2024} "Soft confinement of self-propelled rods: simulation and theory"
+    \item \cite{Peruani2006} "Nonequilibrium clustering of self-propelled rods"
+    \item \cite{Saintillan2013} "Active suspensions and their nonlinear models" (suspensions of
+        self-propelled microorganisms, dynamics of chemotactically responsive)
+    \item \cite{Wensink2012} "Meso-scale turbulence in living fluids" (contains coarse-graining)
+    \item \textbf{TODO look for more mixed-morphology (rods \& spheres) papers}
+    \item BacSim-T6SS~\cite{Lin2023} "A subcellular biochemical model for T6SS dynamics reveals winning competitive strategies"
+    \item \cite{Boyer2011} "Buckling instability in ordered bacterial colonies"
+\end{itemize}
+
+\subsubsection{Hydrodynamics (Swimming,Flagella,Nematodynamics)}
+\subsubsection{Integrative (Growth,Division,Differentiation)}
+\subsubsection{Others}
+\begin{itemize}
+    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
+    \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
+        Numerical model for rigid rods which move with flagella)
+    \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by
+        mesoscale hydrodynamic simulations"
+    \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
+        have been determined, in part, to obtain the most efficient shape for moving through liquids."
+    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
+        have in-silico model
+    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
+        "morphogenetic noise"
+\end{itemize}
+
+\subsection{ABMs}
 \subsubsection{Why ABMs are THE tool}
 
 Since the beginning of this decade, multiple tools have emerged which are able to describe living
@@ -513,42 +564,6 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \end{minipage}%
 \end{table}
 
-
-\subsubsection{Soft Matter}
-\textbf{keywords:}
-filamentous, nematic order
-
-\begin{itemize}
-    \item \cite{Duman2018} "Collective dynamics of self-propelled semiflexible filaments"
-        (no division, no intracellular dynamics, no growth)
-    \item \cite{Joshi2019} "The interplay between activity and filament flexibility determines the
-        emergent properties of active nematics"
-    \item \cite{Modica2024} "Soft confinement of self-propelled rods: simulation and theory"
-    \item \cite{Peruani2006} "Nonequilibrium clustering of self-propelled rods"
-    \item \cite{Saintillan2013} "Active suspensions and their nonlinear models" (suspensions of
-        self-propelled microorganisms, dynamics of chemotactically responsive)
-    \item \cite{Wensink2012} "Meso-scale turbulence in living fluids" (contains coarse-graining)
-    \item \textbf{TODO look for more mixed-morphology (rods \& spheres) papers}
-    \item BacSim-T6SS~\cite{Lin2023} "A subcellular biochemical model for T6SS dynamics reveals winning competitive strategies"
-    \item \cite{Boyer2011} "Buckling instability in ordered bacterial colonies"
-\end{itemize}
-
-\subsubsection{Hydrodynamics (Swimming,Flagella,Nematodynamics)}
-\subsubsection{Integrative (Growth,Division,Differentiation)}
-\subsubsection{Others}
-\begin{itemize}
-    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
-    \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
-        Numerical model for rigid rods which move with flagella)
-    \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by
-        mesoscale hydrodynamic simulations"
-    \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
-        have been determined, in part, to obtain the most efficient shape for moving through liquids."
-    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
-        have in-silico model
-    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
-        "morphogenetic noise"
-\end{itemize}
 
 \subsection{Parameter Estimation \& Techniques}
 \subsubsection{Papers which did some sort of parameter estimation}
