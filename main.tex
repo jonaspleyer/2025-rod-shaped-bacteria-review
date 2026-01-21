@@ -2,6 +2,8 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \usepackage{arxiv}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage[hidelinks]{hyperref}       % hyperlinks
@@ -649,6 +651,35 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \item \cite{Valdez2025} "Biomechanical modeling of spatiotemporal bacteria-phage competition"
     \item \cite{Schwarzendahl2022} "Do active nematic self-mixing dynamics help growing bacterial colonies to maintain local genetic diversity?"
 \end{itemize}
+
+\subsection{Computational Abstractions}
+
+
+\begin{algorithm}
+    \caption{Schematic Main Loop of Simulation Frameworks}
+    \label{algorithm:generalized-main-loop}
+    \begin{algorithmic}[1]
+        \Procedure{main\_loop}{$t_0$, $t_\text{max}$, $\Delta t$}
+        \State \texttt{cells} $\gets$ \texttt{initialize\_agents()} \Comment{Define initial state}
+        \State \texttt{$\mathscr{E}$} $\gets$ \texttt{initialize\_environment()}
+        \State $t\gets t_0$
+        \While{$t<t_\text{max}$}
+            \For{$c$ in \texttt{cells}} \Comment{(C) Cellular}
+                \State \texttt{update\_internal\_states}($c, t, \Delta t$)
+            \EndFor
+            \State \texttt{interacting\_cells} $\gets$ \texttt{determine\_interacting\_cells(cells)}
+            \For{$c_1,c_2$ in \texttt{interacting\_cells}} \Comment{(CC) Cell-Cell}
+                \State \texttt{perform\_interaction}($c_1, c_2, t, \Delta t$)
+            \EndFor
+            \For{$c$ in \texttt{cells}}
+                \State \texttt{react\_to\_environment}($c$, $\mathscr{E}, t, \Delta t$) \Comment{(CE) Cell-Environment}
+            \EndFor
+            \State \texttt{update\_environment}($\mathscr{E}, t, \Delta t$) \Comment{(E) Environment}
+            \State $t\gets t + \Delta t$ \Comment{Increment Time}
+        \EndWhile
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
 
 \section{Discussion}
 
