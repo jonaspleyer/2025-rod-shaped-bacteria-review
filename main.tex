@@ -295,7 +295,7 @@ Additionally, in mixed-species biofilms, antimicrobial-resistant keystone specie
 
 \subsection{Physics Models}
 
-\subsubsection{Soft Matter}
+\subsubsection{Active Matter as a Continuum}
 \textbf{keywords:}
 filamentous, nematic order
 
@@ -312,10 +312,20 @@ filamentous, nematic order
     \item \textbf{TODO look for more mixed-morphology (rods \& spheres) papers}
     \item BacSim-T6SS~\cite{Lin2023} "A subcellular biochemical model for T6SS dynamics reveals winning competitive strategies"
     \item \cite{Boyer2011} "Buckling instability in ordered bacterial colonies"
+    \item \cite{Volfson2008} TODO; continuum model, equations of nematodynamics \cite{Doi1988-ad}
+    \begin{align}
+        \partial_t \rho + \partial_z (\rho \nu) &= \alpha \rho\\
+        \partial_t q + \nu \partial_z q &= B(1-q^2) \partial_z \nu\\
+        \partial_t(\rho \nu) + \nu \partial_z (\rho \nu) &= - \partial_z p - \mu \rho \nu
+    \end{align}
+    \item \cite{You2018} Hard-Rod model, continuous model
+    \begin{itemize}
+        \item shows how single-cell model can be translated into continuum model in large-scale edge
+            case
+    \end{itemize}
+    \item \cite{Schwarzendahl2022} "Do active nematic self-mixing dynamics help growing bacterial colonies to maintain local genetic diversity?"
 \end{itemize}
 
-\subsubsection{Hydrodynamics (Swimming,Flagella,Nematodynamics)}
-\subsubsection{Integrative (Growth,Division,Differentiation)}
 \subsubsection{Others}
 \begin{itemize}
     \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
@@ -331,7 +341,55 @@ filamentous, nematic order
         "morphogenetic noise"
 \end{itemize}
 
-\subsection{ABMs}
+\subsection{Individual-based Models}
+
+\textbf{Further studies with \ac{abm} and rod-shaped bacteria}
+\begin{itemize}
+    \item \cite{Winkle2017} "Modeling mechanical interactions in growing populations of rod-shaped bacteria" \textit{only "stiff" bacteria, growth inside mother machine}
+    \item \cite{Winkle2021} "Emergent spatiotemporal population dynamics with cell-length control of synthetic microbial consortia" \textit{this continues the publication before, also has lattice-based model}
+    \item \cite{Doumic2020} "A purely mechanical model with asymmetric features for early morphogenesis of rod-shaped bacteria micro-colony" \textit{"stiff" bacteria with overlaps, does some parameter estimation}
+    \begin{itemize}
+        \item This is a really good paper for referencing
+        \item no bending in mathematical model
+        \item Compare distributions of "Read-Outs" to data
+        \item uses steric force (see also previously \cite{Trejo2013})
+    \end{itemize}
+    \item \cite{Grant2014} purposely-built model written in `C++`
+    \begin{itemize}
+        \item describes bacteria as collection of overlapping spheres
+        \item spheres are coupled by non-linear springs (Euler-Bernoulli dynamic beam theory);
+        This assumption is unfounded; they show however that it does not alter their results in this
+        case
+        \item only model repulsive forces; no attraction, adhesion
+        \item investigate transition from 2D to 3D colony
+    \end{itemize}
+    \item \cite{Cho2007} only 2D, no bending, no parameter estimation; based on work done in 
+        \cite{Jnsson2005}
+    \item \cite{Storck2014} TODO;
+    41 Parameters for various cases;
+    only 8 parameters taken from literature values/quantified;
+    generated growth rate randomly (normal distribution), but for each growth step; this is
+      stochastically equivalent but numerically slightly more intense;
+    \item \cite{Kong2014} TODO "Swimming motion of rod-shaped magnetotactic bacteria: the effects of
+        shape and growing magnetic moment"
+    \begin{itemize}
+        \item single-cell study
+        \item magnetotactic bacterium, swimming in viscuous liquid
+    \end{itemize}
+    \item \cite{Constantino2016} "Helical and rod-shaped bacteria swim in helical trajectories with
+        little additional propulsion from helical shape"
+    \begin{itemize}
+        \item single-cell study
+    \end{itemize}
+    \item \cite{Starru2007} TODO very interesting FEM-based model
+    \begin{itemize}
+        \item single-cell study
+        \item has on-lattice and off-lattice approach
+        \item has bending of cells
+        \item also shows some type of vortex formation
+    \end{itemize}
+    \item \cite{Valdez2025} "Biomechanical modeling of spatiotemporal bacteria-phage competition"
+\end{itemize}
 \subsubsection{Why ABMs are THE tool}
 
 Since the beginning of this decade, multiple tools have emerged which are able to describe living
@@ -348,7 +406,15 @@ researchers to reuse.
 This begs the question, which of these existing models is able to support the long list of aspects
 that we set out to describe with the experimentally gathered evidence.
 
-\subsubsection{General-Purpose ABMs}
+\textbf{TODO Include them}
+\begin{itemize}
+    \item \cite{Abar2017} "Agent Based Modelling and Simulation tools: A review of the state-of-art software"
+    \item other generic frameworks exist, which may allow to model the desired functions
+    \item \cite{Grimm2006,Grimm2010} \textbf{TODO} "A standard protocol for describing individual-based and
+        agent-based models" and update: \cite{Jang2012}
+\end{itemize}
+
+\subsubsection{The Geometric Challenge (rename this)}
 \paragraph{To Rod .. or not to Rod}
 
 \begin{itemize}
@@ -463,21 +529,9 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \end{minipage}%
 \end{table}
 
-
-\subsection{Parameter Estimation \& Techniques}
-\subsubsection{Papers which did some sort of parameter estimation}
-\begin{itemize}
-    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
-        literature values/quantified
-    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
-    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
-    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
-        rod-shaped bacteria
-    \item \textbf{TODO add more of the soft-matter papers}
-    \item \textbf{TODO see if any of the frameworks do have estimates}
-\end{itemize}
-
-\subsubsection{Strategies for comparing simulation with data}
+\subsection{Bridging Experiment and Simulations}
+\subsubsection{Extracting Information (about Morphology etc.)}
+\paragraph{Strategies for comparing simulation with data}
 \begin{itemize}
     \item Simply do not compare: "Biolgically-inspired"
     \item Select specific feature to investigate
@@ -490,7 +544,22 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \item directly fit parameters from data (rare)
 \end{itemize}
 
-\subsubsection{Common Methods used for Analysis}
+\subsection{Parameter Estimation - Applications and Techniques}
+
+\paragraph{Papers which did some sort of parameter estimation}
+\begin{itemize}
+    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
+        literature values/quantified
+    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
+    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
+    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
+        rod-shaped bacteria
+    \item \cite{Doumic2020} "A purely mechanical model with asymmetric features for early morphogenesis of rod-shaped bacteria micro-colony" \textit{"stiff" bacteria with overlaps, does some parameter estimation (see also section before)}
+    \item \textbf{TODO add more of the soft-matter papers}
+    \item \textbf{TODO see if any of the frameworks do have estimates}
+\end{itemize}
+
+\paragraph{Common Methods used for Analysis}
 \begin{itemize}
     \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
         cellpose~\cite{Stringer2020}
@@ -693,6 +762,12 @@ which the new value is drawn (see supplement).
 \renewcommand{\thesubsection}{S\arabic{subsection}}
 
 \section{Supplementary Material}
+\subsection{Other unsorted Stuff}
+\begin{itemize}
+    \item \cite{Martins2015} "'miSimBa' — A simulator of synthetic time-lapsed microscopy images of
+        bacterial cells"
+\end{itemize}
+
 \subsection{Inheritance of Growth-Relevant Parameters}
 
 We consider a distribution of parameters $rho(x)$ for
