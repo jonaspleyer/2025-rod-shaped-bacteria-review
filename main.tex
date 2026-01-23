@@ -413,7 +413,7 @@ that we set out to describe with the experimentally gathered evidence.
         agent-based models" and update: \cite{Jang2012}
 \end{itemize}
 
-\subsubsection{The Geometric Challenge (rename this)}
+\subsubsection{Few \acp{abm} have support for rod shapes}
 \paragraph{To Rod .. or not to Rod}
 
 \begin{itemize}
@@ -528,19 +528,6 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \end{minipage}%
 \end{table}
 
-\section{Common Building Blocks (Behaviour)}
-\begin{itemize}
-    \item aspect groups (C), (CC), (CE) are related to computational approaches\\
-        for c in cells\\
-        for c1 in cells: for c2 in cells: calculate\_interaction(c1, c2);\\
-        for c in cells; interact\_with\_domain(c, domain);
-    \item summarize what we have learned from biology and from computational approaches
-    \item identify common subgroups, called aspects that are shared between the various models
-    \item building blocks in nature:
-        physical entities (objects of physical extension),
-        in software: behaviour (components which describe effects)
-\end{itemize}
-
 \subsection{Computational Abstractions}
 
 
@@ -585,6 +572,19 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     }
     \label{fig:concept-figure-aspects}
 \end{figure}
+
+\subsection{Shared Aspects (Behaviour)}
+\begin{itemize}
+    \item aspect groups (C), (CC), (CE) are related to computational approaches\\
+        for c in cells\\
+        for c1 in cells: for c2 in cells: calculate\_interaction(c1, c2);\\
+        for c in cells; interact\_with\_domain(c, domain);
+    \item summarize what we have learned from biology and from computational approaches
+    \item identify common subgroups, called aspects that are shared between the various models
+    \item building blocks in nature:
+        physical entities (objects of physical extension),
+        in software: behaviour (components which describe effects)
+\end{itemize}
 
 \begin{itemize}
     \item biological phenomena have been summarized before
@@ -660,6 +660,7 @@ Especially for the parameters which facilitate growth, we can assume that there 
 inheritance from one generation to the next but only a stochastic distribution of parameters from
 which the new value is drawn (see supplement).
 
+\section{Methods \& Challenges}
 \subsection{AI Assisted Model Development}
 \subsubsection{Strategy}
 \begin{itemize}
@@ -736,9 +737,9 @@ which the new value is drawn (see supplement).
 \end{table}
 
 \subsection{Bridging Experiment and Simulations}
-\subsubsection{Extracting Information (about Morphology etc.)}
 \paragraph{Strategies for comparing simulation with data}
 \begin{itemize}
+    \item Extracting Information (about Morphology etc.)
     \item Simply do not compare: "Biolgically-inspired"
     \item Select specific feature to investigate
     \begin{itemize}
@@ -776,7 +777,7 @@ which the new value is drawn (see supplement).
         \cite{Heinrich2025}
 \end{itemize}
 
-\subsection{Remaining Challenges}
+\subsection{Open Questions}
 
 \paragraph{Additional Information}
 \begin{figure}
