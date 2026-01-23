@@ -216,6 +216,14 @@ stuff which is important for us.}
 \end{figure}
 
 \subsection{Cell Wall, Cytoskeleton \& Interplay}
+\textbf{This should be inserted somewhere}
+\begin{itemize}
+    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
+        "morphogenetic noise"; interesting study about how the detailed mechanisms of growth in
+        rod-like bacteria work
+    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model, model
+        individual surface growth of one bacterium)
+\end{itemize}
 
 The shape of bacteria is mainly determined by their envelope and its growth. Most bacteria are surrounded by peptidoglycan \ac{pg}, a mesh-like macromolecule of glycan strands that are crosslinked via short peptides, which is chemically unique to bacteria~\cite{Cava2014, Amir2014, Cochrane2020}. This essential structure mechanically resists high turgor pressure, giving the cell its specific shape, isolating and regulating environmental uptake, which is indispensable for bacterial survival~\cite{Cochrane2020, vanTeeffelen2018}.
 
@@ -278,24 +286,15 @@ Additionally, in mixed-species biofilms, antimicrobial-resistant keystone specie
 
 \subsubsection{Spatial Organization - Modelling papers remaining}
 \begin{itemize}
-    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics.
+    \item \cite{Starru2007} while non-chemical, physical cell-cell interactions drive emergent collective motion patterns such as vortices and streams. Cell shape as the length-to-width ratio controls the level of clustering thereby strongly influencing swarm dynamics. \todo{WRONG CITATION HERE?}
     \item \cite{Jin2020,Jin2020_2} adhesion, friction, and cell stiffness influence colony morphology- stronger cell-cell adhesion leads to denser, slower-growing biofilms, while weaker adhesion promotes faster spreading
     \item \cite{Li2025} AGB modeling \cite{vanGestel2015} biological properties already mentioned
-    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia)
+    \item \cite{Buka1987} "For example, injection of a flux of a liquid crystal between two close parallel plates (viscous fingering) causes orientation of the molecules to couple with the flow, with the resulting emergence of dendritic patterns." (Wikipedia) \todo{put this into "active matter" section?}
 \end{itemize}
 
 
 \section{Mathematical \& Computational Frameworks}
-\paragraph{Toqi suggest those for modeling section}
-\begin{itemize}
-    \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
-    \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
-    \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
-\end{itemize}
-
-\subsection{Physics Models}
-
-\subsubsection{Active Matter as a Continuum}
+\subsection{Active Matter as a Continuum}
 \textbf{keywords:}
 filamentous, nematic order
 
@@ -324,25 +323,21 @@ filamentous, nematic order
             case
     \end{itemize}
     \item \cite{Schwarzendahl2022} "Do active nematic self-mixing dynamics help growing bacterial colonies to maintain local genetic diversity?"
+    \item \cite{Moreau2018} theoretical study abut asymptotic coarse-graining model for slender rods, biofilaments, and flagella
 \end{itemize}
 
-\subsubsection{Others}
+\subsection{Swimming}
 \begin{itemize}
-    \item \cite{Rosenberger1978} "Surface growth in rod-shaped bacteria" (Mathematical Model)
     \item \cite{Hsu2009} "A 3D Motile Rod-Shaped Monotrichous Bacterial Model" (Mathematical \&
-        Numerical model for rigid rods which move with flagella)
+        Numerical model for cylindrical (rigid) rods which move with flagella)
     \item \cite{Hu2015} "swimming properties of an E. coli-type model bacterium are investigated by
         mesoscale hydrodynamic simulations"
     \item \cite{Cooper2006} "we conjecture that the current observed shape of these bacteria may
         have been determined, in part, to obtain the most efficient shape for moving through liquids."
-    \item \cite{Schuech2019} \textbf{TODO study this in more detail} take into account curvature;
-        have in-silico model
-    \item \cite{Cylke2023} growth of \ac{ecoli} might be super-exponential; quantitative analysis of
-        "morphogenetic noise"
+    \item \cite{Schuech2019} study movement of cells in liquid; curvature vs elongation; take into account curvature; have in-silico model
 \end{itemize}
 
 \subsection{Individual-based Models}
-
 \textbf{Further studies with \ac{abm} and rod-shaped bacteria}
 \begin{itemize}
     \item \cite{Winkle2017} "Modeling mechanical interactions in growing populations of rod-shaped bacteria" \textit{only "stiff" bacteria, growth inside mother machine}
@@ -390,7 +385,11 @@ filamentous, nematic order
     \end{itemize}
     \item \cite{Valdez2025} "Biomechanical modeling of spatiotemporal bacteria-phage competition"
 \end{itemize}
+
 \subsubsection{Why ABMs are THE tool}
+\begin{itemize}
+    \item \cite{Nagarajan2022} Agent-Based Modeling of Microbial Communities \todo{use contents of this review}
+\end{itemize}
 
 Since the beginning of this decade, multiple tools have emerged which are able to describe living
 systems on a cellular individual-based approach in various details.
@@ -529,57 +528,7 @@ The engine is limited to 2D and does not consider polar interactions or bending 
     \end{minipage}%
 \end{table}
 
-\subsection{Bridging Experiment and Simulations}
-\subsubsection{Extracting Information (about Morphology etc.)}
-\paragraph{Strategies for comparing simulation with data}
-\begin{itemize}
-    \item Simply do not compare: "Biolgically-inspired"
-    \item Select specific feature to investigate
-    \begin{itemize}
-        \item Compare particular value (possibly with uncertainty)
-        \item Compare multiple values
-        \item Compare distribution
-    \end{itemize}
-    \item Fix some parameters from literature
-    \item directly fit parameters from data (rare)
-\end{itemize}
-
-\subsection{Parameter Estimation - Applications and Techniques}
-
-\paragraph{Papers which did some sort of parameter estimation}
-\begin{itemize}
-    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
-        literature values/quantified
-    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
-    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
-    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
-        rod-shaped bacteria
-    \item \cite{Doumic2020} "A purely mechanical model with asymmetric features for early morphogenesis of rod-shaped bacteria micro-colony" \textit{"stiff" bacteria with overlaps, does some parameter estimation (see also section before)}
-    \item \textbf{TODO add more of the soft-matter papers}
-    \item \textbf{TODO see if any of the frameworks do have estimates}
-\end{itemize}
-
-\paragraph{Common Methods used for Analysis}
-\begin{itemize}
-    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
-        cellpose~\cite{Stringer2020}
-    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
-        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
-    \item Optimization method \textbf{TODO Citation}
-    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
-        \cite{Heinrich2025}
-\end{itemize}
-
-\subsection{Remaining Challenges}
-
-\paragraph{Additional Information}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/Bacterial_morphology_diagram.png}
-    \caption{\textbf{TODO Mark where models have been constructed.}}
-\end{figure}
-
-\section{Common Building Blocks}
+\section{Common Building Blocks (Behaviour)}
 \begin{itemize}
     \item aspect groups (C), (CC), (CE) are related to computational approaches\\
         for c in cells\\
@@ -593,28 +542,6 @@ The engine is limited to 2D and does not consider polar interactions or bending 
 \end{itemize}
 
 \subsection{Computational Abstractions}
-In order to provide a useful lens through which computational frameworks can be studied and constructed, we first decompose the complex underlying biological reality into discrete simulatable aspects of behaviour.
-This approach can be generalized to numerous other cellular systems by following the same steps.
-In our approach, we do not split building blocks by physical entities as is often done in an object-oriented approach but rather identify common types of behaviour.
-This conceptual distinction is important since physical building blocks such as the cell membrane
-will play important roles in various processes such as physical interactions, nutrient uptake or mechanical flexibility.
-We propose a taxonomy that categorizes the modeling requirements into four distinct types: (C)
-Cellular Processes, (CC) Cell-Cell Interactions, (CE) Cell-Environment Interactions and (E) Environmental dynamics.
-
-At the most fundamental level are the Cellular (C) aspects. These define the "agent" itself—its internal state, its specific rod-shaped mechanics, and the autonomous rules governing its life cycle, such as growth rates and division thresholds. These properties exist independently of the colony; they are the intrinsic definitions of the organism.
-
-However, the emergent properties of biofilms and swarms arise not from the individuals alone, but from their physical interactions. The Cell-Cell (CC) category captures the mechanics of density. For elongated bacteria, this is particularly critical, as steric repulsion, friction, and adhesion are highly dependent on relative orientation and local packing, unlike the simplified point-forces used in spherical models.
-
-Finally, these communities exist within a physical context. The Domain-Cell (DC) aspects describe the interface between the agent and its environment. This includes boundary conditions like hard surfaces, the mechanical resistance of an extracellular matrix, and the consumption or secretion of diffusive chemical fields.
-
-This conceptual distinction seems arbitrary from a biological perspective but is natural from a
-modeling/implementation perspective as it combines shared functionalities that require similar types
-of interaction.
-
-The difference between the "traditional" object-oriented approach and the functional one is clearly
-developed by
-\textit{"Casey Muratori - The Big OOPs: Anatomy of a Thirty-five-year Mistake"}
-...
 
 
 \ref{algorithm:generalized-main-loop}
@@ -808,6 +735,56 @@ which the new value is drawn (see supplement).
     \label{tabular:ai-paper-classification}
 \end{table}
 
+\subsection{Bridging Experiment and Simulations}
+\subsubsection{Extracting Information (about Morphology etc.)}
+\paragraph{Strategies for comparing simulation with data}
+\begin{itemize}
+    \item Simply do not compare: "Biolgically-inspired"
+    \item Select specific feature to investigate
+    \begin{itemize}
+        \item Compare particular value (possibly with uncertainty)
+        \item Compare multiple values
+        \item Compare distribution
+    \end{itemize}
+    \item Fix some parameters from literature
+    \item directly fit parameters from data (rare)
+\end{itemize}
+
+\subsection{Parameter Estimation - Applications and Techniques}
+
+\paragraph{Papers which did some sort of parameter estimation}
+\begin{itemize}
+    \item \cite{Storck2014} TODO; 41 Parameters for various cases; only 8 parameters taken from
+        literature values/quantified
+    \item Highlight lack of estimation of mechanical parameters for Agent-Based Models
+    \item \cite{Gallaher2017} TODO "Hybrid approach for parameter estimation in agent-based models"
+    \item \cite{Nguyen2024} TODO tracking single cells; but then do bulk analysis with them, no
+        rod-shaped bacteria
+    \item \cite{Doumic2020} "A purely mechanical model with asymmetric features for early morphogenesis of rod-shaped bacteria micro-colony" \textit{"stiff" bacteria with overlaps, does some parameter estimation (see also section before)}
+    \item \textbf{TODO add more of the soft-matter papers}
+    \item \textbf{TODO see if any of the frameworks do have estimates}
+\end{itemize}
+
+\paragraph{Common Methods used for Analysis}
+\begin{itemize}
+    \item Cell-Segmentation~\cite{VanValen2016} omnipose~\cite{Cutler2022},
+        cellpose~\cite{Stringer2020}
+    \item Cell-Tracking 3DeeCellTracker \cite{Wen2021}; Comparisons of Tracking Algorithms
+        \cite{Maka2014,Ulman2017}; Cell Tracking challenge \cite{Maka2023}
+    \item Optimization method \textbf{TODO Citation}
+    \item Profile-likelihood \cite{Kreutz2013}, structural/practical identifiability
+        \cite{Heinrich2025}
+\end{itemize}
+
+\subsection{Remaining Challenges}
+
+\paragraph{Additional Information}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/Bacterial_morphology_diagram.png}
+    \caption{\textbf{TODO Mark where models have been constructed.}}
+\end{figure}
+
 \section{Discussion}
 
 \begin{itemize}
@@ -839,6 +816,7 @@ which the new value is drawn (see supplement).
 \begin{itemize}
     \item \cite{Martins2015} "'miSimBa' — A simulator of synthetic time-lapsed microscopy images of
         bacterial cells"
+    \item the DLVO-theory~ \cite{Verwey1947,Derjaguin1993} \todo{do we need those later?}
 \end{itemize}
 
 \subsection{Inheritance of Growth-Relevant Parameters}
